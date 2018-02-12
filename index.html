@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Patoline</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="icon" href="images/logo.png">
+  <meta name="keywords" content="patoline,typography,ocaml">
+</head>
+<body>
+  <div id="header">
+    <table>
+      <tr>
+        <td><a href="index.html"><img src="images/duck.png"></a></td>
+        <td><a href="#started">Getting started</a></td>
+        <td><a href="#about">About Patoline</a></td>
+        <td><a href="#roadmap">Project roadmap</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="banner">
+    <img src="images/titleduck.png">
+    <h1>Patoline</h1>
+    <h2>A modern digital typesetting system</h2>
+  </div>
+
+  <h1 id="started" class="title">Getting started using Patoline</h1>
+  <div class="section">
+  </div>
+
+  <h1 id="about"  class="title">About Patoline</h1>
+  <div class="section">
+    <p>Patoline is a collection of typesetting libraries designed to be
+    combined into a variety of possible applications.</p>
+    <p>Its primary goal is not to offer the definitive answer to all
+    typesetting problems, but rather to write the painful and boring parts of
+    the job, so that interesting tools could be written easily.</p>
+    <p>Obviously, a related (but much smaller) project is the Patoline
+    compiler, which compiles a mixed Wiki/LaTeX/Ocaml syntax into a variety of
+    output formats, including traditional PDF files, but also web servers that
+    deliver dynamic contents, synchronized for instance with a talk.</p>
+
+    <h1>Technical facts</h1>
+    <ul>
+      <li>Patoline is mostly written in Ocaml, the reasons for this choice are
+        explained below.</li>
+      <li>It is designed to handle fonts well, in a uniform and simple
+        framework.</li>
+      <li>It uses fast state-of-the-art numerical methods to compute optimal
+        spacing. Our algorithms will be published soon (although their
+        implementations probably need some tuning).</li>
+      <li>It can export the same documents to many output formats.</li>
+      <li>Functions can be written with a general purpose programming
+        language, which makes it easy to query for instance online
+        bibliographic databases.</li>
+      <li>It is designed with portability, long term archiving and forward
+        compatibility in mind. For instance, the various encodings of unicode
+        are already a builtin feature.</li>
+      <li>The Patoline compiler uses a parser that can also parse maths,
+        making it easy to detect syntax or type errors.</li>
+    </ul>
+
+    <h1>What's modularity?</h1>
+    <p>Right now, the various parts of Patoline use common Ocaml constructors
+    to communicate (hence the importance of static typing and module
+    constructs). There are:</p>
+    <ul>
+      <li>Output formats, including libraries to output PDF, SVG (with
+        typographic features portable across browsers), or more exotic
+        formats such as OpenGL executables and web servers.</li>
+      <li>A library to handle OpenType and TrueType (for the moment). The goal
+        is to allow the user to explore, edit and use all the features of
+        their fonts, in all possible scripts.</li>
+      <li>Typesetting algorithms, that place figures and metal boxes
+        (simulations thereof). Several typesetting algorithms could be
+        written, to optimize size or learn beautiful typography using machine
+        learning.</li>
+      <li>A math library, that turns formulae into drawings using numerical
+        methods.</li>
+      <li>A library to edit document structures.</li>
+      <li>A bibliographic tool, that can be extended in several ways,
+        including more efficient and portable file formats, handling
+        character encoding and names well.</li>
+    </ul>
+    <p>Of course, all these components need to talk to each other nicely,
+    which is the purpose of common data types included in the libraries.</p>
+
+    <h1>Design choices</h1>
+    <p>Writing a new typesetting system implies making a lot of design
+    choices. They are all questionnable, by definition of a choice.
+    Nevertheless, our goal, while writing the foundations of Patoline, has
+    always been to make choices as transparent as possible to the user, by
+    designing as many pieces as we could in a modular, replacable way.</p>
+    <p><b>Why OCaml?</b></p>
+    <p>Every computer user has their own preferences about the best language
+    to communicate with a computer: some prefer graphical user interfaces
+    (with preferences on the exact toolkit used), others like 3D gaming
+    interfaces, others like object-oriented programming…</p>
+    <p>Choosing a common language for typography is a tough task. Our choice
+    was constrained by the goal to let the user <em>program</em> inside the
+    document, if they wished to do so. To achieve the long-term goals of:</p>
+    <ul>
+      <li>Modularity</li>
+      <li>Backwards compatibility</li>
+      <li>Portability</li>
+    </ul>
+    <p>we decided to use a functionnal programming language, with types
+    checked by the compiler (ensuring modularity and portability), and whose
+    authors would also have backwards compatibility in mind. Concretely, the
+    choice of OCaml means that even if you don't &quot;test&quot; documents
+    extensively (whatever &quot;testing a document&quot; means), the programs
+    inside your documents will <em>never</em> segfault or crash. Since most
+    users of traditional typesetting systems are not expert programmers, we
+    tried to avoid relying on their knowledge of software engineering
+    &quot;good practices&quot; to achieve this goal, and chose to use a
+    compiler to do that job for them.</p>
+    <p>And if you do not like OCaml, you can still write a compiler from your
+    favorite typesetting language to OCaml. Ours compiles Patoline code to
+    OCaml in a few hundred lines of OCaml code.</p>
+    <p><b>Can I use Patoline to produce commercial documents?</b></p>
+    <p><em>Short answer:</em> for most document formats, yes.<br></p>
+    <p><em>Long answer:</em> the current Patoline compiler produces binaries
+    linked with a GPL-licensed library, and uses these binaries to output
+    documents. This means that when distributing <em>the binaries</em>, you
+    must respect the terms of the GPL. The documents produced, however, have
+    no restriction on their license. Beware: in some cases, the binaries are
+    the final production (such as in the case of webservers). In other cases
+    though, the binaries produced by Patoline could produce source code for
+    other binaries, that are only restricted by the licenses of their source
+    code and linked libraries.</p>
+    <p><b>Can I use Patoline for a huge, ten years long project that I'm
+    starting now?</b></p>
+    <p>Although one of the authors has written his PhD. thesis (120 pages, in
+    computer science) with it, we don't recommend it now. The reason for this
+    is that small adjustements and bugfixes are being made all the time, and
+    working on such an unstable system can be frustrating. However, for
+    documents that are not meant to last forever in time, we would be happy to
+    help you with it: feel free to contact us for help.<br>
+    <em>Stay tuned:</em> we do plan to release a long term supported version
+    of Patoline soon.</p>
+    <p><b>Your code does not seem too documented, or does not respect good
+    practice &quot;x&quot; of software engineering.</b></p>
+    <p>For most values of &quot;x&quot; that you have in mind, that is
+    probably true, unfortunately. After two years and about 60.000 lines of
+    OCaml code, Patoline is still under heavy development, simply because the
+    task of writing and testing good foundational libraries such as font
+    libraries, in a portable and safe way, is large. However:</p>
+    <ul>
+      <li>This does not mean that we don't plan to re-organize and document
+        our code; we have already done it with each new order of magnitude in
+        the size of our project.</li>
+      <li>Languages with type inference and garbage collection (like OCaml)
+        provide certain guarantees that probably make practice &quot;x&quot;
+        less necessary to get a working program. But we <em>will</em>
+        document our code, don't worry.
+      </li>
+    </ul>
+  </div>
+
+  <h1 id="roadmap" class="title">Patoline project roadmap</h1>
+  <div class="section">
+    <h1>Where are you going with all this?</h1>
+    <p>Our long term goal is to make it easy for anyone to quickly produce
+    high quality documents. This is an ambitious goal, but we have made huge
+    progresses towards it. This page lists some of our next projects:</p>
+    <h2>Improving the language</h2>
+    <p> We are currently developping a new parser, using a completely
+    different parser generator. This is one of the main priorities, since we
+    cannot really document a language bound to disappear in the upcoming
+    months.</p>
+    <h2>Making modularity apparent</h2>
+    <p>Patoline <em>is</em> modular, even in its current version. However, all
+    the modules are packed together in a giant single module, for historical
+    reasons: the architecture was envisionned since the beginning, but we
+    wrote the code with an actual document (a PhD. thesis) in mind.<br>
+    It made us define and focus on the real problems that a typesetting
+    system must solve, but had this drawback of producing monolithic code.<br>
+    The next step is: unpack all the modules in module Typography, and rely on
+    ocamlfind to solve the dependencies.</p>
+    <h2>Modular configure</h2>
+    <p>Patoline uses a new idea for its configure script: we wrote it in the
+    same language as the code (OCaml). We must push this idea forward, and
+    write configure scripts that can be stacked on top of each other. This
+    would allow to compile several otherwise independent modules in just one
+    command.<br>
+    Moreover, it would make the production of distribution packages easy.</p>
+    <h2>Faster typesetting algorithms</h2>
+    <p>One problem with the current optimization algorithm is that it keeps
+    recompiling old versions that have not been modified. Possible solutions
+    include:
+    <ul>
+      <li>An algorithm that keeps track of already optimized portions.</li>
+      <li>A faster algorithm, for instance by removing unused branches early
+        (useless hyphenations, for instance).</li>
+      <li>Draft versions of the algorithm, based on the traditional Knuth and
+        Plass algorithm.</li>
+    </ul>
+  </div>
+  <div id="footer">
+    <p>© Florian Hatat,
+      <a href="https://lama.univ-savoie.fr/~hirschowitz">Tom Hirschowitz</a>,
+      <a href="https://lama.univ-savoie.fr/~hyvernat">Pierre Hyvernat</a>,
+      <a href="https://lepigre.fr">Rodolphe Lepigre</a>,
+      <a href="https://tapdance.inria.fr/meunier/">Pierre-Etienne Meunier</a>,
+      <a href="https://lama.univ-savoie.fr/~raffalli">Christophe Raffalli</a>,
+      <a href="https://theyssier.perso.math.cnrs.fr">Guillaume Theyssier</a>
+    </p>
+  </div>
+</body>
+</html>
