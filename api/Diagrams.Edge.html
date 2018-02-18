@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Diagrams.Matrix3d.html">
+<link rel="next" href="Diagrams.Entity.html">
+<link rel="Up" href="Diagrams.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Badness" rel="Chapter" href="Badness.html">
+<link title="Box" rel="Chapter" href="Box.html">
+<link title="Break" rel="Chapter" href="Break.html">
+<link title="Complete" rel="Chapter" href="Complete.html">
+<link title="ConfigFindFont" rel="Chapter" href="ConfigFindFont.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="DefaultMacros" rel="Chapter" href="DefaultMacros.html">
+<link title="Diagrams" rel="Chapter" href="Diagrams.html">
+<link title="Distance" rel="Chapter" href="Distance.html">
+<link title="Document" rel="Chapter" href="Document.html">
+<link title="Euler" rel="Chapter" href="Euler.html">
+<link title="FontPattern" rel="Chapter" href="FontPattern.html">
+<link title="Geometry" rel="Chapter" href="Geometry.html">
+<link title="Maths" rel="Chapter" href="Maths.html">
+<link title="Offset" rel="Chapter" href="Offset.html">
+<link title="OutputDrawing" rel="Chapter" href="OutputDrawing.html">
+<link title="Proj3d" rel="Chapter" href="Proj3d.html">
+<link title="TypoLanguage" rel="Chapter" href="TypoLanguage.html">
+<link title="Typography" rel="Chapter" href="Typography.html">
+<link title="Verbatim" rel="Chapter" href="Verbatim.html">
+<link title="Test_offset" rel="Chapter" href="Test_offset.html">
+<link title="ConfigFindFontLeg" rel="Chapter" href="ConfigFindFontLeg.html">
+<link title="Numerals" rel="Chapter" href="Numerals.html">
+<link title="PageLayout" rel="Chapter" href="PageLayout.html"><title>Diagrams.Edge</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Diagrams.Matrix3d.html" title="Diagrams.Matrix3d">Previous</a>
+&nbsp;<a class="up" href="Diagrams.html" title="Diagrams">Up</a>
+&nbsp;<a class="post" href="Diagrams.Entity.html" title="Diagrams.Entity">Next</a>
+</div>
+<h1>Module <a href="type_Diagrams.Edge.html">Diagrams.Edge</a></h1>
+
+<pre><span class="keyword">module</span> Edge: <code class="code">sig</code> <a href="Diagrams.Edge.html">..</a> <code class="code">end</code></pre><hr width="100%">
+
+<pre><code><span id="TYPEtip_info"><span class="keyword">type</span> <code class="type"></code>tip_info</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtip_info.tip_line_width">tip_line_width</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtip_info.is_double">is_double</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><code><span id="TYPEinfo"><span class="keyword">type</span> <code class="type"></code>info</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.tip_info">tip_info</span>&nbsp;: <code class="type"><a href="Diagrams.Edge.html#TYPEtip_info">tip_info</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.start">start</span>&nbsp;: <code class="type"><a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.finish">finish</span>&nbsp;: <code class="type"><a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.params">params</span>&nbsp;: <code class="type">RawContent.path_param</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.given_curve">given_curve</span>&nbsp;: <code class="type"><a href="Diagrams.Curve.html#TYPEt">Diagrams.Curve.t</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.underlying_curve">underlying_curve</span>&nbsp;: <code class="type"><a href="Diagrams.Curve.html#TYPEt">Diagrams.Curve.t</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.curves">curves</span>&nbsp;: <code class="type">(RawContent.path_param * <a href="Diagrams.Curve.html#TYPEt">Diagrams.Curve.t</a>) list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.decorations">decorations</span>&nbsp;: <code class="type"><a href="Diagrams.Edge.html#TYPEdecoration">decoration</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.z_curve">z_curve</span>&nbsp;: <code class="type">float array list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.anchor">anchor</span>&nbsp;: <code class="type"><a href="Diagrams.html#TYPEanchor">Diagrams.anchor</a> -> <a href="Diagrams.Point.html#TYPEt">Diagrams.Point.t</a></code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><code><span id="TYPEdecoration"><span class="keyword">type</span> <code class="type"></code>decoration</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdecoration.Curve"><span class="constructor">Curve</span></span> <span class="keyword">of</span> <code class="type">RawContent.path_param * <a href="Diagrams.Curve.html#TYPEt">Diagrams.Curve.t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdecoration.Node"><span class="constructor">Node</span></span> <span class="keyword">of</span> <code class="type"><a href="Diagrams.Node.html#TYPEt">Diagrams.Node.t</a></code></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="VALevaluate_z"><span class="keyword">val</span> evaluate_z</span> : <code class="type"><a href="Diagrams.Edge.html#TYPEinfo">info</a> -> int * float -> float</code></pre>
+<pre><span id="VALevaluate_z_global"><span class="keyword">val</span> evaluate_z_global</span> : <code class="type"><a href="Diagrams.Edge.html#TYPEinfo">info</a> -> float -> float</code></pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Diagrams.Edge.html#TYPEinfo">info</a></code> </pre>
+
+
+<pre><span id="TYPEedge_transfo"><span class="keyword">type</span> <code class="type"></code>edge_transfo</span> = <code class="type"><a href="Diagrams.Edge.html#TYPEinfo">info</a> -> <a href="Diagrams.Edge.html#TYPEinfo">info</a></code> </pre>
+
+
+<pre><span class="keyword">module</span> <a href="Diagrams.Edge.Transfo.html">Transfo</a>: <code class="type"><a href="Diagrams.Transfo.html">Diagrams.Transfo</a></code><code class="code">(</code><code class="code">sig</code></pre><div class="sig_block">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Diagrams.Edge.html#TYPEinfo">Diagrams.Edge.info</a></code> </pre>
+
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">'a -> 'a -> int</code></pre></div>
+<pre><code class="code">end</code><code class="code">)</code></pre>
+<pre><span id="VALdefault_tip_info"><span class="keyword">val</span> default_tip_info</span> : <code class="type"><a href="Diagrams.Edge.html#TYPEtip_info">tip_info</a></code></pre>
+<pre><span id="VALdefault_params"><span class="keyword">val</span> default_params</span> : <code class="type">RawContent.path_param</code></pre>
+<pre><span id="VALdefault_edge_info"><span class="keyword">val</span> default_edge_info</span> : <code class="type"><a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a> -><br>       <a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a> -> <a href="Diagrams.Curve.html#TYPEt">Diagrams.Curve.t</a> -> <a href="Diagrams.Edge.html#TYPEinfo">info</a></code></pre>
+<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type"><a href="Diagrams.Edge.html#TYPEinfo">info</a></code></pre>
+<pre><span id="VALtransform"><span class="keyword">val</span> transform</span> : <code class="type">Transfo.Style.t list -><br>       <a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a> -><br>       <a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a> -> <a href="Diagrams.Curve.html#TYPEt">Diagrams.Curve.t</a> -> <a href="Diagrams.Edge.html#TYPEinfo">info</a></code></pre>
+<pre><span id="VALouter_curve"><span class="keyword">val</span> outer_curve</span> : <code class="type">'a -> 'b -> 'b</code></pre>
+<pre><span id="TYPEcontinue_path_spec"><span class="keyword">type</span> <code class="type"></code>continue_path_spec</span> = <code class="type"><a href="Diagrams.Point.html#TYPEt">Diagrams.Point.t</a> list</code> </pre>
+
+
+<pre><span id="TYPEpath_spec"><span class="keyword">type</span> <code class="type"></code>path_spec</span> = <code class="type"><a href="Diagrams.Edge.html#TYPEcontinue_path_spec">continue_path_spec</a> list</code> </pre>
+
+
+<pre><span id="VALpoint_lists_of_path_spec"><span class="keyword">val</span> point_lists_of_path_spec</span> : <code class="type">'a -> 'a list list -> 'a list list</code></pre>
+<pre><span id="TYPEcontrols"><span class="keyword">type</span> <code class="type"></code>controls</span> = <code class="type"><a href="Diagrams.Edge.html#TYPEcontinue_path_spec">continue_path_spec</a> * <a href="Diagrams.Point.html#TYPEt">Diagrams.Point.t</a> list</code> </pre>
+
+
+<pre><span id="VALpoint_lists_of_edge_spec_rec"><span class="keyword">val</span> point_lists_of_edge_spec_rec</span> : <code class="type">'a list list -> 'a -> 'a -> 'a list list -> 'a list list</code></pre>
+<pre><span id="VALpoint_lists_of_edge_spec"><span class="keyword">val</span> point_lists_of_edge_spec</span> : <code class="type"><a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a> -><br>       <a href="Diagrams.Point.html#TYPEt">Diagrams.Point.t</a> list list -><br>       <a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a> -> <a href="Diagrams.Point.html#TYPEt">Diagrams.Point.t</a> list list</code></pre>
+<pre><span id="VALdecoration_to_contents"><span class="keyword">val</span> decoration_to_contents</span> : <code class="type">'a -> <a href="Diagrams.Edge.html#TYPEdecoration">decoration</a> -> RawContent.raw list</code></pre>
+<pre><span id="VALto_contents"><span class="keyword">val</span> to_contents</span> : <code class="type"><a href="Diagrams.Edge.html#TYPEinfo">info</a> -> RawContent.raw list</code></pre>
+<pre><span id="VALto_gentity"><span class="keyword">val</span> to_gentity</span> : <code class="type"><a href="Diagrams.Edge.html#TYPEinfo">info</a> -> <a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a></code></pre>
+<pre><span id="VALdashed"><span class="keyword">val</span> dashed</span> : <code class="type">float list -> Transfo.Style.t</code></pre>
+<pre><span id="VALfill"><span class="keyword">val</span> fill</span> : <code class="type">Color.color -> Transfo.Style.t</code></pre>
+<pre><span id="VALcolor"><span class="keyword">val</span> color</span> : <code class="type">Color.color -> Transfo.Style.t</code></pre>
+<pre><span id="VALnoStroke"><span class="keyword">val</span> noStroke</span> : <code class="type">Transfo.Style.t</code></pre>
+<pre><span id="VALblack"><span class="keyword">val</span> black</span> : <code class="type">Transfo.Style.t</code></pre>
+<pre><span id="VALlineWidth"><span class="keyword">val</span> lineWidth</span> : <code class="type">float -> Transfo.Style.t</code></pre>
+<pre><span id="VALdo_clip"><span class="keyword">val</span> do_clip</span> : <code class="type">(float array * float array) list -><br>       <a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a> -> <a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a> -> (float array * float array) list</code></pre>
+<pre><span id="VALdo_squiggle"><span class="keyword">val</span> do_squiggle</span> : <code class="type">int -> float -> float array * float array -> (float array * float array) list</code></pre>
+<pre><span id="VALshortenS"><span class="keyword">val</span> shortenS</span> : <code class="type">float -> Transfo.Style.t</code></pre>
+<pre><span id="VALshortenE"><span class="keyword">val</span> shortenE</span> : <code class="type">float -> Transfo.Style.t</code></pre>
+<pre><span id="VALfontArrowHeadCurves"><span class="keyword">val</span> fontArrowHeadCurves</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -> (float array * float array) list list * float</code></pre>
+<pre><span id="VALfontArrowHead"><span class="keyword">val</span> fontArrowHead</span> : <code class="type">float * float -><br>       float -><br>       'a -><br>       <a href="Diagrams.Edge.html#TYPEtip_info">tip_info</a> -><br>       RawContent.path_param -><br>       (float array * float array) list list -><br>       float -> (float array * float array) list</code></pre>
+<pre><span id="VALcliptip"><span class="keyword">val</span> cliptip</span> : <code class="type">?reverse:bool -><br>       float * float -><br>       <a href="Diagrams.Edge.html#TYPEinfo">info</a> -><br>       (float array * float array) list -><br>       (float array * float array) list -> (float array * float array) list</code></pre>
+<pre><span id="VALbase_arrow"><span class="keyword">val</span> base_arrow</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       ?head_or_tail:bool -> <a href="Diagrams.Edge.html#TYPEinfo">info</a> -> <a href="Diagrams.Edge.html#TYPEinfo">info</a></code></pre>
+<pre><span id="VALarrow"><span class="keyword">val</span> arrow</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -> Transfo.Style.t</code></pre>
+<pre><span id="VALarrow'"><span class="keyword">val</span> arrow'</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -> Transfo.Style.t</code></pre>
+<pre><span id="VALdblArrow"><span class="keyword">val</span> dblArrow</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -> Transfo.Style.t</code></pre>
+<pre><span id="VALmodTo"><span class="keyword">val</span> modTo</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -> Transfo.Style.t</code></pre>
+<pre><span id="VALbendLeft"><span class="keyword">val</span> bendLeft</span> : <code class="type">float -> Transfo.Style.t</code></pre>
+<pre><span id="VALbendRight"><span class="keyword">val</span> bendRight</span> : <code class="type">float -> Transfo.Style.t</code></pre>
+<pre><span id="VALlabel_anchor"><span class="keyword">val</span> label_anchor</span> : <code class="type"><a href="Diagrams.html#TYPEanchor">Diagrams.anchor</a> -><br>       <a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       ?pos:<a href="Diagrams.html#TYPEanchor">Diagrams.anchor</a> -><br>       ?shape:Diagrams.Node.Transfo.Style.t -><br>       ?style:Diagrams.Node.Transfo.Style.t list -><br>       <a href="Document.html#TYPEcontent">Document.content</a> list -> Transfo.Style.t</code></pre>
+<pre><span id="VALabove"><span class="keyword">val</span> above</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       ?pos:<a href="Diagrams.html#TYPEanchor">Diagrams.anchor</a> -><br>       ?shape:Diagrams.Node.Transfo.Style.t -><br>       ?style:Diagrams.Node.Transfo.Style.t list -><br>       <a href="Document.html#TYPEcontent">Document.content</a> list -> Transfo.Style.t</code></pre>
+<pre><span id="VALbelow"><span class="keyword">val</span> below</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       ?pos:<a href="Diagrams.html#TYPEanchor">Diagrams.anchor</a> -><br>       ?shape:Diagrams.Node.Transfo.Style.t -><br>       ?style:Diagrams.Node.Transfo.Style.t list -><br>       <a href="Document.html#TYPEcontent">Document.content</a> list -> Transfo.Style.t</code></pre>
+<pre><span id="VALleft"><span class="keyword">val</span> left</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       ?pos:<a href="Diagrams.html#TYPEanchor">Diagrams.anchor</a> -><br>       ?shape:Diagrams.Node.Transfo.Style.t -><br>       ?style:Diagrams.Node.Transfo.Style.t list -><br>       <a href="Document.html#TYPEcontent">Document.content</a> list -> Transfo.Style.t</code></pre>
+<pre><span id="VALright"><span class="keyword">val</span> right</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       ?pos:<a href="Diagrams.html#TYPEanchor">Diagrams.anchor</a> -><br>       ?shape:Diagrams.Node.Transfo.Style.t -><br>       ?style:Diagrams.Node.Transfo.Style.t list -><br>       <a href="Document.html#TYPEcontent">Document.content</a> list -> Transfo.Style.t</code></pre>
+<pre><span id="VALaboveL"><span class="keyword">val</span> aboveL</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       ?pos:<a href="Diagrams.html#TYPEanchor">Diagrams.anchor</a> -><br>       ?shape:Diagrams.Node.Transfo.Style.t -><br>       ?style:Diagrams.Node.Transfo.Style.t list -><br>       <a href="Document.html#TYPEcontent">Document.content</a> list -> Transfo.Style.t</code></pre>
+<pre><span id="VALaboveR"><span class="keyword">val</span> aboveR</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       ?pos:<a href="Diagrams.html#TYPEanchor">Diagrams.anchor</a> -><br>       ?shape:Diagrams.Node.Transfo.Style.t -><br>       ?style:Diagrams.Node.Transfo.Style.t list -><br>       <a href="Document.html#TYPEcontent">Document.content</a> list -> Transfo.Style.t</code></pre>
+<pre><span id="VALbelowL"><span class="keyword">val</span> belowL</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       ?pos:<a href="Diagrams.html#TYPEanchor">Diagrams.anchor</a> -><br>       ?shape:Diagrams.Node.Transfo.Style.t -><br>       ?style:Diagrams.Node.Transfo.Style.t list -><br>       <a href="Document.html#TYPEcontent">Document.content</a> list -> Transfo.Style.t</code></pre>
+<pre><span id="VALbelowR"><span class="keyword">val</span> belowR</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       ?pos:<a href="Diagrams.html#TYPEanchor">Diagrams.anchor</a> -><br>       ?shape:Diagrams.Node.Transfo.Style.t -><br>       ?style:Diagrams.Node.Transfo.Style.t list -><br>       <a href="Document.html#TYPEcontent">Document.content</a> list -> Transfo.Style.t</code></pre>
+<pre><span id="VALlabelOn"><span class="keyword">val</span> labelOn</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       ?style:Diagrams.Node.Transfo.Style.t list -><br>       <a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       ?pos:<a href="Diagrams.html#TYPEanchor">Diagrams.anchor</a> -><br>       ?shape:Diagrams.Node.Transfo.Style.t -><br>       <a href="Document.html#TYPEcontent">Document.content</a> list -> Transfo.Style.t</code></pre>
+<pre><span id="VALraw_edge"><span class="keyword">val</span> raw_edge</span> : <code class="type">Transfo.Style.t list -><br>       <a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a> -><br>       <a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a> -> <a href="Diagrams.Curve.html#TYPEt">Diagrams.Curve.t</a> -> <a href="Diagrams.Edge.html#TYPEinfo">info</a></code></pre>
+<pre><span id="VALpath_of_curve"><span class="keyword">val</span> path_of_curve</span> : <code class="type">Transfo.Style.t list -> <a href="Diagrams.Curve.html#TYPEt">Diagrams.Curve.t</a> -> <a href="Diagrams.Edge.html#TYPEinfo">info</a></code></pre>
+<pre><span id="VALpath"><span class="keyword">val</span> path</span> : <code class="type">Transfo.Style.t list -><br>       float * float -> (float * float) list list -> <a href="Diagrams.Edge.html#TYPEinfo">info</a></code></pre>
+<pre><span id="VALpolyLine"><span class="keyword">val</span> polyLine</span> : <code class="type">Transfo.Style.t list -><br>       <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> list -> <a href="Diagrams.Edge.html#TYPEinfo">info</a></code></pre>
+<pre><span id="VALof_gentities"><span class="keyword">val</span> of_gentities</span> : <code class="type">Transfo.Style.t list -><br>       <a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a> -><br>       ?controls:<a href="Diagrams.Point.html#TYPEt">Diagrams.Point.t</a> list list -><br>       <a href="Diagrams.Gentity.html#TYPEt">Diagrams.Gentity.t</a> -> <a href="Diagrams.Edge.html#TYPEinfo">info</a></code></pre>
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">Transfo.Style.t list -><br>       <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> -><br>       ?controls:<a href="Diagrams.Point.html#TYPEt">Diagrams.Point.t</a> list list -><br>       <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> -> <a href="Diagrams.Edge.html#TYPEinfo">info</a></code></pre>
+<pre><span id="VALmakes"><span class="keyword">val</span> makes</span> : <code class="type">Transfo.Style.t list -><br>       (Transfo.Style.t list * <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> *<br>        <a href="Diagrams.Point.html#TYPEt">Diagrams.Point.t</a> list list * <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a>)<br>       list -> <a href="Diagrams.Edge.html#TYPEinfo">info</a> list</code></pre>
+<pre><span id="VALmake_3d"><span class="keyword">val</span> make_3d</span> : <code class="type">Transfo.Style.t list -><br>       <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> -><br>       ?projection:<a href="Proj3d.html#TYPEprojection">Proj3d.projection</a> -><br>       ?controls:<a href="Diagrams.Point.html#TYPEt">Diagrams.Point.t</a> list list -><br>       ?controls3d:(float * float * float) list list -><br>       <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> -> <a href="Diagrams.Edge.html#TYPEinfo">info</a></code></pre>
+<pre><span id="VALmakes_3d"><span class="keyword">val</span> makes_3d</span> : <code class="type">Transfo.Style.t list -><br>       ?projection:<a href="Proj3d.html#TYPEprojection">Proj3d.projection</a> -><br>       (Transfo.Style.t list * <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> *<br>        <a href="Diagrams.Point.html#TYPEt">Diagrams.Point.t</a> list list * (float * float * float) list list *<br>        <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a>)<br>       list -> <a href="Diagrams.Edge.html#TYPEinfo">info</a> list</code></pre>
+<pre><span id="VALrestrict"><span class="keyword">val</span> restrict</span> : <code class="type"><a href="Diagrams.Edge.html#TYPEinfo">info</a> -> int * float -> int * float -> <a href="Diagrams.Edge.html#TYPEinfo">info</a></code></pre>
+<pre><span id="VALput_forth"><span class="keyword">val</span> put_forth</span> : <code class="type"><a href="Diagrams.Edge.html#TYPEinfo">info</a> -><br>       int * float -> ?color:Color.color -> float -> float -> <a href="Diagrams.Edge.html#TYPEinfo">info</a></code></pre></body></html>

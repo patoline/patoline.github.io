@@ -1,0 +1,314 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Badness" rel="Chapter" href="Badness.html">
+<link title="Box" rel="Chapter" href="Box.html">
+<link title="Break" rel="Chapter" href="Break.html">
+<link title="Complete" rel="Chapter" href="Complete.html">
+<link title="ConfigFindFont" rel="Chapter" href="ConfigFindFont.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="DefaultMacros" rel="Chapter" href="DefaultMacros.html">
+<link title="Diagrams" rel="Chapter" href="Diagrams.html">
+<link title="Distance" rel="Chapter" href="Distance.html">
+<link title="Document" rel="Chapter" href="Document.html">
+<link title="Euler" rel="Chapter" href="Euler.html">
+<link title="FontPattern" rel="Chapter" href="FontPattern.html">
+<link title="Geometry" rel="Chapter" href="Geometry.html">
+<link title="Maths" rel="Chapter" href="Maths.html">
+<link title="Offset" rel="Chapter" href="Offset.html">
+<link title="OutputDrawing" rel="Chapter" href="OutputDrawing.html">
+<link title="Proj3d" rel="Chapter" href="Proj3d.html">
+<link title="TypoLanguage" rel="Chapter" href="TypoLanguage.html">
+<link title="Typography" rel="Chapter" href="Typography.html">
+<link title="Verbatim" rel="Chapter" href="Verbatim.html">
+<link title="Test_offset" rel="Chapter" href="Test_offset.html">
+<link title="ConfigFindFontLeg" rel="Chapter" href="ConfigFindFontLeg.html">
+<link title="Numerals" rel="Chapter" href="Numerals.html">
+<link title="PageLayout" rel="Chapter" href="PageLayout.html"><title>Diagrams.Diagram</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;stack&nbsp;:&nbsp;entity&nbsp;list&nbsp;ref<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;env&nbsp;:&nbsp;<span class="constructor">Document</span>.environment<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compute_intersections&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.info)&nbsp;option&nbsp;ref<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;epsilon&nbsp;:&nbsp;float&nbsp;ref<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;margin&nbsp;:&nbsp;float&nbsp;ref<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;t_margin&nbsp;:&nbsp;float&nbsp;ref<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;node&nbsp;:&nbsp;<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;coordinate&nbsp;:&nbsp;<span class="constructor">Point</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;edge&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?controls:<span class="constructor">Point</span>.t&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;edges&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Point</span>.t&nbsp;list&nbsp;list&nbsp;*&nbsp;<span class="constructor">Node</span>.info)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.info&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;path&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(float&nbsp;*&nbsp;float)&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;raw&nbsp;:&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">RawContent</span>.raw&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Entity</span>.raw<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;edge_3d&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?controls:<span class="constructor">Point</span>.t&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?controls3d:(float&nbsp;*&nbsp;float&nbsp;*&nbsp;float)&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?projection:<span class="constructor">Proj3d</span>.projection&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;edges_3d&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?projection:<span class="constructor">Proj3d</span>.projection&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Point</span>.t&nbsp;list&nbsp;list&nbsp;*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(float&nbsp;*&nbsp;float&nbsp;*&nbsp;float)&nbsp;list&nbsp;list&nbsp;*&nbsp;<span class="constructor">Node</span>.info)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.info&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;matrix_full&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Matrix</span>.<span class="constructor">T</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;<span class="constructor">Document</span>.content&nbsp;list)&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Matrix</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;math_matrix_full&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Matrix</span>.<span class="constructor">T</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;<span class="constructor">Maths</span>.math&nbsp;list)&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Matrix</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;matrix&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Matrix</span>.<span class="constructor">T</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;<span class="constructor">Document</span>.content&nbsp;list)&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;math_matrix&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Matrix</span>.<span class="constructor">T</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;<span class="constructor">Maths</span>.math&nbsp;list)&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;matrix_3d_full&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Matrix3d</span>.<span class="constructor">T</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;<span class="constructor">Document</span>.content&nbsp;list)&nbsp;list&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Matrix3d</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;matrix_3d_project&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Matrix3d</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="constructor">Matrix</span>.matrix&nbsp;array<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;matrix_3d&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Matrix3d</span>.<span class="constructor">T</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;<span class="constructor">Document</span>.content&nbsp;list)&nbsp;list&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="constructor">Matrix</span>.matrix&nbsp;array<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;all_intersections&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Entity</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Edge</span>.t&nbsp;*&nbsp;<span class="constructor">Edge</span>.t&nbsp;*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((int&nbsp;*&nbsp;float&nbsp;*&nbsp;<span class="constructor">Bezier</span>.curve)&nbsp;*&nbsp;(int&nbsp;*&nbsp;float&nbsp;*&nbsp;<span class="constructor">Bezier</span>.curve)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;add_intersections&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Edge</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.t)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;spit_stack&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;entity&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;spit_stack_with_intersections&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;entity&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;include_diagram&nbsp;:&nbsp;entity&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;make&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?offset:float&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?adjust_before:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?hcenter:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?vcenter:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?width_fixed:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Box</span>.drawingBox<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;defaultLabelStyle&nbsp;:&nbsp;<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;label_anchor&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;anchor&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?pos:anchor&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?shape:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;labela&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?pos:anchor&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?shape:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;labelb&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?pos:anchor&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?shape:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;labell&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?pos:anchor&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?shape:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;labelr&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?pos:anchor&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?shape:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;labelal&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?pos:anchor&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?shape:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;labelar&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?pos:anchor&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?shape:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;labelbl&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?pos:anchor&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?shape:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;labelbr&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?pos:anchor&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?shape:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;label_edge&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;label_edge_anchor&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;anchor&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;label_edgea&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;label_edgeb&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;label_edgel&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;label_edger&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;label_edgebr&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;label_edgebl&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;label_edgear&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;label_edgeal&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;label_edgec&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;edge_anchor&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;anchor&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;edges_anchor&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;anchor&nbsp;*&nbsp;float&nbsp;*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="constructor">Edge</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info)&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;edges_anchor_mid&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;anchor&nbsp;*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="constructor">Edge</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info)&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;edge_anchor_of_gentities&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Gentity</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Gentity</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;anchor&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;edges_anchor_of_gentities&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Gentity</span>.t&nbsp;*&nbsp;<span class="constructor">Gentity</span>.t&nbsp;*&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;anchor&nbsp;*&nbsp;float&nbsp;*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="constructor">Edge</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info)&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;edges_anchor_mid_of_gentities&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Gentity</span>.t&nbsp;*&nbsp;<span class="constructor">Gentity</span>.t&nbsp;*&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;anchor&nbsp;*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="constructor">Edge</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info)&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;edge_anchor_of_edges&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;anchor&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Edge</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;edges_anchor_of_edges&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Edge</span>.info&nbsp;*&nbsp;<span class="constructor">Edge</span>.info&nbsp;*&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;anchor&nbsp;*&nbsp;float&nbsp;*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="constructor">Edge</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info)&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;edges_anchor_mid_of_edges&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Edge</span>.info&nbsp;*&nbsp;<span class="constructor">Edge</span>.info&nbsp;*&nbsp;<span class="constructor">Edge</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;anchor&nbsp;*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="constructor">Edge</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info)&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Arr</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;fun_max&nbsp;:&nbsp;?max:(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;node_width&nbsp;:&nbsp;<span class="constructor">Edge</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;between_borders&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;anchor&nbsp;array&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Matrix</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;*&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Make</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">functor</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">MkMatrix</span>&nbsp;:&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;make_matrix&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Matrix</span>.<span class="constructor">T</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;t&nbsp;list)&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;array&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;anchor&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?vertical_padding:(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?horizontal_padding:(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?all_node_styles:<span class="constructor">Matrix</span>.<span class="constructor">T</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?matrix_anchor:(<span class="constructor">Matrix</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Point</span>.t)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?main_node_style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">MkMatrix</span>.t&nbsp;list&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">MakeMathMatrix</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;<span class="constructor">Maths</span>.math<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;make_matrix&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Matrix</span>.<span class="constructor">T</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;<span class="constructor">Maths</span>.math&nbsp;list)&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">MakeMatrix</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;<span class="constructor">Document</span>.content<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;make_matrix&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Matrix</span>.<span class="constructor">T</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;*&nbsp;<span class="constructor">Document</span>.content&nbsp;list)&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">MakeArray</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;array&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;anchor&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?vertical_padding:(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?horizontal_padding:(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?all_node_styles:<span class="constructor">Matrix</span>.<span class="constructor">T</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?matrix_anchor:(<span class="constructor">Matrix</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Point</span>.t)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?main_node_style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">MakeMathMatrix</span>.t&nbsp;list&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">MakeTabular</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;array&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;anchor&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?vertical_padding:(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?horizontal_padding:(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?all_node_styles:<span class="constructor">Matrix</span>.<span class="constructor">T</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?matrix_anchor:(<span class="constructor">Matrix</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Point</span>.t)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?main_node_style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">MakeMatrix</span>.t&nbsp;list&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;array&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;anchor&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?vertical_padding:(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?horizontal_padding:(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?all_node_styles:<span class="constructor">Matrix</span>.<span class="constructor">T</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?matrix_anchor:(<span class="constructor">Matrix</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Point</span>.t)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?main_node_style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">MakeMathMatrix</span>.t&nbsp;list&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;tabular&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;anchor&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?vertical_padding:(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?horizontal_padding:(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?all_node_styles:<span class="constructor">Matrix</span>.<span class="constructor">T</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?matrix_anchor:(<span class="constructor">Matrix</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Point</span>.t)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?main_node_style:<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">MakeMatrix</span>.t&nbsp;list&nbsp;list&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Node</span>.info&nbsp;*&nbsp;<span class="constructor">Node</span>.info&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+<span class="keyword">end</span></code></body></html>

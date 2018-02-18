@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Diagrams.Edge.html">
+<link rel="next" href="Diagrams.MakeDiagram.html">
+<link rel="Up" href="Diagrams.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Badness" rel="Chapter" href="Badness.html">
+<link title="Box" rel="Chapter" href="Box.html">
+<link title="Break" rel="Chapter" href="Break.html">
+<link title="Complete" rel="Chapter" href="Complete.html">
+<link title="ConfigFindFont" rel="Chapter" href="ConfigFindFont.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="DefaultMacros" rel="Chapter" href="DefaultMacros.html">
+<link title="Diagrams" rel="Chapter" href="Diagrams.html">
+<link title="Distance" rel="Chapter" href="Distance.html">
+<link title="Document" rel="Chapter" href="Document.html">
+<link title="Euler" rel="Chapter" href="Euler.html">
+<link title="FontPattern" rel="Chapter" href="FontPattern.html">
+<link title="Geometry" rel="Chapter" href="Geometry.html">
+<link title="Maths" rel="Chapter" href="Maths.html">
+<link title="Offset" rel="Chapter" href="Offset.html">
+<link title="OutputDrawing" rel="Chapter" href="OutputDrawing.html">
+<link title="Proj3d" rel="Chapter" href="Proj3d.html">
+<link title="TypoLanguage" rel="Chapter" href="TypoLanguage.html">
+<link title="Typography" rel="Chapter" href="Typography.html">
+<link title="Verbatim" rel="Chapter" href="Verbatim.html">
+<link title="Test_offset" rel="Chapter" href="Test_offset.html">
+<link title="ConfigFindFontLeg" rel="Chapter" href="ConfigFindFontLeg.html">
+<link title="Numerals" rel="Chapter" href="Numerals.html">
+<link title="PageLayout" rel="Chapter" href="PageLayout.html"><title>Diagrams.Entity</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Diagrams.Edge.html" title="Diagrams.Edge">Previous</a>
+&nbsp;<a class="up" href="Diagrams.html" title="Diagrams">Up</a>
+&nbsp;<a class="post" href="Diagrams.MakeDiagram.html" title="Diagrams.MakeDiagram">Next</a>
+</div>
+<h1>Module <a href="type_Diagrams.Entity.html">Diagrams.Entity</a></h1>
+
+<pre><span class="keyword">module</span> Entity: <code class="code">sig</code> <a href="Diagrams.Entity.html">..</a> <code class="code">end</code></pre><hr width="100%">
+
+<pre><code><span id="TYPEraw"><span class="keyword">type</span> <code class="type"></code>raw</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTraw.raw_contents">raw_contents</span>&nbsp;: <code class="type">RawContent.raw list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTraw.raw_anchor">raw_anchor</span>&nbsp;: <code class="type">float * float</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Node"><span class="constructor">Node</span></span> <span class="keyword">of</span> <code class="type"><a href="Diagrams.Node.html#TYPEt">Diagrams.Node.t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Matrix"><span class="constructor">Matrix</span></span> <span class="keyword">of</span> <code class="type"><a href="Diagrams.Matrix.html#TYPEt">Diagrams.Matrix.t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Matrix3d"><span class="constructor">Matrix3d</span></span> <span class="keyword">of</span> <code class="type"><a href="Diagrams.Matrix3d.html#TYPEt">Diagrams.Matrix3d.t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Edge"><span class="constructor">Edge</span></span> <span class="keyword">of</span> <code class="type"><a href="Diagrams.Edge.html#TYPEt">Diagrams.Edge.t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Gentity"><span class="constructor">Gentity</span></span> <span class="keyword">of</span> <code class="type"><a href="Diagrams.html#TYPEgentity">Diagrams.gentity</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Raw"><span class="constructor">Raw</span></span> <span class="keyword">of</span> <code class="type"><a href="Diagrams.Entity.html#TYPEraw">raw</a></code></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="VALto_raw_list"><span class="keyword">val</span> to_raw_list</span> : <code class="type"><a href="Diagrams.Entity.html#TYPEt">t</a> -> RawContent.raw list</code></pre>
+<pre><span id="VALanchor"><span class="keyword">val</span> anchor</span> : <code class="type"><a href="Diagrams.Entity.html#TYPEt">t</a> -> <a href="Diagrams.html#TYPEanchor">Diagrams.anchor</a> -> <a href="Diagrams.Point.html#TYPEt">Diagrams.Point.t</a></code></pre>
+<pre><span id="VALorder"><span class="keyword">val</span> order</span> : <code class="type">int -> RawContent.raw list -> RawContent.raw list -> RawContent.raw list</code></pre>
+<pre><span id="VALto_contents"><span class="keyword">val</span> to_contents</span> : <code class="type"><a href="Diagrams.Entity.html#TYPEt">t</a> list -> RawContent.raw list</code></pre></body></html>

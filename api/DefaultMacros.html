@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Debug.html">
+<link rel="next" href="Diagrams.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Badness" rel="Chapter" href="Badness.html">
+<link title="Box" rel="Chapter" href="Box.html">
+<link title="Break" rel="Chapter" href="Break.html">
+<link title="Complete" rel="Chapter" href="Complete.html">
+<link title="ConfigFindFont" rel="Chapter" href="ConfigFindFont.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="DefaultMacros" rel="Chapter" href="DefaultMacros.html">
+<link title="Diagrams" rel="Chapter" href="Diagrams.html">
+<link title="Distance" rel="Chapter" href="Distance.html">
+<link title="Document" rel="Chapter" href="Document.html">
+<link title="Euler" rel="Chapter" href="Euler.html">
+<link title="FontPattern" rel="Chapter" href="FontPattern.html">
+<link title="Geometry" rel="Chapter" href="Geometry.html">
+<link title="Maths" rel="Chapter" href="Maths.html">
+<link title="Offset" rel="Chapter" href="Offset.html">
+<link title="OutputDrawing" rel="Chapter" href="OutputDrawing.html">
+<link title="Proj3d" rel="Chapter" href="Proj3d.html">
+<link title="TypoLanguage" rel="Chapter" href="TypoLanguage.html">
+<link title="Typography" rel="Chapter" href="Typography.html">
+<link title="Verbatim" rel="Chapter" href="Verbatim.html">
+<link title="Test_offset" rel="Chapter" href="Test_offset.html">
+<link title="ConfigFindFontLeg" rel="Chapter" href="ConfigFindFontLeg.html">
+<link title="Numerals" rel="Chapter" href="Numerals.html">
+<link title="PageLayout" rel="Chapter" href="PageLayout.html"><title>DefaultMacros</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Debug.html" title="Debug">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Diagrams.html" title="Diagrams">Next</a>
+</div>
+<h1>Module <a href="type_DefaultMacros.html">DefaultMacros</a></h1>
+
+<pre><span class="keyword">module</span> DefaultMacros: <code class="code">sig</code> <a href="DefaultMacros.html">..</a> <code class="code">end</code></pre><hr width="100%">
+
+<pre><span id="VALfindFont"><span class="keyword">val</span> findFont</span> : <code class="type"><a href="FontPattern.html#TYPEt">FontPattern.t</a> -> string</code></pre>
+<pre><span id="VALmathsText"><span class="keyword">val</span> mathsText</span> : <code class="type"><a href="Document.html#TYPEcontent">Document.content</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALmathcal"><span class="keyword">val</span> mathcal</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALcal"><span class="keyword">val</span> cal</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALfraktur"><span class="keyword">val</span> fraktur</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALmathbf"><span class="keyword">val</span> mathbf</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALmathsc"><span class="keyword">val</span> mathsc</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALbbFont"><span class="keyword">val</span> bbFont</span> : <code class="type">Fonts.font Lazy.t</code></pre>
+<pre><span id="VALmathbb"><span class="keyword">val</span> mathbb</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALmathrm"><span class="keyword">val</span> mathrm</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALdisplayStyle"><span class="keyword">val</span> displayStyle</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALsetStyle"><span class="keyword">val</span> setStyle</span> : <code class="type">(<a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -><br>        <a href="Document.html#TYPEenvironment">Document.environment</a> list -> <a href="Document.html#TYPEenvironment">Document.environment</a> list) -><br>       <a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALmathsize"><span class="keyword">val</span> mathsize</span> : <code class="type">float -> <a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALmathSpace"><span class="keyword">val</span> mathSpace</span> : <code class="type">float -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALoline"><span class="keyword">val</span> oline</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALodiag"><span class="keyword">val</span> odiag</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALmnot"><span class="keyword">val</span> mnot</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALoDot"><span class="keyword">val</span> oDot</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALoDoubleDot"><span class="keyword">val</span> oDoubleDot</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALoHat"><span class="keyword">val</span> oHat</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALbinomial"><span class="keyword">val</span> binomial</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALoRightArrow"><span class="keyword">val</span> oRightArrow</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALoLeftArrow"><span class="keyword">val</span> oLeftArrow</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALvec"><span class="keyword">val</span> vec</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALcev"><span class="keyword">val</span> cev</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALod"><span class="keyword">val</span> od</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALodd"><span class="keyword">val</span> odd</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALhat"><span class="keyword">val</span> hat</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALhalf_eq"><span class="keyword">val</span> half_eq</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> float</code></pre>
+<pre><span id="VALmatrix"><span class="keyword">val</span> matrix</span> : <code class="type">?extra:((module Diagrams.Diagram) -><br>               <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> -><br>               <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> <a href="Diagrams.Matrix.html#TYPEmatrix">Diagrams.Matrix.matrix</a> -> unit) -><br>       <a href="Maths.html#TYPEmath">Maths.math</a> list list list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALematrix"><span class="keyword">val</span> ematrix</span> : <code class="type"><a href="Maths.html#TYPEmath">Maths.math</a> list list list -><br>       ((module Diagrams.Diagram) -><br>        <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> -> <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> <a href="Diagrams.Matrix.html#TYPEmatrix">Diagrams.Matrix.matrix</a> -> unit) -><br>       <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALcolomnMatrix"><span class="keyword">val</span> colomnMatrix</span> : <code class="type">?extra:((module Diagrams.Diagram) -><br>               <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> -><br>               <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> <a href="Diagrams.Matrix.html#TYPEmatrix">Diagrams.Matrix.matrix</a> -> unit) -><br>       <a href="Maths.html#TYPEmath">Maths.math</a> list list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALlineMatrix"><span class="keyword">val</span> lineMatrix</span> : <code class="type">?extra:((module Diagrams.Diagram) -><br>               <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> -><br>               <a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a> <a href="Diagrams.Matrix.html#TYPEmatrix">Diagrams.Matrix.matrix</a> -> unit) -><br>       <a href="Maths.html#TYPEmath">Maths.math</a> list list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALcaml"><span class="keyword">val</span> caml</span> : <code class="type">'a -> 'a</code></pre></body></html>

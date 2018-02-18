@@ -1,0 +1,733 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Badness.html">
+<link rel="next" href="Break.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Badness" rel="Chapter" href="Badness.html">
+<link title="Box" rel="Chapter" href="Box.html">
+<link title="Break" rel="Chapter" href="Break.html">
+<link title="Complete" rel="Chapter" href="Complete.html">
+<link title="ConfigFindFont" rel="Chapter" href="ConfigFindFont.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="DefaultMacros" rel="Chapter" href="DefaultMacros.html">
+<link title="Diagrams" rel="Chapter" href="Diagrams.html">
+<link title="Distance" rel="Chapter" href="Distance.html">
+<link title="Document" rel="Chapter" href="Document.html">
+<link title="Euler" rel="Chapter" href="Euler.html">
+<link title="FontPattern" rel="Chapter" href="FontPattern.html">
+<link title="Geometry" rel="Chapter" href="Geometry.html">
+<link title="Maths" rel="Chapter" href="Maths.html">
+<link title="Offset" rel="Chapter" href="Offset.html">
+<link title="OutputDrawing" rel="Chapter" href="OutputDrawing.html">
+<link title="Proj3d" rel="Chapter" href="Proj3d.html">
+<link title="TypoLanguage" rel="Chapter" href="TypoLanguage.html">
+<link title="Typography" rel="Chapter" href="Typography.html">
+<link title="Verbatim" rel="Chapter" href="Verbatim.html">
+<link title="Test_offset" rel="Chapter" href="Test_offset.html">
+<link title="ConfigFindFontLeg" rel="Chapter" href="ConfigFindFontLeg.html">
+<link title="Numerals" rel="Chapter" href="Numerals.html">
+<link title="PageLayout" rel="Chapter" href="PageLayout.html"><link title="Helper functions for layouts " rel="Section" href="#1_Helperfunctionsforlayouts">
+<link title="Helper functions for lines" rel="Section" href="#1_Helperfunctionsforlines">
+<title>Box</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Badness.html" title="Badness">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Break.html" title="Break">Next</a>
+</div>
+<h1>Module <a href="type_Box.html">Box</a></h1>
+
+<pre><span class="keyword">module</span> Box: <code class="code">sig</code> <a href="Box.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Patoline boxes<br>
+</div>
+<hr width="100%">
+
+<pre><code><span id="TYPEbox"><span class="keyword">type</span> <code class="type"></code>box</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbox.GlyphBox"><span class="constructor">GlyphBox</span></span> <span class="keyword">of</span> <code class="type">RawContent.glyph</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbox.Kerning"><span class="constructor">Kerning</span></span> <span class="keyword">of</span> <code class="type"><a href="Box.html#TYPEbox">box</a> FTypes.kerningBox</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbox.Glue"><span class="constructor">Glue</span></span> <span class="keyword">of</span> <code class="type"><a href="Box.html#TYPEdrawingBox">drawingBox</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbox.Drawing"><span class="constructor">Drawing</span></span> <span class="keyword">of</span> <code class="type"><a href="Box.html#TYPEdrawingBox">drawingBox</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbox.Hyphen"><span class="constructor">Hyphen</span></span> <span class="keyword">of</span> <code class="type"><a href="Box.html#TYPEhyphenBox">hyphenBox</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbox.Marker"><span class="constructor">Marker</span></span> <span class="keyword">of</span> <code class="type"><a href="Box.html#TYPEmarker">marker</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbox.BeginFigure"><span class="constructor">BeginFigure</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbox.FlushFigure"><span class="constructor">FlushFigure</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbox.Parameters"><span class="constructor">Parameters</span></span> <span class="keyword">of</span> <code class="type">(<a href="Box.html#TYPEparameters">parameters</a> -> <a href="Box.html#TYPEparameters">parameters</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbox.Layout"><span class="constructor">Layout</span></span> <span class="keyword">of</span> <code class="type">(<a href="Box.html#TYPEframe_zipper">frame_zipper</a> -> <a href="Box.html#TYPEframe_zipper">frame_zipper</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbox.Empty"><span class="constructor">Empty</span></span></code></td>
+
+</tr></table>
+
+<div class="info ">
+Elementary box in a paragraph<br>
+</div>
+
+
+<pre><span id="TYPEparagraph"><span class="keyword">type</span> <code class="type"></code>paragraph</span> = <code class="type"><a href="Box.html#TYPEbox">box</a> array</code> </pre>
+<div class="info ">
+A paragraph is an array of elementary boxes. The line breaking
+ algorithm produces lines (given by the type <a href="Box.html#TYPEline"><code class="code">Box.line</code></a>) by selecting
+ chunks in a paragraph array.<br>
+</div>
+
+
+<pre><code><span id="TYPEdrawingBox"><span class="keyword">type</span> <code class="type"></code>drawingBox</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdrawingBox.drawing_min_width">drawing_min_width</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdrawingBox.drawing_nominal_width">drawing_nominal_width</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdrawingBox.drawing_max_width">drawing_max_width</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdrawingBox.drawing_width_fixed">drawing_width_fixed</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdrawingBox.drawing_adjust_before">drawing_adjust_before</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdrawingBox.drawing_y0">drawing_y0</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdrawingBox.drawing_y1">drawing_y1</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdrawingBox.drawing_badness">drawing_badness</span>&nbsp;: <code class="type">float -> float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdrawingBox.drawing_break_badness">drawing_break_badness</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdrawingBox.drawing_states">drawing_states</span>&nbsp;: <code class="type">int list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdrawingBox.drawing_contents">drawing_contents</span>&nbsp;: <code class="type">float -> RawContent.raw list</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><code><span id="TYPEhyphenBox"><span class="keyword">type</span> <code class="type"></code>hyphenBox</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELThyphenBox.hyphen_normal">hyphen_normal</span>&nbsp;: <code class="type"><a href="Box.html#TYPEbox">box</a> array</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELThyphenBox.hyphenated">hyphenated</span>&nbsp;: <code class="type">(<a href="Box.html#TYPEbox">box</a> array * <a href="Box.html#TYPEbox">box</a> array) array</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><code><span id="TYPEkind"><span class="keyword">type</span> <code class="type"></code>kind</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.Extern"><span class="constructor">Extern</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.Intern"><span class="constructor">Intern</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.Button"><span class="constructor">Button</span></span> <span class="keyword">of</span> <code class="type">RawContent.button_kind * string</code></code></td>
+
+</tr></table>
+
+
+
+<pre><code><span id="TYPEmarker"><span class="keyword">type</span> <code class="type"></code>marker</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmarker.Label"><span class="constructor">Label</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmarker.FigureRef"><span class="constructor">FigureRef</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmarker.Pageref"><span class="constructor">Pageref</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmarker.Structure"><span class="constructor">Structure</span></span> <span class="keyword">of</span> <code class="type">int list</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmarker.BeginLink"><span class="constructor">BeginLink</span></span> <span class="keyword">of</span> <code class="type"><a href="Box.html#TYPEkind">kind</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmarker.EndLink"><span class="constructor">EndLink</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmarker.AlignmentMark"><span class="constructor">AlignmentMark</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><code><span id="TYPEline"><span class="keyword">type</span> <code class="type"></code>line</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.paragraph">paragraph</span>&nbsp;: <code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Index of the paragraph containing this line in the array<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.lastFigure">lastFigure</span>&nbsp;: <code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Last placed figure (initially -1)<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.lineStart">lineStart</span>&nbsp;: <code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Index of the first box of the line in the paragraph.<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.lineEnd">lineEnd</span>&nbsp;: <code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Index of the box next to the last box of the line, or the box with
+      the hyphenation if the line is hyphenated.<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.hyphenStart">hyphenStart</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.hyphenEnd">hyphenEnd</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.isFigure">isFigure</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.layout">layout</span>&nbsp;: <code class="type"><a href="Box.html#TYPEframe_zipper">frame_zipper</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.height">height</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.paragraph_height">paragraph_height</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.page_line">page_line</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.min_width">min_width</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.nom_width">nom_width</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.max_width">max_width</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.line_y0">line_y0</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTline.line_y1">line_y1</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr></table>
+}
+
+<div class="info ">
+Description of a line, which should be produced by the line breaking
+ algorithm. A line is merely described as the index of its first box and
+ the index of its last box inside the paragraph (which itself is an
+ array of boxes).<br>
+</div>
+
+
+<pre><code><span id="TYPEparameters"><span class="keyword">type</span> <code class="type"></code>parameters</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparameters.measure">measure</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparameters.left_margin">left_margin</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparameters.local_optimization">local_optimization</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparameters.min_height_before">min_height_before</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparameters.min_height_after">min_height_after</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparameters.min_page_before">min_page_before</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparameters.min_page_after">min_page_after</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparameters.not_last_line">not_last_line</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparameters.not_first_line">not_first_line</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparameters.min_lines_before">min_lines_before</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparameters.min_lines_after">min_lines_after</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparameters.absolute">absolute</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><code><span id="TYPEplaced_line"><span class="keyword">type</span> <code class="type"></code>placed_line</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTplaced_line.line_params">line_params</span>&nbsp;: <code class="type"><a href="Box.html#TYPEparameters">parameters</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTplaced_line.line">line</span>&nbsp;: <code class="type"><a href="Box.html#TYPEline">line</a></code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><code><span id="TYPEframe_content"><span class="keyword">type</span> <code class="type"></code>frame_content</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTframe_content.Placed_line"><span class="constructor">Placed_line</span></span> <span class="keyword">of</span> <code class="type"><a href="Box.html#TYPEplaced_line">placed_line</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTframe_content.Raw"><span class="constructor">Raw</span></span> <span class="keyword">of</span> <code class="type">RawContent.raw list</code></code></td>
+
+</tr></table>
+
+
+
+<pre><code><span id="TYPEframe"><span class="keyword">type</span> <code class="type"></code>frame</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTframe.frame_children">frame_children</span>&nbsp;: <code class="type"><a href="Box.html#TYPEframe">frame</a> Extra.IntMap.t</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTframe.frame_tags">frame_tags</span>&nbsp;: <code class="type">string list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTframe.frame_x0">frame_x0</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTframe.frame_y0">frame_y0</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTframe.frame_x1">frame_x1</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTframe.frame_y1">frame_y1</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTframe.frame_content">frame_content</span>&nbsp;: <code class="type"><a href="Box.html#TYPEframe_content">frame_content</a> list</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><span id="TYPEframe_zipper"><span class="keyword">type</span> <code class="type"></code>frame_zipper</span> = <code class="type"><a href="Box.html#TYPEframe">frame</a> * (int * <a href="Box.html#TYPEframe">frame</a>) list</code> </pre>
+
+
+<pre><span class="keyword">module</span> <a href="Box.MarkerMap.html">MarkerMap</a>: <code class="type">Map.Make</code><code class="code">(</code><code class="code">sig</code></pre><div class="sig_block">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Box.html#TYPEmarker">Box.marker</a></code> </pre>
+
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Box.html#TYPEmarker">Box.marker</a> -> <a href="Box.html#TYPEmarker">Box.marker</a> -> int</code></pre></div>
+<pre><code class="code">end</code><code class="code">)</code></pre>
+<pre><span id="VALis_glyph"><span class="keyword">val</span> is_glyph</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> -> bool</code></pre><div class="info ">
+Helpful test functions.<br>
+</div>
+
+<pre><span id="VALis_glue"><span class="keyword">val</span> is_glue</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> -> bool</code></pre>
+<pre><span id="VALis_hyphen"><span class="keyword">val</span> is_hyphen</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> -> bool</code></pre>
+<pre><span id="VALglyphCache"><span class="keyword">val</span> glyphCache</span> : <code class="type">Fonts.font -> FTypes.glyph_id -> Color.color -> float -> <a href="Box.html#TYPEbox">box</a></code></pre><div class="info ">
+Build a box containing one glyph, with a cache.<br>
+</div>
+
+<pre><span id="VALglyph_of_uchar"><span class="keyword">val</span> glyph_of_uchar</span> : <code class="type">Fonts.font -> UChar.t -> FTypes.glyph_id</code></pre><div class="info ">
+Build a glyph id from a font and a unicode character.<br>
+</div>
+
+<pre><span id="VALglyph_of_string"><span class="keyword">val</span> glyph_of_string</span> : <code class="type">(FTypes.glyph_id list -> FTypes.glyph_id list) -><br>       (FTypes.glyph_ids list -> FTypes.glyph_ids list) -><br>       Fonts.font -> float -> Color.color -> string -> <a href="Box.html#TYPEbox">box</a> list</code></pre><div class="info ">
+Build a list of boxes from a string, using stuff from kerning.<br>
+</div>
+
+<pre><span id="VALhyphenate"><span class="keyword">val</span> hyphenate</span> : <code class="type">(string -> (string * string) array) -><br>       (FTypes.glyph_id list -> FTypes.glyph_id list) -><br>       (FTypes.glyph_ids list -> FTypes.glyph_ids list) -><br>       Fonts.font -> float -> Color.color -> string -> <a href="Box.html#TYPEbox">box</a> list</code></pre><div class="info ">
+Build a list of boxes representing a word, while taking care of building
+    an array of possible hyphenations for the word (if any).<br>
+</div>
+<br>
+<h1 id="1_Helperfunctionsforlayouts">Helper functions for layouts </h1><br>
+
+<pre><span id="VALframe_up"><span class="keyword">val</span> frame_up</span> : <code class="type"><a href="Box.html#TYPEframe">frame</a> * (Extra.IntMap.key * <a href="Box.html#TYPEframe">frame</a>) list -><br>       <a href="Box.html#TYPEframe">frame</a> * (Extra.IntMap.key * <a href="Box.html#TYPEframe">frame</a>) list</code></pre>
+<pre><span id="VALframe_down"><span class="keyword">val</span> frame_down</span> : <code class="type">Extra.IntMap.key -><br>       <a href="Box.html#TYPEframe">frame</a> * (Extra.IntMap.key * <a href="Box.html#TYPEframe">frame</a>) list -><br>       <a href="Box.html#TYPEframe">frame</a> * (Extra.IntMap.key * <a href="Box.html#TYPEframe">frame</a>) list</code></pre>
+<pre><span id="VALframe_down_last"><span class="keyword">val</span> frame_down_last</span> : <code class="type"><a href="Box.html#TYPEframe">frame</a> * (Extra.IntMap.key * <a href="Box.html#TYPEframe">frame</a>) list -><br>       <a href="Box.html#TYPEframe">frame</a> * (Extra.IntMap.key * <a href="Box.html#TYPEframe">frame</a>) list</code></pre>
+<pre><span id="VALframe_top"><span class="keyword">val</span> frame_top</span> : <code class="type"><a href="Box.html#TYPEframe">frame</a> * (Extra.IntMap.key * <a href="Box.html#TYPEframe">frame</a>) list -><br>       <a href="Box.html#TYPEframe">frame</a> * (Extra.IntMap.key * <a href="Box.html#TYPEframe">frame</a>) list</code></pre>
+<pre><span id="VALempty_frame"><span class="keyword">val</span> empty_frame</span> : <code class="type"><a href="Box.html#TYPEframe">frame</a></code></pre>
+<pre><span id="VALframe"><span class="keyword">val</span> frame</span> : <code class="type">?contents:<a href="Box.html#TYPEframe_content">frame_content</a> list -><br>       float -><br>       float -><br>       float -><br>       float -><br>       <a href="Box.html#TYPEframe">frame</a> * (int * <a href="Box.html#TYPEframe">frame</a>) list -> <a href="Box.html#TYPEframe">frame</a> * (int * <a href="Box.html#TYPEframe">frame</a>) list</code></pre><div class="info ">
+Creates a new frame with the given top-left and bottom-right
+    corners, appends this frame as a child of the current frame, and
+    moves down to this new frame.<br>
+</div>
+
+<pre><span id="VALmake_page"><span class="keyword">val</span> make_page</span> : <code class="type">float * float -><br>       <a href="Box.html#TYPEframe">frame</a> * (int * <a href="Box.html#TYPEframe">frame</a>) list -> <a href="Box.html#TYPEframe">frame</a> * (int * <a href="Box.html#TYPEframe">frame</a>) list</code></pre>
+<pre><span id="VALtwocols"><span class="keyword">val</span> twocols</span> : <code class="type"><a href="Box.html#TYPEframe">frame</a> * 'a -> <a href="Box.html#TYPEframe">frame</a> * 'a</code></pre>
+<pre><span id="VALnext_zipper"><span class="keyword">val</span> next_zipper</span> : <code class="type"><a href="Box.html#TYPEframe">frame</a> * (Extra.IntMap.key * <a href="Box.html#TYPEframe">frame</a>) list -><br>       (<a href="Box.html#TYPEframe">frame</a> * (Extra.IntMap.key * <a href="Box.html#TYPEframe">frame</a>) list) option</code></pre>
+<pre><span id="VALdoc_frame"><span class="keyword">val</span> doc_frame</span> : <code class="type"><a href="Box.html#TYPEframe">frame</a></code></pre>
+<pre><span id="VALframe_page"><span class="keyword">val</span> frame_page</span> : <code class="type">'a * (Extra.IntMap.key * <a href="Box.html#TYPEframe">frame</a>) list -> int</code></pre>
+<pre><span id="VALlayout_page"><span class="keyword">val</span> layout_page</span> : <code class="type"><a href="Box.html#TYPEline">line</a> -> int</code></pre>
+<pre><span id="VALall_contents"><span class="keyword">val</span> all_contents</span> : <code class="type"><a href="Box.html#TYPEframe">frame</a> -> <a href="Box.html#TYPEframe_content">frame_content</a> list</code></pre><br>
+<h1 id="1_Helperfunctionsforlines">Helper functions for lines</h1><br>
+
+<pre><span id="VALuselessLine"><span class="keyword">val</span> uselessLine</span> : <code class="type"><a href="Box.html#TYPEline">line</a></code></pre>
+<pre><span id="VALdefault_params"><span class="keyword">val</span> default_params</span> : <code class="type"><a href="Box.html#TYPEparameters">parameters</a></code></pre>
+<pre><span id="VALlines_eq"><span class="keyword">val</span> lines_eq</span> : <code class="type"><a href="Box.html#TYPEline">line</a> -> <a href="Box.html#TYPEline">line</a> -> bool</code></pre>
+<pre><span id="VALempty_drawing_box"><span class="keyword">val</span> empty_drawing_box</span> : <code class="type"><a href="Box.html#TYPEdrawingBox">drawingBox</a></code></pre>
+<pre><span id="VALdrawing"><span class="keyword">val</span> drawing</span> : <code class="type">?adjust_before:bool -><br>       ?vcenter:bool -><br>       ?hcenter:bool -><br>       ?offset:float -><br>       ?width_fixed:bool -><br>       ?states:int list -> RawContent.raw list -> <a href="Box.html#TYPEdrawingBox">drawingBox</a></code></pre>
+<pre><span id="VALdrawing_blit"><span class="keyword">val</span> drawing_blit</span> : <code class="type"><a href="Box.html#TYPEdrawingBox">drawingBox</a> -> float -> float -> <a href="Box.html#TYPEdrawingBox">drawingBox</a> -> <a href="Box.html#TYPEdrawingBox">drawingBox</a></code></pre>
+<pre><span id="VALbox_width"><span class="keyword">val</span> box_width</span> : <code class="type">float -> <a href="Box.html#TYPEbox">box</a> -> float</code></pre>
+<pre><span id="VALbox_size"><span class="keyword">val</span> box_size</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> -> float</code></pre>
+<pre><span id="VALbox_interval"><span class="keyword">val</span> box_interval</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> -> float * float * float</code></pre>
+<pre><span id="VALboxes_interval"><span class="keyword">val</span> boxes_interval</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> array -> float * float * float</code></pre>
+<pre><span id="VALlower_y"><span class="keyword">val</span> lower_y</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> -> float</code></pre>
+<pre><span id="VALupper_y"><span class="keyword">val</span> upper_y</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> -> float</code></pre>
+<pre><span id="VALknuth_h_badness"><span class="keyword">val</span> knuth_h_badness</span> : <code class="type">float -> float -> float</code></pre>
+<pre><span id="VALglue"><span class="keyword">val</span> glue</span> : <code class="type">float -> float -> float -> <a href="Box.html#TYPEbox">box</a></code></pre>
+<pre><span id="VALresize_drawing"><span class="keyword">val</span> resize_drawing</span> : <code class="type">float -> <a href="Box.html#TYPEdrawingBox">drawingBox</a> -> <a href="Box.html#TYPEdrawingBox">drawingBox</a></code></pre>
+<pre><span id="VALresize"><span class="keyword">val</span> resize</span> : <code class="type">float -> <a href="Box.html#TYPEbox">box</a> -> <a href="Box.html#TYPEbox">box</a></code></pre>
+<pre><span id="VALtranslate"><span class="keyword">val</span> translate</span> : <code class="type">float -> float -> <a href="Box.html#TYPEbox">box</a> -> <a href="Box.html#TYPEbox">box</a></code></pre>
+<pre><span id="VALvkern_percent_under'"><span class="keyword">val</span> vkern_percent_under'</span> : <code class="type">('a -> 'b -> <a href="Box.html#TYPEbox">box</a> list) -> float -> 'a -> 'b -> float * <a href="Box.html#TYPEbox">box</a> list</code></pre>
+<pre><span id="VALvkern_percent_under"><span class="keyword">val</span> vkern_percent_under</span> : <code class="type">('a -> 'b -> <a href="Box.html#TYPEbox">box</a> list) -> float -> 'a -> 'b -> <a href="Box.html#TYPEbox">box</a> list</code></pre>
+<pre><span id="VALvkern_center"><span class="keyword">val</span> vkern_center</span> : <code class="type">('a -> 'b -> <a href="Box.html#TYPEbox">box</a> list) -> float -> 'a -> 'b -> <a href="Box.html#TYPEbox">box</a> list</code></pre>
+<pre><span id="VALvkern_translate"><span class="keyword">val</span> vkern_translate</span> : <code class="type">('a -> 'b -> <a href="Box.html#TYPEbox">box</a> list) -> float -> 'a -> 'b -> <a href="Box.html#TYPEbox">box</a> list</code></pre>
+<pre><span id="VALvkern_as"><span class="keyword">val</span> vkern_as</span> : <code class="type">('a -> 'b -> <a href="Box.html#TYPEbox">box</a> list) -><br>       ('a -> 'b -> <a href="Box.html#TYPEbox">box</a> list) -> 'a -> 'b -> <a href="Box.html#TYPEbox">box</a> list</code></pre>
+<pre><span id="VALfold_left_line"><span class="keyword">val</span> fold_left_line</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> array array -> ('a -> <a href="Box.html#TYPEbox">box</a> -> 'a) -> 'a -> <a href="Box.html#TYPEline">line</a> -> 'a</code></pre><div class="info ">
+Calling <code class="code">fold_left_line paragraphs f x0 line</code> computes
+ <code class="code">f (... (f (f (f x0 box0) box1) box2) ...) boxn</code>
+ where <code class="code">box0</code>, <code class="code">box1</code>, <code class="code">box2</code>, … <code class="code">boxn</code> are the boxes which belong to
+ <code class="code">line</code> in its corresponding paragraph <code class="code">paragraphs.(line.paragraph)</code>.<br>
+</div>
+
+<pre><span id="VALline_layout"><span class="keyword">val</span> line_layout</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> array array -> <a href="Box.html#TYPEline">line</a> -> <a href="Box.html#TYPEframe_zipper">frame_zipper</a> -> <a href="Box.html#TYPEframe_zipper">frame_zipper</a></code></pre>
+<pre><span id="VALfold_left"><span class="keyword">val</span> fold_left</span> : <code class="type">('a -> <a href="Box.html#TYPEbox">box</a> -> 'a) -> 'a -> <a href="Box.html#TYPEbox">box</a> list -> 'a</code></pre>
+<pre><span id="VALfirst_line"><span class="keyword">val</span> first_line</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> array array -> <a href="Box.html#TYPEline">line</a> -> <a href="Box.html#TYPEbox">box</a></code></pre>
+<pre><span id="VALlast_line"><span class="keyword">val</span> last_line</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> array array -> <a href="Box.html#TYPEline">line</a> -> <a href="Box.html#TYPEbox">box</a></code></pre>
+<pre><span id="VALline_height"><span class="keyword">val</span> line_height</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> array array -> <a href="Box.html#TYPEdrawingBox">drawingBox</a> array -> <a href="Box.html#TYPEline">line</a> -> float * float</code></pre>
+<pre><span id="VALcomp"><span class="keyword">val</span> comp</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> array array -> float -> int -> int -> int -> int -> int -> float</code></pre>
+<pre><span id="VALcompression"><span class="keyword">val</span> compression</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> array array -> <a href="Box.html#TYPEparameters">parameters</a> -> <a href="Box.html#TYPEline">line</a> -> float</code></pre>
+<pre><span id="VALbox_to_string"><span class="keyword">val</span> box_to_string</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> -> string</code></pre>
+<pre><span id="VALtext_line"><span class="keyword">val</span> text_line</span> : <code class="type"><a href="Box.html#TYPEbox">box</a> array array -> <a href="Box.html#TYPEline">line</a> -> string</code></pre></body></html>

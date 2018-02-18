@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Diagrams.Matrix.html">
+<link rel="next" href="Diagrams.Edge.html">
+<link rel="Up" href="Diagrams.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Badness" rel="Chapter" href="Badness.html">
+<link title="Box" rel="Chapter" href="Box.html">
+<link title="Break" rel="Chapter" href="Break.html">
+<link title="Complete" rel="Chapter" href="Complete.html">
+<link title="ConfigFindFont" rel="Chapter" href="ConfigFindFont.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="DefaultMacros" rel="Chapter" href="DefaultMacros.html">
+<link title="Diagrams" rel="Chapter" href="Diagrams.html">
+<link title="Distance" rel="Chapter" href="Distance.html">
+<link title="Document" rel="Chapter" href="Document.html">
+<link title="Euler" rel="Chapter" href="Euler.html">
+<link title="FontPattern" rel="Chapter" href="FontPattern.html">
+<link title="Geometry" rel="Chapter" href="Geometry.html">
+<link title="Maths" rel="Chapter" href="Maths.html">
+<link title="Offset" rel="Chapter" href="Offset.html">
+<link title="OutputDrawing" rel="Chapter" href="OutputDrawing.html">
+<link title="Proj3d" rel="Chapter" href="Proj3d.html">
+<link title="TypoLanguage" rel="Chapter" href="TypoLanguage.html">
+<link title="Typography" rel="Chapter" href="Typography.html">
+<link title="Verbatim" rel="Chapter" href="Verbatim.html">
+<link title="Test_offset" rel="Chapter" href="Test_offset.html">
+<link title="ConfigFindFontLeg" rel="Chapter" href="ConfigFindFontLeg.html">
+<link title="Numerals" rel="Chapter" href="Numerals.html">
+<link title="PageLayout" rel="Chapter" href="PageLayout.html"><title>Diagrams.Matrix3d</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Diagrams.Matrix.html" title="Diagrams.Matrix">Previous</a>
+&nbsp;<a class="up" href="Diagrams.html" title="Diagrams">Up</a>
+&nbsp;<a class="post" href="Diagrams.Edge.html" title="Diagrams.Edge">Next</a>
+</div>
+<h1>Module <a href="type_Diagrams.Matrix3d.html">Diagrams.Matrix3d</a></h1>
+
+<pre><span class="keyword">module</span> Matrix3d: <code class="code">sig</code> <a href="Diagrams.Matrix3d.html">..</a> <code class="code">end</code></pre><hr width="100%">
+
+<pre><code><span id="TYPEinfo"><span class="keyword">type</span> <code class="type"></code>info</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.placement">placement</span>&nbsp;: <code class="type"><a href="Diagrams.Matrix3d.html#TYPEinfo">info</a> -> int -> int -> int -> <a href="Diagrams.Point.html#TYPEt">Diagrams.Point.t</a> * float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.planes">planes</span>&nbsp;: <code class="type"><a href="Diagrams.Matrix.html#TYPEinfo">Diagrams.Matrix.info</a> array</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.common">common</span>&nbsp;: <code class="type">Diagrams.Node.Transfo.Style.t list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.mainNode">mainNode</span>&nbsp;: <code class="type"><a href="Diagrams.Node.html#TYPEinfo">Diagrams.Node.info</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTinfo.mainNodes">mainNodes</span>&nbsp;: <code class="type">Diagrams.Node.Transfo.Style.t list</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Diagrams.Matrix3d.html#TYPEinfo">info</a></code> </pre>
+
+
+<pre><span class="keyword">module</span> <a href="Diagrams.Matrix3d.Transfo.html">Transfo</a>: <code class="type"><a href="Diagrams.Transfo.html">Diagrams.Transfo</a></code><code class="code">(</code><code class="code">sig</code></pre><div class="sig_block">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Diagrams.Matrix3d.html#TYPEinfo">Diagrams.Matrix3d.info</a></code> </pre>
+
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">'a -> 'a -> int</code></pre></div>
+<pre><code class="code">end</code><code class="code">)</code></pre>
+<pre><span class="keyword">module</span> <a href="Diagrams.Matrix3d.T.html">T</a>: <code class="type"><a href="Diagrams.Matrix3d.Transfo.html">Transfo</a></code></pre>
+<pre><span class="keyword">module</span> <a href="Diagrams.Matrix3d.S.html">S</a>: <code class="type">T.Style</code></pre>
+<pre><span id="VALbetween_centers"><span class="keyword">val</span> between_centers</span> : <code class="type">?projection:<a href="Proj3d.html#TYPEprojection">Proj3d.projection</a> -><br>       float -> float -> float -> 'a -> int -> int -> int -> (float * float) * float</code></pre>
+<pre><span id="VALdefault"><span class="keyword">val</span> default</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Diagrams.Matrix3d.html#TYPEinfo">info</a></code></pre>
+<pre><span id="VALnodes_contents"><span class="keyword">val</span> nodes_contents</span> : <code class="type"><a href="Diagrams.Matrix3d.html#TYPEinfo">info</a> -> RawContent.raw list</code></pre>
+<pre><span id="VALto_contents"><span class="keyword">val</span> to_contents</span> : <code class="type"><a href="Diagrams.Matrix3d.html#TYPEinfo">info</a> -> RawContent.raw list</code></pre>
+<pre><span id="VALcontents_output"><span class="keyword">val</span> contents_output</span> : <code class="type">(Diagrams.Node.Transfo.Style.t list * RawContent.raw list) list list list -><br>       S.t</code></pre>
+<pre><span id="VALcontents_box"><span class="keyword">val</span> contents_box</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       (Diagrams.Node.Transfo.Style.t list * <a href="Box.html#TYPEbox">Box.box</a> list) list list list -> S.t</code></pre>
+<pre><span id="VALcontents"><span class="keyword">val</span> contents</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       (Diagrams.Node.Transfo.Style.t list * <a href="Document.html#TYPEcontent">Document.content</a> list) list list list -><br>       S.t</code></pre>
+<pre><span id="VALtransform_matrix"><span class="keyword">val</span> transform_matrix</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       T.Style.t list -><br>       (Diagrams.Node.Transfo.Style.t list * <a href="Document.html#TYPEcontent">Document.content</a> list) list list list -><br>       <a href="Diagrams.Matrix3d.html#TYPEinfo">info</a> -> <a href="Diagrams.Matrix3d.html#TYPEinfo">info</a></code></pre>
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       T.Style.t list -><br>       (Diagrams.Node.Transfo.Style.t list * <a href="Document.html#TYPEcontent">Document.content</a> list) list list list -><br>       <a href="Diagrams.Matrix3d.html#TYPEinfo">info</a></code></pre></body></html>

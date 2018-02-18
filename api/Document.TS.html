@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="next" href="Document.Mathematical.html">
+<link rel="Up" href="Document.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Badness" rel="Chapter" href="Badness.html">
+<link title="Box" rel="Chapter" href="Box.html">
+<link title="Break" rel="Chapter" href="Break.html">
+<link title="Complete" rel="Chapter" href="Complete.html">
+<link title="ConfigFindFont" rel="Chapter" href="ConfigFindFont.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="DefaultMacros" rel="Chapter" href="DefaultMacros.html">
+<link title="Diagrams" rel="Chapter" href="Diagrams.html">
+<link title="Distance" rel="Chapter" href="Distance.html">
+<link title="Document" rel="Chapter" href="Document.html">
+<link title="Euler" rel="Chapter" href="Euler.html">
+<link title="FontPattern" rel="Chapter" href="FontPattern.html">
+<link title="Geometry" rel="Chapter" href="Geometry.html">
+<link title="Maths" rel="Chapter" href="Maths.html">
+<link title="Offset" rel="Chapter" href="Offset.html">
+<link title="OutputDrawing" rel="Chapter" href="OutputDrawing.html">
+<link title="Proj3d" rel="Chapter" href="Proj3d.html">
+<link title="TypoLanguage" rel="Chapter" href="TypoLanguage.html">
+<link title="Typography" rel="Chapter" href="Typography.html">
+<link title="Verbatim" rel="Chapter" href="Verbatim.html">
+<link title="Test_offset" rel="Chapter" href="Test_offset.html">
+<link title="ConfigFindFontLeg" rel="Chapter" href="ConfigFindFontLeg.html">
+<link title="Numerals" rel="Chapter" href="Numerals.html">
+<link title="PageLayout" rel="Chapter" href="PageLayout.html"><title>Document.TS</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Document.html" title="Document">Up</a>
+&nbsp;<a class="post" href="Document.Mathematical.html" title="Document.Mathematical">Next</a>
+</div>
+<h1>Module <a href="type_Document.TS.html">Document.TS</a></h1>
+
+<pre><span class="keyword">module</span> TS: <code class="type"><a href="Break.Make.html">Break.Make</a></code><code class="code">(</code><code class="code">sig</code></pre><div class="sig_block">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Box.html#TYPEline">Box.line</a></code> </pre>
+
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEline">Box.line</a> -> int</code></pre>
+<pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type">'a -> int</code></pre></div>
+<pre><code class="code">end</code><code class="code">)</code></pre><hr width="100%">
+
+<pre><span class="keyword">module</span> <a href="Break.Make.LineMap.html">LineMap</a>: <code class="type">Map.S</code><code class="type">  with type key = Line.t</code></pre>
+<pre><span class="keyword">module</span> <a href="Break.Make.ColMap.html">ColMap</a>: <code class="type">Map.S</code><code class="type">  with type key = float * float * <a href="Box.html">Box</a>.line * float * float * <a href="Box.html">Box</a>.line</code></pre>
+<pre><span id="VALprint_graph"><span class="keyword">val</span> print_graph</span> : <code class="type">string -><br>       'a -><br>       ('b * 'c * 'd * 'e * 'f * LineMap.key * 'g * 'h)<br>       LineMap.t -> ('i * LineMap.key) list -> unit</code></pre>
+<pre><span id="VALtypeset"><span class="keyword">val</span> typeset</span> : <code class="type">?initial_line:<a href="Box.html#TYPEline">Box.line</a> -><br>       completeLine:(<a href="Box.html#TYPEbox">Box.box</a> array array -><br>                     <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>                     <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>                     Line.t Box.MarkerMap.t -> <a href="Box.html#TYPEline">Box.line</a> -> bool -> Line.t list)<br>                    array -><br>       figures:<a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>       figure_parameters:(<a href="Box.html#TYPEbox">Box.box</a> array array -><br>                          <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>                          <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>                          <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>                          Line.t Box.MarkerMap.t -><br>                          LineMap.key -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a>)<br>                         array -><br>       parameters:(<a href="Box.html#TYPEbox">Box.box</a> array array -><br>                   <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>                   <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>                   <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>                   Line.t Box.MarkerMap.t -><br>                   LineMap.key -> Line.t -> <a href="Box.html#TYPEparameters">Box.parameters</a>)<br>                  array -><br>       new_page:(<a href="Box.html#TYPEframe_zipper">Box.frame_zipper</a> -> <a href="Box.html#TYPEframe_zipper">Box.frame_zipper</a>) array -><br>       new_line:(<a href="Box.html#TYPEline">Box.line</a> -><br>                 <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>                 <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a> -> <a href="Box.html#TYPEframe_zipper">Box.frame_zipper</a> -> float -> float)<br>                array -><br>       badness:(<a href="Box.html#TYPEbox">Box.box</a> array array -><br>                <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>                <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>                LineMap.key -><br>                <a href="Box.html#TYPEbox">Box.box</a> array -><br>                int -><br>                <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>                float -><br>                Line.t -> <a href="Box.html#TYPEbox">Box.box</a> array -> int -> <a href="Box.html#TYPEparameters">Box.parameters</a> -> float -> float)<br>               array -><br>       states:int list array -><br>       <a href="Box.html#TYPEbox">Box.box</a> array array -><br>       <a href="TypoLanguage.html#TYPEmessage">TypoLanguage.message</a> list * <a href="Box.html#TYPEframe">Box.frame</a> * <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t *<br>       Line.t Box.MarkerMap.t</code></pre></body></html>

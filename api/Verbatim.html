@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Typography.html">
+<link rel="next" href="Test_offset.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Badness" rel="Chapter" href="Badness.html">
+<link title="Box" rel="Chapter" href="Box.html">
+<link title="Break" rel="Chapter" href="Break.html">
+<link title="Complete" rel="Chapter" href="Complete.html">
+<link title="ConfigFindFont" rel="Chapter" href="ConfigFindFont.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="DefaultMacros" rel="Chapter" href="DefaultMacros.html">
+<link title="Diagrams" rel="Chapter" href="Diagrams.html">
+<link title="Distance" rel="Chapter" href="Distance.html">
+<link title="Document" rel="Chapter" href="Document.html">
+<link title="Euler" rel="Chapter" href="Euler.html">
+<link title="FontPattern" rel="Chapter" href="FontPattern.html">
+<link title="Geometry" rel="Chapter" href="Geometry.html">
+<link title="Maths" rel="Chapter" href="Maths.html">
+<link title="Offset" rel="Chapter" href="Offset.html">
+<link title="OutputDrawing" rel="Chapter" href="OutputDrawing.html">
+<link title="Proj3d" rel="Chapter" href="Proj3d.html">
+<link title="TypoLanguage" rel="Chapter" href="TypoLanguage.html">
+<link title="Typography" rel="Chapter" href="Typography.html">
+<link title="Verbatim" rel="Chapter" href="Verbatim.html">
+<link title="Test_offset" rel="Chapter" href="Test_offset.html">
+<link title="ConfigFindFontLeg" rel="Chapter" href="ConfigFindFontLeg.html">
+<link title="Numerals" rel="Chapter" href="Numerals.html">
+<link title="PageLayout" rel="Chapter" href="PageLayout.html"><title>Verbatim</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Typography.html" title="Typography">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Test_offset.html" title="Test_offset">Next</a>
+</div>
+<h1>Module <a href="type_Verbatim.html">Verbatim</a></h1>
+
+<pre><span class="keyword">module</span> Verbatim: <code class="code">sig</code> <a href="Verbatim.html">..</a> <code class="code">end</code></pre><hr width="100%">
+
+<pre><span id="VALfile_cache"><span class="keyword">val</span> file_cache</span> : <code class="type">(string, Pervasives.out_channel * int) Hashtbl.t</code></pre>
+<pre><span id="VALlines_to_file"><span class="keyword">val</span> lines_to_file</span> : <code class="type">string list -> string option -> unit</code></pre>
+<pre><span id="VALglue_space"><span class="keyword">val</span> glue_space</span> : <code class="type">int -> <a href="Document.html#TYPEcontent">Document.content</a></code></pre>
+<pre><span id="VALlines_skip"><span class="keyword">val</span> lines_skip</span> : <code class="type">int Pervasives.ref</code></pre>
+<pre><span id="VALline_per_line"><span class="keyword">val</span> line_per_line</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">Document.tree_zipper</a> Pervasives.ref -><br>       (string -> <a href="Document.html#TYPEcontent">Document.content</a> list) -> string list -> unit</code></pre>
+<pre><code><span id="TYPEparam"><span class="keyword">type</span> <code class="type"></code>param</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparam.keywords">keywords</span>&nbsp;: <code class="type">string list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparam.separators">separators</span>&nbsp;: <code class="type">string list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparam.symbols">symbols</span>&nbsp;: <code class="type">(string * <a href="Document.html#TYPEcontent">Document.content</a>) list</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><span id="VALhandle_spaces"><span class="keyword">val</span> handle_spaces</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a> -><br>       (string -> <a href="Document.html#TYPEcontent">Document.content</a> list) -> string -> <a href="Document.html#TYPEcontent">Document.content</a> list</code></pre>
+<pre><span id="VALfit_on_grid"><span class="keyword">val</span> fit_on_grid</span> : <code class="type"><a href="Document.html#TYPEcontent">Document.content</a> -> <a href="Document.html#TYPEcontent">Document.content</a></code></pre>
+<pre><span id="VALsymbol"><span class="keyword">val</span> symbol</span> : <code class="type">string -> <a href="Document.html#TYPEcontent">Document.content</a></code></pre>
+<pre><span id="EXCEPTIONFound_symbol"><span class="keyword">exception</span> Found_symbol</span> <span class="keyword">of</span> <code class="type">int * string * <a href="Document.html#TYPEcontent">Document.content</a></code></pre>
+
+<pre><span id="VALhandle_word"><span class="keyword">val</span> handle_word</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a> -> string -> <a href="Document.html#TYPEcontent">Document.content</a> list</code></pre>
+<pre><span id="VALverb_text"><span class="keyword">val</span> verb_text</span> : <code class="type">(string -> <a href="Document.html#TYPEcontent">Document.content</a> list) -> string -> <a href="Document.html#TYPEcontent">Document.content</a> list</code></pre>
+<pre><span id="VALparam_Default"><span class="keyword">val</span> param_Default</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a></code></pre>
+<pre><span id="VALparam_SML"><span class="keyword">val</span> param_SML</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a></code></pre>
+<pre><span id="VALparam_OCaml"><span class="keyword">val</span> param_OCaml</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a></code></pre>
+<pre><span id="VALparam_PML"><span class="keyword">val</span> param_PML</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a></code></pre>
+<pre><span id="VALparam_Python"><span class="keyword">val</span> param_Python</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a></code></pre>
+<pre><span id="VALlang_Default"><span class="keyword">val</span> lang_Default</span> : <code class="type">string list -> <a href="Document.html#TYPEcontent">Document.content</a> list list</code></pre>
+<pre><span id="VALline_to_contents"><span class="keyword">val</span> line_to_contents</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a> -> string -> <a href="Document.html#TYPEcontent">Document.content</a> list</code></pre>
+<pre><span id="VALlines_to_contents"><span class="keyword">val</span> lines_to_contents</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a> -> string list -> <a href="Document.html#TYPEcontent">Document.content</a> list list</code></pre>
+<pre><span id="VALlang_OCaml"><span class="keyword">val</span> lang_OCaml</span> : <code class="type">string list -> <a href="Document.html#TYPEcontent">Document.content</a> list list</code></pre>
+<pre><span id="VALlang_SML"><span class="keyword">val</span> lang_SML</span> : <code class="type">string list -> <a href="Document.html#TYPEcontent">Document.content</a> list list</code></pre>
+<pre><span id="VALlang_PML"><span class="keyword">val</span> lang_PML</span> : <code class="type">string list -> <a href="Document.html#TYPEcontent">Document.content</a> list list</code></pre>
+<pre><span id="VALlang_Python"><span class="keyword">val</span> lang_Python</span> : <code class="type">string list -> <a href="Document.html#TYPEcontent">Document.content</a> list list</code></pre>
+<pre><span id="VALverb_OCaml"><span class="keyword">val</span> verb_OCaml</span> : <code class="type">string -> <a href="Document.html#TYPEcontent">Document.content</a> list</code></pre>
+<pre><span id="VALverb_SML"><span class="keyword">val</span> verb_SML</span> : <code class="type">string -> <a href="Document.html#TYPEcontent">Document.content</a> list</code></pre>
+<pre><span id="VALverb_PML"><span class="keyword">val</span> verb_PML</span> : <code class="type">string -> <a href="Document.html#TYPEcontent">Document.content</a> list</code></pre>
+<pre><span id="VALverb_Python"><span class="keyword">val</span> verb_Python</span> : <code class="type">string -> <a href="Document.html#TYPEcontent">Document.content</a> list</code></pre></body></html>

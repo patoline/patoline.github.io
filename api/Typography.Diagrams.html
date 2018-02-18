@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Typography.Document.html">
+<link rel="next" href="Typography.Verbatim.html">
+<link rel="Up" href="Typography.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Badness" rel="Chapter" href="Badness.html">
+<link title="Box" rel="Chapter" href="Box.html">
+<link title="Break" rel="Chapter" href="Break.html">
+<link title="Complete" rel="Chapter" href="Complete.html">
+<link title="ConfigFindFont" rel="Chapter" href="ConfigFindFont.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="DefaultMacros" rel="Chapter" href="DefaultMacros.html">
+<link title="Diagrams" rel="Chapter" href="Diagrams.html">
+<link title="Distance" rel="Chapter" href="Distance.html">
+<link title="Document" rel="Chapter" href="Document.html">
+<link title="Euler" rel="Chapter" href="Euler.html">
+<link title="FontPattern" rel="Chapter" href="FontPattern.html">
+<link title="Geometry" rel="Chapter" href="Geometry.html">
+<link title="Maths" rel="Chapter" href="Maths.html">
+<link title="Offset" rel="Chapter" href="Offset.html">
+<link title="OutputDrawing" rel="Chapter" href="OutputDrawing.html">
+<link title="Proj3d" rel="Chapter" href="Proj3d.html">
+<link title="TypoLanguage" rel="Chapter" href="TypoLanguage.html">
+<link title="Typography" rel="Chapter" href="Typography.html">
+<link title="Verbatim" rel="Chapter" href="Verbatim.html">
+<link title="Test_offset" rel="Chapter" href="Test_offset.html">
+<link title="ConfigFindFontLeg" rel="Chapter" href="ConfigFindFontLeg.html">
+<link title="Numerals" rel="Chapter" href="Numerals.html">
+<link title="PageLayout" rel="Chapter" href="PageLayout.html"><title>Typography.Diagrams</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Typography.Document.html" title="Typography.Document">Previous</a>
+&nbsp;<a class="up" href="Typography.html" title="Typography">Up</a>
+&nbsp;<a class="post" href="Typography.Verbatim.html" title="Typography.Verbatim">Next</a>
+</div>
+<h1>Module <a href="type_Typography.Diagrams.html">Typography.Diagrams</a></h1>
+
+<pre><span class="keyword">module</span> Diagrams: <code class="type"><a href="Diagrams.html">Diagrams</a></code></pre><hr width="100%">
+
+<pre><span class="keyword">module</span> <a href="Diagrams.Drivers.html">Drivers</a>: <code class="type">RawContent</code></pre>
+<pre><span id="VALdiagram"><span class="keyword">val</span> diagram</span> : <code class="type">'a -> 'a</code></pre>
+<pre><span id="VALswap"><span class="keyword">val</span> swap</span> : <code class="type">'a * 'b -> 'b * 'a</code></pre>
+<pre><span id="VALpi"><span class="keyword">val</span> pi</span> : <code class="type">float</code></pre>
+<pre><span id="VALone_third"><span class="keyword">val</span> one_third</span> : <code class="type">float</code></pre>
+<pre><span id="VALhalf_pi"><span class="keyword">val</span> half_pi</span> : <code class="type">float</code></pre>
+<pre><span id="VALto_deg"><span class="keyword">val</span> to_deg</span> : <code class="type">float -> float</code></pre>
+<pre><span id="VALto_rad"><span class="keyword">val</span> to_rad</span> : <code class="type">float -> float</code></pre>
+<pre><span id="VALdefault_line_width"><span class="keyword">val</span> default_line_width</span> : <code class="type">float Pervasives.ref</code></pre>
+<pre><span id="VALex"><span class="keyword">val</span> ex</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -> float</code></pre>
+<pre><span id="VALscale_env"><span class="keyword">val</span> scale_env</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -> float</code></pre>
+<pre><span id="VALdrag_hook"><span class="keyword">val</span> drag_hook</span> : <code class="type">((float * float -> bool -> unit) -><br>        float * float -> bool -> (string * Util.visibility) list)<br>       Pervasives.ref</code></pre>
+<pre><span id="VALmem_compare"><span class="keyword">val</span> mem_compare</span> : <code class="type">('a -> 'b -> int) -> 'a -> 'b list -> bool</code></pre>
+<pre><span id="VALlist_last"><span class="keyword">val</span> list_last</span> : <code class="type">'a list -> 'a</code></pre>
+<pre><span id="VALonly_last"><span class="keyword">val</span> only_last</span> : <code class="type">'a -> 'b -> 'b list</code></pre>
+<pre><span id="VALarray_last"><span class="keyword">val</span> array_last</span> : <code class="type">'a array -> 'a</code></pre>
+<pre><span id="VALarray_update_last"><span class="keyword">val</span> array_update_last</span> : <code class="type">'a array -> 'a -> unit</code></pre>
+<pre><span id="VALarray_update"><span class="keyword">val</span> array_update</span> : <code class="type">('a -> 'a) -> 'a array -> unit</code></pre>
+<pre><span id="VALacurve_update"><span class="keyword">val</span> acurve_update</span> : <code class="type">('a -> 'a) -> ('b -> 'b) -> ('a array * 'b array) array -> unit</code></pre>
+<pre><span id="VALlist_split_last_rev"><span class="keyword">val</span> list_split_last_rev</span> : <code class="type">'a list -> 'a list * 'a</code></pre>
+<pre><span id="VALapp_default"><span class="keyword">val</span> app_default</span> : <code class="type">('a -> 'b -> 'c option) -> 'a -> 'b -> 'c -> 'c</code></pre>
+<pre><span id="VALmax_list"><span class="keyword">val</span> max_list</span> : <code class="type">('a -> 'b) -> 'b -> 'a list -> 'b</code></pre>
+<pre><span id="VALmax_list_list"><span class="keyword">val</span> max_list_list</span> : <code class="type">('a -> 'b) -> 'b -> 'a list list -> 'b</code></pre>
+<pre><span class="keyword">module</span> <a href="Diagrams.Point.html">Point</a>: <code class="code">sig</code> <a href="Diagrams.Point.html">..</a> <code class="code">end</code></pre>
+<pre><span class="keyword">module</span> <a href="Diagrams.Vector.html">Vector</a>: <code class="code">sig</code> <a href="Diagrams.Vector.html">..</a> <code class="code">end</code></pre>
+<pre><span class="keyword">module</span> <a href="Diagrams.Curve.html">Curve</a>: <code class="code">sig</code> <a href="Diagrams.Curve.html">..</a> <code class="code">end</code></pre>
+<pre><span class="keyword">module</span> <a href="Diagrams.Transfo.html">Transfo</a>: <div class="sig_block"><code class="code">functor (</code><code class="code">X</code><code class="code"> : </code><code class="type">Set.OrderedType</code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Diagrams.Transfo.html">..</a> <code class="code">end</code></div></pre>
+<pre><span id="TYPEanchor"><span class="keyword">type</span> <code class="type"></code>anchor</span> = <code class="type">[ `A<br>       | `Angle of float<br>       | `Apex<br>       | `B<br>       | `Base<br>       | `BaseEast<br>       | `BaseWest<br>       | `C<br>       | `Center<br>       | `Curvilinear of float<br>       | `CurvilinearFromStart of float<br>       | `D<br>       | `East<br>       | `Edge of int<br>       | `End<br>       | `Line<br>       | `LineEast<br>       | `LineWest<br>       | `Main<br>       | `North<br>       | `NorthEast<br>       | `NorthWest<br>       | `Pdf<br>       | `South<br>       | `SouthBase<br>       | `SouthEast<br>       | `SouthLine<br>       | `SouthWest<br>       | `Start<br>       | `Temporal of float<br>       | `Vec of <a href="Diagrams.Vector.html#TYPEt">Vector.t</a><br>       | `Vertex of int<br>       | `West ]</code> </pre>
+
+
+<pre><span id="VALopposite"><span class="keyword">val</span> opposite</span> : <code class="type">[> `Angle of float<br>        | `Base<br>        | `BaseEast<br>        | `BaseWest<br>        | `Center<br>        | `East<br>        | `LineEast<br>        | `LineWest<br>        | `Main<br>        | `North<br>        | `NorthEast<br>        | `NorthWest<br>        | `Pdf<br>        | `South<br>        | `SouthEast<br>        | `SouthWest<br>        | `Vec of float * float<br>        | `West ] -><br>       [> `Angle of float<br>        | `Base<br>        | `BaseEast<br>        | `BaseWest<br>        | `Center<br>        | `East<br>        | `LineEast<br>        | `LineWest<br>        | `Main<br>        | `North<br>        | `NorthEast<br>        | `NorthWest<br>        | `Pdf<br>        | `South<br>        | `SouthEast<br>        | `SouthWest<br>        | `Vec of float * float<br>        | `West ]</code></pre>
+<pre><span class="keyword">module</span> <a href="Diagrams.Gentity.html">Gentity</a>: <code class="code">sig</code> <a href="Diagrams.Gentity.html">..</a> <code class="code">end</code></pre>
+<pre><span id="TYPEgentity"><span class="keyword">type</span> <code class="type"></code>gentity</span> = <code class="type"><a href="Diagrams.Gentity.html#TYPEt">Gentity.t</a></code> </pre>
+
+
+<pre><span id="VALcoord"><span class="keyword">val</span> coord</span> : <code class="type"><a href="Diagrams.Point.html#TYPEt">Point.t</a> -> <a href="Diagrams.Gentity.html#TYPEt">Gentity.t</a></code></pre>
+<pre><span id="VALcoord3d"><span class="keyword">val</span> coord3d</span> : <code class="type"><a href="Proj3d.html#TYPEprojection">Proj3d.projection</a> -> float * float * float -> <a href="Diagrams.Gentity.html#TYPEt">Gentity.t</a></code></pre>
+<pre><span id="VALtranslate"><span class="keyword">val</span> translate</span> : <code class="type">float * float -> <a href="Diagrams.Gentity.html#TYPEt">Gentity.t</a> -> <a href="Diagrams.Gentity.html#TYPEt">Gentity.t</a></code></pre>
+<pre><span class="keyword">module</span> <a href="Diagrams.Node.html">Node</a>: <code class="code">sig</code> <a href="Diagrams.Node.html">..</a> <code class="code">end</code></pre>
+<pre><span class="keyword">module</span> <a href="Diagrams.Matrix.html">Matrix</a>: <code class="code">sig</code> <a href="Diagrams.Matrix.html">..</a> <code class="code">end</code></pre>
+<pre><span class="keyword">module</span> <a href="Diagrams.Matrix3d.html">Matrix3d</a>: <code class="code">sig</code> <a href="Diagrams.Matrix3d.html">..</a> <code class="code">end</code></pre>
+<pre><span class="keyword">module</span> <a href="Diagrams.Edge.html">Edge</a>: <code class="code">sig</code> <a href="Diagrams.Edge.html">..</a> <code class="code">end</code></pre>
+<pre><span class="keyword">module</span> <a href="Diagrams.Entity.html">Entity</a>: <code class="code">sig</code> <a href="Diagrams.Entity.html">..</a> <code class="code">end</code></pre>
+<pre><span id="TYPEentity"><span class="keyword">type</span> <code class="type"></code>entity</span> = <code class="type"><a href="Diagrams.Entity.html#TYPEt">Entity.t</a></code> </pre>
+
+
+<pre><span class="keyword">module</span> <a href="Diagrams.MakeDiagram.html">MakeDiagram</a>: <div class="sig_block"><code class="code">functor (</code><code class="code">Args</code><code class="code"> : </code><code class="code">sig</code></pre><div class="sig_block">
+<pre><span id="VALenv"><span class="keyword">val</span> env</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a></code></pre></div><pre><code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Diagrams.MakeDiagram.html">..</a> <code class="code">end</code></div></pre>
+<pre><span id="VALdefault_where"><span class="keyword">val</span> default_where</span> : <code class="type"><a href="Diagrams.Node.html#TYPEinfo">Node.info</a> array array -> float * float</code></pre>
+<pre><span id="VALdefault_deco"><span class="keyword">val</span> default_deco</span> : <code class="type">'a -> <a href="Diagrams.Node.html#TYPEinfo">Node.info</a> array array -> 'b list * (float * float)</code></pre>
+<pre><span id="VALxarrow"><span class="keyword">val</span> xarrow</span> : <code class="type">?margin:float -><br>       ?decoration:(<a href="Document.html#TYPEenvironment">Document.environment</a> -><br>                    <a href="Diagrams.Node.html#TYPEinfo">Node.info</a> <a href="Diagrams.Matrix.html#TYPEmatrix">Matrix.matrix</a> -><br>                    <a href="Diagrams.Entity.html#TYPEt">Entity.t</a> list * (float * float)) -><br>       <a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALxto"><span class="keyword">val</span> xto</span> : <code class="type">?margin:float -> <a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span id="VALxot"><span class="keyword">val</span> xot</span> : <code class="type">?margin:float -> <a href="Maths.html#TYPEmath">Maths.math</a> list -> <a href="Maths.html#TYPEmath">Maths.math</a> list</code></pre>
+<pre><span class="keyword">module type</span> <a href="Diagrams.Diagram.html">Diagram</a> = <code class="type">module type of MakeDiagram (struct let env = assert false end)</code></pre>
+<pre><span id="VALdrawingOfDiagram"><span class="keyword">val</span> drawingOfDiagram</span> : <code class="type"><a href="Document.html#TYPEcontent">Document.content</a> list -> <a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a></code></pre></body></html>

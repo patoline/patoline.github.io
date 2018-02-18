@@ -1,0 +1,381 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Geometry.html">
+<link rel="next" href="Offset.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Badness" rel="Chapter" href="Badness.html">
+<link title="Box" rel="Chapter" href="Box.html">
+<link title="Break" rel="Chapter" href="Break.html">
+<link title="Complete" rel="Chapter" href="Complete.html">
+<link title="ConfigFindFont" rel="Chapter" href="ConfigFindFont.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="DefaultMacros" rel="Chapter" href="DefaultMacros.html">
+<link title="Diagrams" rel="Chapter" href="Diagrams.html">
+<link title="Distance" rel="Chapter" href="Distance.html">
+<link title="Document" rel="Chapter" href="Document.html">
+<link title="Euler" rel="Chapter" href="Euler.html">
+<link title="FontPattern" rel="Chapter" href="FontPattern.html">
+<link title="Geometry" rel="Chapter" href="Geometry.html">
+<link title="Maths" rel="Chapter" href="Maths.html">
+<link title="Offset" rel="Chapter" href="Offset.html">
+<link title="OutputDrawing" rel="Chapter" href="OutputDrawing.html">
+<link title="Proj3d" rel="Chapter" href="Proj3d.html">
+<link title="TypoLanguage" rel="Chapter" href="TypoLanguage.html">
+<link title="Typography" rel="Chapter" href="Typography.html">
+<link title="Verbatim" rel="Chapter" href="Verbatim.html">
+<link title="Test_offset" rel="Chapter" href="Test_offset.html">
+<link title="ConfigFindFontLeg" rel="Chapter" href="ConfigFindFontLeg.html">
+<link title="Numerals" rel="Chapter" href="Numerals.html">
+<link title="PageLayout" rel="Chapter" href="PageLayout.html"><title>Maths</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Geometry.html" title="Geometry">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Offset.html" title="Offset">Next</a>
+</div>
+<h1>Module <a href="type_Maths.html">Maths</a></h1>
+
+<pre><span class="keyword">module</span> Maths: <code class="code">sig</code> <a href="Maths.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Signature of a module extending the type <code class="code">math list</code> into a type
+    <code class="code">math list t</code> with the necessary typeseting machinery.<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">module type</span> <a href="Maths.CustomT.html">CustomT</a> = <code class="code">sig</code> <a href="Maths.CustomT.html">..</a> <code class="code">end</code></pre><div class="info">
+Signature of a module extending the type <code class="code">math list</code> into a type
+    <code class="code">math list t</code> with the necessary typeseting machinery.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Maths.Custom.html">Custom</a> = <code class="code">sig</code> <a href="Maths.Custom.html">..</a> <code class="code">end</code></pre><div class="info">
+Signature of a module containing only one element of type <code class="code">u C.t</code>, for a
+    module <code class="code">C : CustomT</code>.
+</div>
+
+<pre><code><span id="TYPEmath"><span class="keyword">type</span> <code class="type"></code>math</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmath.Ordinary"><span class="constructor">Ordinary</span></span> <span class="keyword">of</span> <code class="type"><a href="Maths.html#TYPEnucleus">nucleus</a> <a href="Maths.html#TYPEnode">node</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmath.Glue"><span class="constructor">Glue</span></span> <span class="keyword">of</span> <code class="type"><a href="Box.html#TYPEdrawingBox">Box.drawingBox</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmath.Env"><span class="constructor">Env</span></span> <span class="keyword">of</span> <code class="type">(<a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.html#TYPEenvironment">Document.environment</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmath.Scope"><span class="constructor">Scope</span></span> <span class="keyword">of</span> <code class="type">(<a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Maths.html#TYPEmath">math</a> list)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmath.Binary"><span class="constructor">Binary</span></span> <span class="keyword">of</span> <code class="type"><a href="Maths.html#TYPEbinary">binary</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmath.Fraction"><span class="constructor">Fraction</span></span> <span class="keyword">of</span> <code class="type"><a href="Maths.html#TYPEfraction">fraction</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmath.Operator"><span class="constructor">Operator</span></span> <span class="keyword">of</span> <code class="type"><a href="Maths.html#TYPEoperator">operator</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmath.Decoration"><span class="constructor">Decoration</span></span> <span class="keyword">of</span> <code class="type">(<a href="Document.html#TYPEenvironment">Document.environment</a> -><br>      <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Box.html#TYPEbox">Box.box</a> list -> <a href="Box.html#TYPEbox">Box.box</a> list)<br>        * <a href="Maths.html#TYPEmath">math</a> list</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmath.Custom"><span class="constructor">Custom</span></span> <span class="keyword">of</span> <code class="type">(module Maths.Custom with type u = <a href="Maths.html#TYPEmath">math</a> list)</code></code></td>
+
+</tr></table>
+
+
+
+<pre><code><span id="TYPEnode"><span class="keyword">type</span> <code class="type">'a</code> node</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTnode.nucleus">nucleus</span>&nbsp;: <code class="type">'a</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTnode.subscript_left">subscript_left</span>&nbsp;: <code class="type"><a href="Maths.html#TYPEmath">math</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTnode.subscript_right">subscript_right</span>&nbsp;: <code class="type"><a href="Maths.html#TYPEmath">math</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTnode.superscript_left">superscript_left</span>&nbsp;: <code class="type"><a href="Maths.html#TYPEmath">math</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTnode.superscript_right">superscript_right</span>&nbsp;: <code class="type"><a href="Maths.html#TYPEmath">math</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTnode.super_left_same_script">super_left_same_script</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTnode.super_right_same_script">super_right_same_script</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><span id="TYPEnucleus"><span class="keyword">type</span> <code class="type"></code>nucleus</span> = <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Box.html#TYPEbox">Box.box</a> list</code> </pre>
+
+
+<pre><span id="TYPEnucleuses"><span class="keyword">type</span> <code class="type"></code>nucleuses</span> = <code class="type"><a href="Maths.html#TYPEnucleus">nucleus</a> list</code> </pre>
+
+
+<pre><code><span id="TYPEbinary_type"><span class="keyword">type</span> <code class="type"></code>binary_type</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbinary_type.Invisible"><span class="constructor">Invisible</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Regular binary symbol, the booleans remove spacing if true.<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbinary_type.Normal"><span class="constructor">Normal</span></span> <span class="keyword">of</span> <code class="type">bool * <a href="Maths.html#TYPEnucleus">nucleus</a> <a href="Maths.html#TYPEnode">node</a> * bool</code></code></td>
+
+</tr></table>
+
+
+
+<pre><code><span id="TYPEbinary"><span class="keyword">type</span> <code class="type"></code>binary</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbinary.bin_priority">bin_priority</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbinary.bin_drawing">bin_drawing</span>&nbsp;: <code class="type"><a href="Maths.html#TYPEbinary_type">binary_type</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbinary.bin_left">bin_left</span>&nbsp;: <code class="type"><a href="Maths.html#TYPEmath">math</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbinary.bin_right">bin_right</span>&nbsp;: <code class="type"><a href="Maths.html#TYPEmath">math</a> list</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><code><span id="TYPEfraction"><span class="keyword">type</span> <code class="type"></code>fraction</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTfraction.numerator">numerator</span>&nbsp;: <code class="type"><a href="Maths.html#TYPEmath">math</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTfraction.denominator">denominator</span>&nbsp;: <code class="type"><a href="Maths.html#TYPEmath">math</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTfraction.line">line</span>&nbsp;: <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> RawContent.path_param</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><code><span id="TYPEoperator"><span class="keyword">type</span> <code class="type"></code>operator</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToperator.op_node">op_node</span>&nbsp;: <code class="type"><a href="Maths.html#TYPEnucleuses">nucleuses</a> <a href="Maths.html#TYPEnode">node</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToperator.op_limits">op_limits</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToperator.op_left_contents">op_left_contents</span>&nbsp;: <code class="type"><a href="Maths.html#TYPEmath">math</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToperator.op_right_contents">op_right_contents</span>&nbsp;: <code class="type"><a href="Maths.html#TYPEmath">math</a> list</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><span class="keyword">module</span> <a href="Maths.Mk_Custom.html">Mk_Custom</a>: <div class="sig_block"><code class="code">functor (</code><code class="code">C</code><code class="code"> : </code><code class="type"><a href="Maths.CustomT.html">CustomT</a></code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Maths.Mk_Custom.html">..</a> <code class="code">end</code></div></pre><div class="info">
+Convenient functor to use the <code class="code">Custom</code> constructor.
+</div>
+
+<pre><span id="VALdebug_kerning"><span class="keyword">val</span> debug_kerning</span> : <code class="type">bool Pervasives.ref</code></pre>
+<pre><span id="VALenv_style"><span class="keyword">val</span> env_style</span> : <code class="type">'a array -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> 'a</code></pre>
+<pre><span id="VALnode"><span class="keyword">val</span> node</span> : <code class="type">'a -> 'a <a href="Maths.html#TYPEnode">node</a></code></pre>
+<pre><span id="VALstyle"><span class="keyword">val</span> style</span> : <code class="type"><a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Maths.html#TYPEmath">math</a></code></pre>
+<pre><span id="VALfraction"><span class="keyword">val</span> fraction</span> : <code class="type"><a href="Maths.html#TYPEmath">math</a> list -> <a href="Maths.html#TYPEmath">math</a> list -> <a href="Maths.html#TYPEmath">math</a></code></pre>
+<pre><span id="VALbin"><span class="keyword">val</span> bin</span> : <code class="type">int -> <a href="Maths.html#TYPEbinary_type">binary_type</a> -> <a href="Maths.html#TYPEmath">math</a> list -> <a href="Maths.html#TYPEmath">math</a> list -> <a href="Maths.html#TYPEmath">math</a></code></pre>
+<pre><span id="VALbin_invisible"><span class="keyword">val</span> bin_invisible</span> : <code class="type">int -> <a href="Maths.html#TYPEmath">math</a> list -> <a href="Maths.html#TYPEmath">math</a> list -> <a href="Maths.html#TYPEmath">math</a></code></pre>
+<pre><span id="VALoperator"><span class="keyword">val</span> operator</span> : <code class="type">bool -><br>       <a href="Maths.html#TYPEmath">math</a> list -><br>       <a href="Maths.html#TYPEnucleuses">nucleuses</a> <a href="Maths.html#TYPEnode">node</a> -> <a href="Maths.html#TYPEmath">math</a> list -> <a href="Maths.html#TYPEmath">math</a></code></pre>
+<pre><span id="VALop_limits"><span class="keyword">val</span> op_limits</span> : <code class="type"><a href="Maths.html#TYPEmath">math</a> list -><br>       <a href="Maths.html#TYPEnucleuses">nucleuses</a> <a href="Maths.html#TYPEnode">node</a> -> <a href="Maths.html#TYPEmath">math</a> list -> <a href="Maths.html#TYPEmath">math</a></code></pre>
+<pre><span id="VALop_nolimits"><span class="keyword">val</span> op_nolimits</span> : <code class="type"><a href="Maths.html#TYPEmath">math</a> list -><br>       <a href="Maths.html#TYPEnucleuses">nucleuses</a> <a href="Maths.html#TYPEnode">node</a> -> <a href="Maths.html#TYPEmath">math</a> list -> <a href="Maths.html#TYPEmath">math</a></code></pre>
+<pre><span id="VALcramp"><span class="keyword">val</span> cramp</span> : <code class="type"><a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a></code></pre>
+<pre><span id="VALis_cramped"><span class="keyword">val</span> is_cramped</span> : <code class="type"><a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> bool</code></pre>
+<pre><span id="VALnonscript"><span class="keyword">val</span> nonscript</span> : <code class="type"><a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> bool</code></pre>
+<pre><span id="VALscriptStyle"><span class="keyword">val</span> scriptStyle</span> : <code class="type"><a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a></code></pre>
+<pre><span id="VALapply_head"><span class="keyword">val</span> apply_head</span> : <code class="type">('a -> 'a) -> 'a list -> 'a list</code></pre>
+<pre><span id="VALlast"><span class="keyword">val</span> last</span> : <code class="type">'a list -> 'a</code></pre>
+<pre><span id="VALset_style"><span class="keyword">val</span> set_style</span> : <code class="type"><a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -><br>       <a href="Document.html#TYPEenvironment">Document.environment</a> list -> <a href="Document.html#TYPEenvironment">Document.environment</a> list</code></pre>
+<pre><span id="VALsuperStyle"><span class="keyword">val</span> superStyle</span> : <code class="type"><a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -><br>       <a href="Document.html#TYPEenvironment">Document.environment</a> list -> <a href="Document.html#TYPEenvironment">Document.environment</a> list</code></pre>
+<pre><span id="VALsubStyle"><span class="keyword">val</span> subStyle</span> : <code class="type"><a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -><br>       <a href="Document.html#TYPEenvironment">Document.environment</a> list -> <a href="Document.html#TYPEenvironment">Document.environment</a> list</code></pre>
+<pre><span id="VALnumeratorStyle"><span class="keyword">val</span> numeratorStyle</span> : <code class="type"><a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -><br>       <a href="Document.html#TYPEenvironment">Document.environment</a> list -> <a href="Document.html#TYPEenvironment">Document.environment</a> list</code></pre>
+<pre><span id="VALdenominatorStyle"><span class="keyword">val</span> denominatorStyle</span> : <code class="type"><a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -><br>       <a href="Document.html#TYPEenvironment">Document.environment</a> list -> <a href="Document.html#TYPEenvironment">Document.environment</a> list</code></pre>
+<pre><span id="VALmatrixStyle"><span class="keyword">val</span> matrixStyle</span> : <code class="type"><a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -><br>       <a href="Document.html#TYPEenvironment">Document.environment</a> list -> <a href="Document.html#TYPEenvironment">Document.environment</a> list</code></pre>
+<pre><span id="VALadjust_space"><span class="keyword">val</span> adjust_space</span> : <code class="type">?absolute:bool -><br>       <a href="Document.Mathematical.html#TYPEenv">Document.Mathematical.env</a> -><br>       float -> float -> RawContent.raw list -> RawContent.raw list -> float</code></pre>
+<pre><span id="VALline"><span class="keyword">val</span> line</span> : <code class="type">'a * 'b -> 'a * 'b -> 'a array * 'b array</code></pre>
+<pre><span id="VALcontents"><span class="keyword">val</span> contents</span> : <code class="type"><a href="Box.html#TYPEbox">Box.box</a> -> string</code></pre>
+<pre><code><span id="TYPEdraw_env"><span class="keyword">type</span> <code class="type"></code>draw_env</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdraw_env.depth">depth</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdraw_env.prio">prio</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><span id="VALdincr"><span class="keyword">val</span> dincr</span> : <code class="type"><a href="Maths.html#TYPEdraw_env">draw_env</a> -> <a href="Maths.html#TYPEdraw_env">draw_env</a></code></pre>
+<pre><span id="VALdraw"><span class="keyword">val</span> draw</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> list -> <a href="Maths.html#TYPEmath">math</a> list -> <a href="Box.html#TYPEbox">Box.box</a> list</code></pre>
+<pre><span id="VALdraw"><span class="keyword">val</span> draw</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> list -> <a href="Maths.html#TYPEmath">math</a> list -> <a href="Box.html#TYPEbox">Box.box</a> list</code></pre>
+<pre><span id="VALkdraw"><span class="keyword">val</span> kdraw</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> list -> <a href="Maths.html#TYPEmath">math</a> list -> <a href="Box.html#TYPEbox">Box.box</a> list</code></pre>
+<pre><span id="VALdist_boxes"><span class="keyword">val</span> dist_boxes</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -> 'a -> <a href="Box.html#TYPEbox">Box.box</a> list -> <a href="Box.html#TYPEbox">Box.box</a> list -> float</code></pre>
+<pre><span id="VALglyphs"><span class="keyword">val</span> glyphs</span> : <code class="type">string -> <a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Box.html#TYPEbox">Box.box</a> list</code></pre>
+<pre><span id="VALmulti_glyphs"><span class="keyword">val</span> multi_glyphs</span> : <code class="type">('a -> 'b -> 'c) list -> 'a -> 'b -> 'c list</code></pre>
+<pre><span id="VALchange_fonts"><span class="keyword">val</span> change_fonts</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -> Fonts.font -> <a href="Document.html#TYPEenvironment">Document.environment</a></code></pre>
+<pre><span id="VALsymbol"><span class="keyword">val</span> symbol</span> : <code class="type">?name:string -><br>       Fonts.font -><br>       int list -><br>       <a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Box.html#TYPEbox">Box.box</a> list</code></pre>
+<pre><span id="VALopen_close"><span class="keyword">val</span> open_close</span> : <code class="type">(<a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Box.html#TYPEbox">Box.box</a> list) list -><br>       (<a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Box.html#TYPEbox">Box.box</a> list) list -><br>       <a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Box.html#TYPEbox">Box.box</a> list -> <a href="Box.html#TYPEbox">Box.box</a> list</code></pre>
+<pre><span id="VALsqrts"><span class="keyword">val</span> sqrts</span> : <code class="type">Fonts.glyph array Pervasives.ref</code></pre>
+<pre><span id="VALmake_sqrt"><span class="keyword">val</span> make_sqrt</span> : <code class="type"><a href="Document.html#TYPEenvironment">Document.environment</a> -><br>       <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Box.html#TYPEbox">Box.box</a> list -> <a href="Box.html#TYPEbox">Box.box</a> list</code></pre>
+<pre><span id="VALsqrt"><span class="keyword">val</span> sqrt</span> : <code class="type"><a href="Maths.html#TYPEmath">math</a> list -> <a href="Maths.html#TYPEmath">math</a> list</code></pre>
+<pre><span id="VALmath_env_set"><span class="keyword">val</span> math_env_set</span> : <code class="type">(<a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.html#TYPEenvironment">Document.environment</a>) -><br>       <a href="Maths.html#TYPEmath">math</a> list -> <a href="Maths.html#TYPEmath">math</a> list</code></pre><div class="info ">
+Allows to modify the <code class="code">Document.environment</code> in a math formula.<br>
+</div>
+
+<pre><span id="VALmcolor"><span class="keyword">val</span> mcolor</span> : <code class="type">Color.color -> <a href="Maths.html#TYPEmath">math</a> list -> <a href="Maths.html#TYPEmath">math</a> list</code></pre>
+<pre><span id="VALfit"><span class="keyword">val</span> fit</span> : <code class="type"><a href="Maths.html#TYPEmath">math</a> list -> <a href="Maths.html#TYPEmath">math</a> list</code></pre>
+<pre><span id="VALfindFont"><span class="keyword">val</span> findFont</span> : <code class="type"><a href="FontPattern.html#TYPEt">FontPattern.t</a> -> string</code></pre>
+<pre><span id="VALasana_font"><span class="keyword">val</span> asana_font</span> : <code class="type">Fonts.font Lazy.t</code></pre>
+<pre><span id="VALasana"><span class="keyword">val</span> asana</span> : <code class="type">string -><br>       int -> <a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Box.html#TYPEbox">Box.box</a> list</code></pre>
+<pre><span id="VALeuler_font"><span class="keyword">val</span> euler_font</span> : <code class="type">Fonts.font Lazy.t</code></pre>
+<pre><span id="VALeuler"><span class="keyword">val</span> euler</span> : <code class="type">string -><br>       int -> <a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Box.html#TYPEbox">Box.box</a> list</code></pre>
+<pre><span id="VALams_font"><span class="keyword">val</span> ams_font</span> : <code class="type">Fonts.font Lazy.t</code></pre>
+<pre><span id="VALams"><span class="keyword">val</span> ams</span> : <code class="type">string -><br>       int -> <a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Box.html#TYPEbox">Box.box</a> list</code></pre>
+<pre><span id="VALadjusted_asana_delimiters'"><span class="keyword">val</span> adjusted_asana_delimiters'</span> : <code class="type">'a -> ('b -> 'c -> <a href="Box.html#TYPEbox">Box.box</a> list) list -> ('b -> 'c -> <a href="Box.html#TYPEbox">Box.box</a> list) list</code></pre>
+<pre><span id="VALadjusted_asana_delimiters"><span class="keyword">val</span> adjusted_asana_delimiters</span> : <code class="type">string -><br>       int list -><br>       (<a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Box.html#TYPEbox">Box.box</a> list) list</code></pre>
+<pre><span id="VALfix_asana_delimiters"><span class="keyword">val</span> fix_asana_delimiters</span> : <code class="type">string -><br>       int list -><br>       (<a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Box.html#TYPEbox">Box.box</a> list) list</code></pre>
+<pre><span id="VALadjusted_euler_delimiters"><span class="keyword">val</span> adjusted_euler_delimiters</span> : <code class="type">string -><br>       int list -><br>       (<a href="Document.html#TYPEenvironment">Document.environment</a> -> <a href="Document.Mathematical.html#TYPEstyle">Document.Mathematical.style</a> -> <a href="Box.html#TYPEbox">Box.box</a> list) list</code></pre></body></html>

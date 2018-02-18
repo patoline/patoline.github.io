@@ -1,0 +1,790 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Typography.Maths.html">
+<link rel="next" href="Typography.Diagrams.html">
+<link rel="Up" href="Typography.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Badness" rel="Chapter" href="Badness.html">
+<link title="Box" rel="Chapter" href="Box.html">
+<link title="Break" rel="Chapter" href="Break.html">
+<link title="Complete" rel="Chapter" href="Complete.html">
+<link title="ConfigFindFont" rel="Chapter" href="ConfigFindFont.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="DefaultMacros" rel="Chapter" href="DefaultMacros.html">
+<link title="Diagrams" rel="Chapter" href="Diagrams.html">
+<link title="Distance" rel="Chapter" href="Distance.html">
+<link title="Document" rel="Chapter" href="Document.html">
+<link title="Euler" rel="Chapter" href="Euler.html">
+<link title="FontPattern" rel="Chapter" href="FontPattern.html">
+<link title="Geometry" rel="Chapter" href="Geometry.html">
+<link title="Maths" rel="Chapter" href="Maths.html">
+<link title="Offset" rel="Chapter" href="Offset.html">
+<link title="OutputDrawing" rel="Chapter" href="OutputDrawing.html">
+<link title="Proj3d" rel="Chapter" href="Proj3d.html">
+<link title="TypoLanguage" rel="Chapter" href="TypoLanguage.html">
+<link title="Typography" rel="Chapter" href="Typography.html">
+<link title="Verbatim" rel="Chapter" href="Verbatim.html">
+<link title="Test_offset" rel="Chapter" href="Test_offset.html">
+<link title="ConfigFindFontLeg" rel="Chapter" href="ConfigFindFontLeg.html">
+<link title="Numerals" rel="Chapter" href="Numerals.html">
+<link title="PageLayout" rel="Chapter" href="PageLayout.html"><link title="Environment transformations" rel="Section" href="#3_Environmenttransformations">
+<link title="Figures" rel="Section" href="#3_Figures">
+<link title="References, labels and links" rel="Section" href="#3_Referenceslabelsandlinks">
+<link title="Images" rel="Section" href="#3_Images">
+<link title="Boxification" rel="Section" href="#3_Boxification">
+<title>Typography.Document</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Typography.Maths.html" title="Typography.Maths">Previous</a>
+&nbsp;<a class="up" href="Typography.html" title="Typography">Up</a>
+&nbsp;<a class="post" href="Typography.Diagrams.html" title="Typography.Diagrams">Next</a>
+</div>
+<h1>Module <a href="type_Typography.Document.html">Typography.Document</a></h1>
+
+<pre><span class="keyword">module</span> Document: <code class="type"><a href="Document.html">Document</a></code></pre><hr width="100%">
+
+<pre><code><span id="TYPEfontAlternative"><span class="keyword">type</span> <code class="type"></code>fontAlternative</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTfontAlternative.Regular"><span class="constructor">Regular</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTfontAlternative.Bold"><span class="constructor">Bold</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTfontAlternative.Caps"><span class="constructor">Caps</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTfontAlternative.Demi"><span class="constructor">Demi</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="VALsimpleFamilyMember"><span class="keyword">val</span> simpleFamilyMember</span> : <code class="type">(unit -> Fonts.font) -><br>       (Fonts.font * (string -> string) *<br>        (FTypes.glyph_id list -> FTypes.glyph_id list) *<br>        (FTypes.glyph_ids list -> FTypes.glyph_ids list))<br>       Lazy.t</code></pre>
+<pre><span id="VALmake_ligature"><span class="keyword">val</span> make_ligature</span> : <code class="type">int list -> FTypes.glyph_id -> FTypes.glyph_id list -> FTypes.glyph_id list</code></pre>
+<pre><span id="TYPEfontFamily"><span class="keyword">type</span> <code class="type"></code>fontFamily</span> = <code class="type"><a href="Document.html#TYPEfontAlternative">fontAlternative</a> *<br>       ((Fonts.font * (string -> string) *<br>         (FTypes.glyph_id list -> FTypes.glyph_id list) *<br>         (FTypes.glyph_ids list -> FTypes.glyph_ids list))<br>        Lazy.t *<br>        (Fonts.font * (string -> string) *<br>         (FTypes.glyph_id list -> FTypes.glyph_id list) *<br>         (FTypes.glyph_ids list -> FTypes.glyph_ids list))<br>        Lazy.t)</code> </pre>
+
+
+<pre><span class="keyword">module</span> <a href="Document.TS.html">TS</a>: <code class="type"><a href="Break.Make.html">Break.Make</a></code><code class="code">(</code><code class="code">sig</code></pre><div class="sig_block">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Box.html#TYPEline">Box.line</a></code> </pre>
+
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEline">Box.line</a> -> int</code></pre>
+<pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type">'a -> int</code></pre></div>
+<pre><code class="code">end</code><code class="code">)</code></pre>
+<pre><span class="keyword">module</span> <a href="Document.Mathematical.html">Mathematical</a>: <code class="code">sig</code> <a href="Document.Mathematical.html">..</a> <code class="code">end</code></pre>
+<pre><code><span id="TYPEenvironment"><span class="keyword">type</span> <code class="type"></code>environment</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.fontFamily">fontFamily</span>&nbsp;: <code class="type"><a href="Document.html#TYPEfontFamily">fontFamily</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.fontMonoFamily">fontMonoFamily</span>&nbsp;: <code class="type"><a href="Document.html#TYPEfontFamily">fontFamily</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.fontMonoRatio">fontMonoRatio</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.fontItalic">fontItalic</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.fontAlternative">fontAlternative</span>&nbsp;: <code class="type"><a href="Document.html#TYPEfontAlternative">fontAlternative</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.fontFeatures">fontFeatures</span>&nbsp;: <code class="type">string list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.fontColor">fontColor</span>&nbsp;: <code class="type">Color.color</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.font">font</span>&nbsp;: <code class="type">Fonts.font</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.mathsEnvironment">mathsEnvironment</span>&nbsp;: <code class="type"><a href="Document.Mathematical.html#TYPEenvironment">Mathematical.environment</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.mathStyle">mathStyle</span>&nbsp;: <code class="type"><a href="Document.Mathematical.html#TYPEstyle">Mathematical.style</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.size">size</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.lead">lead</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.footnote_y">footnote_y</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.normalMeasure">normalMeasure</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.normalLead">normalLead</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.normalLeftMargin">normalLeftMargin</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.normalPageFormat">normalPageFormat</span>&nbsp;: <code class="type">float * float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.par_indent">par_indent</span>&nbsp;: <code class="type"><a href="Box.html#TYPEbox">Box.box</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.hyphenate">hyphenate</span>&nbsp;: <code class="type">string -> (string * string) array</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.word_substitutions">word_substitutions</span>&nbsp;: <code class="type">string -> string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.substitutions">substitutions</span>&nbsp;: <code class="type">FTypes.glyph_id list -> FTypes.glyph_id list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.positioning">positioning</span>&nbsp;: <code class="type">FTypes.glyph_ids list -> FTypes.glyph_ids list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.counters">counters</span>&nbsp;: <code class="type">(int * int list) Extra.StrMap.t</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Niveau du compteur, état.<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.last_changed_counter">last_changed_counter</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.names">names</span>&nbsp;: <code class="type">((int * int list) Extra.StrMap.t * string * <a href="Box.html#TYPEline">Box.line</a>) Extra.StrMap.t</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Niveaux de tous les compteurs à cet endroit, type, position<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.fixable">fixable</span>&nbsp;: <code class="type">bool Pervasives.ref</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.new_page">new_page</span>&nbsp;: <code class="type"><a href="Box.html#TYPEframe_zipper">Box.frame_zipper</a> -> <a href="Box.html#TYPEframe_zipper">Box.frame_zipper</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.new_line">new_line</span>&nbsp;: <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -><br>       <a href="Box.html#TYPEline">Box.line</a> -><br>       <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>       <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a> -> <a href="Box.html#TYPEframe_zipper">Box.frame_zipper</a> -> float -> float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.user_positions">user_positions</span>&nbsp;: <code class="type"><a href="Box.html#TYPEline">Box.line</a> Box.MarkerMap.t</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.show_boxes">show_boxes</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.show_frames">show_frames</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.adjust_optical_alpha">adjust_optical_alpha</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.adjust_optical_beta">adjust_optical_beta</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.adjust_epsilon">adjust_epsilon</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.adjust_min_space">adjust_min_space</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.math_break_badness">math_break_badness</span>&nbsp;: <code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTenvironment.stdGlue">stdGlue</span>&nbsp;: <code class="type">float * float * float</code>;</code></td>
+
+</tr></table>
+}
+
+<div class="info ">
+Environments. These are typically folded on document trees, and
+    control many different things about the fonts, counters, or
+    labels.<br>
+</div>
+
+
+<pre><span id="VALenv_accessed"><span class="keyword">val</span> env_accessed</span> : <code class="type">bool Pervasives.ref</code></pre>
+<pre><span id="VALnames"><span class="keyword">val</span> names</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -><br>       ((int * int list) Extra.StrMap.t * string * <a href="Box.html#TYPEline">Box.line</a>) Extra.StrMap.t</code></pre>
+<pre><span id="VALuser_positions"><span class="keyword">val</span> user_positions</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Box.html#TYPEline">Box.line</a> Box.MarkerMap.t</code></pre>
+<pre><span id="VALdisplayname"><span class="keyword">val</span> displayname</span> : <code class="type">Driver.structure -> RawContent.raw list</code></pre>
+<pre><code><span id="TYPEcontent"><span class="keyword">type</span> <code class="type"></code>content</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTcontent.B"><span class="constructor">B</span></span> <span class="keyword">of</span> <code class="type">(<a href="Document.html#TYPEenvironment">environment</a> -> <a href="Box.html#TYPEbox">Box.box</a> list) * <a href="Box.html#TYPEbox">Box.box</a> list option Pervasives.ref</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTcontent.C"><span class="constructor">C</span></span> <span class="keyword">of</span> <code class="type">(<a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEcontent">content</a> list)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTcontent.T"><span class="constructor">T</span></span> <span class="keyword">of</span> <code class="type">string * <a href="Box.html#TYPEbox">Box.box</a> list Extra.IntMap.t option Pervasives.ref</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTcontent.Env"><span class="constructor">Env</span></span> <span class="keyword">of</span> <code class="type">(<a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTcontent.Scoped"><span class="constructor">Scoped</span></span> <span class="keyword">of</span> <code class="type">(<a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a>) * <a href="Document.html#TYPEcontent">content</a> list</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTcontent.N"><span class="constructor">N</span></span> <span class="keyword">of</span> <code class="type"><a href="Document.html#TYPEtree">tree</a></code></code></td>
+
+</tr></table>
+
+
+
+<pre><code><span id="TYPEparagraph"><span class="keyword">type</span> <code class="type"></code>paragraph</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparagraph.par_contents">par_contents</span>&nbsp;: <code class="type"><a href="Document.html#TYPEcontent">content</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparagraph.par_env">par_env</span>&nbsp;: <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparagraph.par_post_env">par_post_env</span>&nbsp;: <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparagraph.par_parameters">par_parameters</span>&nbsp;: <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -><br>       <a href="Box.html#TYPEbox">Box.box</a> array array -><br>       <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>       <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>       <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>       <a href="Box.html#TYPEline">Box.line</a> Box.MarkerMap.t -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparagraph.par_badness">par_badness</span>&nbsp;: <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -><br>       <a href="Box.html#TYPEbox">Box.box</a> array array -><br>       <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>       <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>       <a href="Box.html#TYPEline">Box.line</a> -><br>       <a href="Box.html#TYPEbox">Box.box</a> array -><br>       int -><br>       <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>       float -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEbox">Box.box</a> array -> int -> <a href="Box.html#TYPEparameters">Box.parameters</a> -> float -> float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparagraph.par_completeLine">par_completeLine</span>&nbsp;: <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -><br>       <a href="Box.html#TYPEbox">Box.box</a> array array -><br>       <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>       <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>       <a href="Box.html#TYPEline">Box.line</a> Box.MarkerMap.t -> <a href="Box.html#TYPEline">Box.line</a> -> bool -> <a href="Box.html#TYPEline">Box.line</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparagraph.par_states">par_states</span>&nbsp;: <code class="type">int list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTparagraph.par_paragraph">par_paragraph</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><code><span id="TYPEfiguredef"><span class="keyword">type</span> <code class="type"></code>figuredef</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTfiguredef.fig_contents">fig_contents</span>&nbsp;: <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTfiguredef.fig_env">fig_env</span>&nbsp;: <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTfiguredef.fig_post_env">fig_post_env</span>&nbsp;: <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTfiguredef.fig_parameters">fig_parameters</span>&nbsp;: <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -><br>       <a href="Box.html#TYPEbox">Box.box</a> array array -><br>       <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>       <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>       <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>       <a href="Box.html#TYPEline">Box.line</a> Box.MarkerMap.t -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a></code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><code><span id="TYPEnode"><span class="keyword">type</span> <code class="type"></code>node</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTnode.name">name</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTnode.displayname">displayname</span>&nbsp;: <code class="type"><a href="Document.html#TYPEcontent">content</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span class="keyword">mutable&nbsp;</span><span id="TYPEELTnode.boxified_displayname">boxified_displayname</span>&nbsp;: <code class="type">RawContent.raw list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTnode.children">children</span>&nbsp;: <code class="type"><a href="Document.html#TYPEtree">tree</a> Extra.IntMap.t</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTnode.node_tags">node_tags</span>&nbsp;: <code class="type">(string * string) list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTnode.node_env">node_env</span>&nbsp;: <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTnode.node_post_env">node_post_env</span>&nbsp;: <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTnode.node_states">node_states</span>&nbsp;: <code class="type">int list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span class="keyword">mutable&nbsp;</span><span id="TYPEELTnode.node_paragraph">node_paragraph</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><code><span id="TYPEtree"><span class="keyword">type</span> <code class="type"></code>tree</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtree.Paragraph"><span class="constructor">Paragraph</span></span> <span class="keyword">of</span> <code class="type"><a href="Document.html#TYPEparagraph">paragraph</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtree.FigureDef"><span class="constructor">FigureDef</span></span> <span class="keyword">of</span> <code class="type"><a href="Document.html#TYPEfiguredef">figuredef</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtree.Node"><span class="constructor">Node</span></span> <span class="keyword">of</span> <code class="type"><a href="Document.html#TYPEnode">node</a></code></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type"><a href="Document.html#TYPEnode">node</a></code></pre>
+<pre><span id="VALsingleton"><span class="keyword">val</span> singleton</span> : <code class="type"><a href="Document.html#TYPEtree">tree</a> -> <a href="Document.html#TYPEnode">node</a></code></pre>
+<pre><span id="TYPEtree_zipper"><span class="keyword">type</span> <code class="type"></code>tree_zipper</span> = <code class="type"><a href="Document.html#TYPEtree">tree</a> * (int * <a href="Document.html#TYPEnode">node</a>) list</code> </pre>
+
+
+<pre><span id="VALup"><span class="keyword">val</span> up</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
+<pre><span id="VALup_n"><span class="keyword">val</span> up_n</span> : <code class="type">int -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
+<pre><span id="VALtop"><span class="keyword">val</span> top</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
+<pre><span id="VALlastChild"><span class="keyword">val</span> lastChild</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
+<pre><span id="VALnewChildAfter"><span class="keyword">val</span> newChildAfter</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree">tree</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
+<pre><span id="VALnewChildBefore"><span class="keyword">val</span> newChildBefore</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree">tree</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
+<pre><span id="VALchild"><span class="keyword">val</span> child</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> int -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
+<pre><span id="VALfollow"><span class="keyword">val</span> follow</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> int list -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
+<pre><span class="keyword">module type</span> <a href="Document.Format.html">Format</a> = <code class="code">sig</code> <a href="Document.Format.html">..</a> <code class="code">end</code></pre>
+<pre><span class="keyword">module type</span> <a href="Document.DocumentStructure.html">DocumentStructure</a> = <code class="code">sig</code> <a href="Document.DocumentStructure.html">..</a> <code class="code">end</code></pre>
+<pre><span id="VALdoc_tags"><span class="keyword">val</span> doc_tags</span> : <code class="type"><a href="Document.html#TYPEtree">tree</a> -> (string * string) list</code></pre>
+<pre><span id="VALinit_env_hook"><span class="keyword">val</span> init_env_hook</span> : <code class="type">(<a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a>) list Pervasives.ref</code></pre>
+<pre><span id="VALadd_env_hook"><span class="keyword">val</span> add_env_hook</span> : <code class="type">(<a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a>) -> unit</code></pre>
+<pre><span id="VALbB"><span class="keyword">val</span> bB</span> : <code class="type">(<a href="Document.html#TYPEenvironment">environment</a> -> <a href="Box.html#TYPEbox">Box.box</a> list) -> <a href="Document.html#TYPEcontent">content</a></code></pre>
+<pre><span id="VALuB"><span class="keyword">val</span> uB</span> : <code class="type">(<a href="Document.html#TYPEenvironment">environment</a> -> <a href="Box.html#TYPEbox">Box.box</a> list) -> <a href="Document.html#TYPEcontent">content</a></code></pre>
+<pre><span id="VALtT"><span class="keyword">val</span> tT</span> : <code class="type">string -> <a href="Document.html#TYPEcontent">content</a></code></pre>
+<pre><span id="VALuT"><span class="keyword">val</span> uT</span> : <code class="type">string -> <a href="Document.html#TYPEcontent">content</a></code></pre>
+<pre><span id="VALstring_of_contents"><span class="keyword">val</span> string_of_contents</span> : <code class="type"><a href="Document.html#TYPEcontent">content</a> list -> string</code></pre>
+<pre><span id="VAL_names"><span class="keyword">val</span> _names</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -><br>       ((int * int list) Extra.StrMap.t * string * <a href="Box.html#TYPEline">Box.line</a>) Extra.StrMap.t</code></pre>
+<pre><span id="VAL_user_positions"><span class="keyword">val</span> _user_positions</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Box.html#TYPEline">Box.line</a> Box.MarkerMap.t</code></pre>
+<pre><span id="VALincr_counter"><span class="keyword">val</span> incr_counter</span> : <code class="type">?level:int -><br>       Extra.StrMap.key -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALpop_counter"><span class="keyword">val</span> pop_counter</span> : <code class="type">Extra.StrMap.key -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALpush_counter"><span class="keyword">val</span> push_counter</span> : <code class="type">Extra.StrMap.key -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALtags"><span class="keyword">val</span> tags</span> : <code class="type"><a href="Document.html#TYPEtree">tree</a> -> (string * string) list</code></pre>
+<pre><span id="VALenvApp"><span class="keyword">val</span> envApp</span> : <code class="type">('a -> 'a) list -> 'a -> 'a</code></pre>
+<pre><span id="VALmap_paragraphs"><span class="keyword">val</span> map_paragraphs</span> : <code class="type">(<a href="Document.html#TYPEparagraph">paragraph</a> -> <a href="Document.html#TYPEparagraph">paragraph</a>) -> <a href="Document.html#TYPEtree">tree</a> -> <a href="Document.html#TYPEtree">tree</a></code></pre>
+<pre><span id="EXCEPTIONFound"><span class="keyword">exception</span> Found</span></pre>
+
+<pre><span id="VALfind_last"><span class="keyword">val</span> find_last</span> : <code class="type">(<a href="Document.html#TYPEtree">tree</a> -> bool) -> <a href="Document.html#TYPEtree">tree</a> -> Extra.IntMap.key list</code></pre><div class="info ">
+Finds the last node satisfying a given predicate in a document tree.<br>
+</div>
+
+<pre><span id="VALis_paragraph"><span class="keyword">val</span> is_paragraph</span> : <code class="type"><a href="Document.html#TYPEtree">tree</a> -> bool</code></pre><div class="info ">
+Is the node a paragraph ?<br>
+</div>
+
+<pre><span id="VALis_node"><span class="keyword">val</span> is_node</span> : <code class="type"><a href="Document.html#TYPEtree">tree</a> -> bool</code></pre><div class="info ">
+Is the node an internal node ?<br>
+</div>
+
+<pre><span id="VALprev"><span class="keyword">val</span> prev</span> : <code class="type">(<a href="Document.html#TYPEtree">tree</a> -> bool) -><br>       <a href="Document.html#TYPEtree">tree</a> * (Extra.IntMap.key * <a href="Document.html#TYPEtree">tree</a>) list -><br>       <a href="Document.html#TYPEtree">tree</a> * (Extra.IntMap.key * <a href="Document.html#TYPEtree">tree</a>) list</code></pre>
+<pre><span id="VALgo_up"><span class="keyword">val</span> go_up</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> Pervasives.ref -> unit</code></pre>
+<pre><span id="VALn_go_up"><span class="keyword">val</span> n_go_up</span> : <code class="type">int -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a> Pervasives.ref -> unit</code></pre><br>
+<h3 id="3_Environmenttransformations">Environment transformations</h3><br>
+
+<pre><span id="VALchange_env"><span class="keyword">val</span> change_env</span> : <code class="type"><a href="Document.html#TYPEtree">tree</a> * 'a -><br>       (<a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a>) -> <a href="Document.html#TYPEtree">tree</a> * 'a</code></pre>
+<pre><span id="EXCEPTIONNot_found_in_family"><span class="keyword">exception</span> Not_found_in_family</span></pre>
+
+<pre><span id="VALselectFont"><span class="keyword">val</span> selectFont</span> : <code class="type">('a * ('b Lazy.t * 'b Lazy.t)) list -> 'a -> bool -> 'b</code></pre>
+<pre><span id="VALupdateFont"><span class="keyword">val</span> updateFont</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -><br>       Fonts.font -><br>       (string -> string) -><br>       (FTypes.glyph_id list -> FTypes.glyph_id list) -><br>       (FTypes.glyph_ids list -> FTypes.glyph_ids list) -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALchange_font"><span class="keyword">val</span> change_font</span> : <code class="type">Fonts.font -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALfont"><span class="keyword">val</span> font</span> : <code class="type">Fonts.font -> <a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALadd_features"><span class="keyword">val</span> add_features</span> : <code class="type">string list -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALenvItalic"><span class="keyword">val</span> envItalic</span> : <code class="type">bool -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALitalic"><span class="keyword">val</span> italic</span> : <code class="type"><a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALnotItalic"><span class="keyword">val</span> notItalic</span> : <code class="type"><a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALtoggleItalic"><span class="keyword">val</span> toggleItalic</span> : <code class="type"><a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALenvAlternative"><span class="keyword">val</span> envAlternative</span> : <code class="type">?features:string list -><br>       <a href="Document.html#TYPEfontAlternative">fontAlternative</a> -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALalternative"><span class="keyword">val</span> alternative</span> : <code class="type">?features:string list -><br>       <a href="Document.html#TYPEfontAlternative">fontAlternative</a> -> <a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALfont_size_ratio"><span class="keyword">val</span> font_size_ratio</span> : <code class="type">(<a href="Document.html#TYPEfontAlternative">fontAlternative</a> * ((Fonts.font * 'a * 'b * 'c) Lazy.t * 'd)) list -><br>       (<a href="Document.html#TYPEfontAlternative">fontAlternative</a> * ((Fonts.font * 'e * 'f * 'g) Lazy.t * 'h)) list -><br>       float</code></pre>
+<pre><span id="VALenvFamily"><span class="keyword">val</span> envFamily</span> : <code class="type"><a href="Document.html#TYPEfontFamily">fontFamily</a> list -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALfamily"><span class="keyword">val</span> family</span> : <code class="type"><a href="Document.html#TYPEfontFamily">fontFamily</a> list -> <a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALenvMonoFamily"><span class="keyword">val</span> envMonoFamily</span> : <code class="type"><a href="Document.html#TYPEfontFamily">fontFamily</a> list -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALmonoFamily"><span class="keyword">val</span> monoFamily</span> : <code class="type"><a href="Document.html#TYPEfontFamily">fontFamily</a> list -> <a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALenvSize"><span class="keyword">val</span> envSize</span> : <code class="type">float -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type">float -> <a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALenvScale"><span class="keyword">val</span> envScale</span> : <code class="type">float -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALscale"><span class="keyword">val</span> scale</span> : <code class="type">float -> <a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALenvScaleLead"><span class="keyword">val</span> envScaleLead</span> : <code class="type">float -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALscaleLead"><span class="keyword">val</span> scaleLead</span> : <code class="type">float -> <a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALenvColor"><span class="keyword">val</span> envColor</span> : <code class="type">Color.color -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALcolor"><span class="keyword">val</span> color</span> : <code class="type">Color.color -> <a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALenvBold"><span class="keyword">val</span> envBold</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALbold"><span class="keyword">val</span> bold</span> : <code class="type"><a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALenvSv"><span class="keyword">val</span> envSv</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALsc"><span class="keyword">val</span> sc</span> : <code class="type"><a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALverbEnv"><span class="keyword">val</span> verbEnv</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre>
+<pre><span id="VALverb"><span class="keyword">val</span> verb</span> : <code class="type"><a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALemph"><span class="keyword">val</span> emph</span> : <code class="type"><a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALid"><span class="keyword">val</span> id</span> : <code class="type">'a -> 'a</code></pre>
+<pre><span id="VALparameters"><span class="keyword">val</span> parameters</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -><br>       <a href="Box.html#TYPEbox">Box.box</a> array array -><br>       <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>       'a -><br>       <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -> 'b -> 'c -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a></code></pre>
+<pre><span id="VALset_parameters"><span class="keyword">val</span> set_parameters</span> : <code class="type">(<a href="Box.html#TYPEparameters">Box.parameters</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a>) -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALvspaceBefore"><span class="keyword">val</span> vspaceBefore</span> : <code class="type">float -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALvspaceAfter"><span class="keyword">val</span> vspaceAfter</span> : <code class="type">float -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALpagesBefore"><span class="keyword">val</span> pagesBefore</span> : <code class="type">int -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALpagesAfter"><span class="keyword">val</span> pagesAfter</span> : <code class="type">int -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALlinesBefore"><span class="keyword">val</span> linesBefore</span> : <code class="type">int -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALlinesAfter"><span class="keyword">val</span> linesAfter</span> : <code class="type">int -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALnotFirstLine"><span class="keyword">val</span> notFirstLine</span> : <code class="type"><a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALnotLastLine"><span class="keyword">val</span> notLastLine</span> : <code class="type"><a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALhspace"><span class="keyword">val</span> hspace</span> : <code class="type">float -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALhfill"><span class="keyword">val</span> hfill</span> : <code class="type"><a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALdo_center"><span class="keyword">val</span> do_center</span> : <code class="type">('a -> 'b -> 'c -> 'd -> 'e -> 'f -> 'g -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a>) -><br>       'a -> 'b -> 'c -> 'd -> 'e -> 'f -> 'g -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a></code></pre>
+<pre><span id="VALdo_ragged_left"><span class="keyword">val</span> do_ragged_left</span> : <code class="type">('a -> 'b -> 'c -> 'd -> 'e -> 'f -> 'g -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a>) -><br>       'a -> 'b -> 'c -> 'd -> 'e -> 'f -> 'g -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a></code></pre>
+<pre><span id="VALdo_ragged_right"><span class="keyword">val</span> do_ragged_right</span> : <code class="type">('a -> 'b -> 'c -> 'd -> 'e -> 'f -> 'g -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a>) -><br>       'a -> 'b -> 'c -> 'd -> 'e -> 'f -> 'g -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a></code></pre>
+<pre><span id="VALbadness"><span class="keyword">val</span> badness</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -><br>       <a href="Box.html#TYPEbox">Box.box</a> array array -><br>       'a -><br>       'b -><br>       <a href="Box.html#TYPEline">Box.line</a> -><br>       <a href="Box.html#TYPEbox">Box.box</a> array -><br>       int -><br>       <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>       float -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEbox">Box.box</a> array -> int -> <a href="Box.html#TYPEparameters">Box.parameters</a> -> float -> float</code></pre><br>
+<h3 id="3_Figures">Figures</h3><br>
+
+<pre><span id="VALfigure"><span class="keyword">val</span> figure</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> Pervasives.ref -><br>       (<a href="Document.html#TYPEenvironment">environment</a> -><br>        <a href="Box.html#TYPEbox">Box.box</a> array array -><br>        <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>        <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>        <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>        <a href="Box.html#TYPEline">Box.line</a> Box.MarkerMap.t -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a>) -><br>       ?name:Extra.StrMap.key -> (<a href="Document.html#TYPEenvironment">environment</a> -> <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a>) -> unit</code></pre>
+<pre><span id="VALflushFigure"><span class="keyword">val</span> flushFigure</span> : <code class="type">Extra.StrMap.key -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALbeginFigure"><span class="keyword">val</span> beginFigure</span> : <code class="type">Extra.StrMap.key -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALnewPar"><span class="keyword">val</span> newPar</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> Pervasives.ref -><br>       ?environment:(<a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a>) -><br>       ?badness:(<a href="Document.html#TYPEenvironment">environment</a> -><br>                 <a href="Box.html#TYPEbox">Box.box</a> array array -><br>                 <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>                 <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>                 <a href="Box.html#TYPEline">Box.line</a> -><br>                 <a href="Box.html#TYPEbox">Box.box</a> array -><br>                 int -><br>                 <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>                 float -><br>                 <a href="Box.html#TYPEline">Box.line</a> -><br>                 <a href="Box.html#TYPEbox">Box.box</a> array -> int -> <a href="Box.html#TYPEparameters">Box.parameters</a> -> float -> float) -><br>       ?states:int list -><br>       (<a href="Document.html#TYPEenvironment">environment</a> -><br>        <a href="Box.html#TYPEbox">Box.box</a> array array -><br>        <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>        <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>        <a href="Box.html#TYPEline">Box.line</a> Box.MarkerMap.t -> <a href="Box.html#TYPEline">Box.line</a> -> bool -> <a href="Box.html#TYPEline">Box.line</a> list) -><br>       (<a href="Document.html#TYPEenvironment">environment</a> -><br>        <a href="Box.html#TYPEbox">Box.box</a> array array -><br>        <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>        <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>        <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>        <a href="Box.html#TYPEline">Box.line</a> Box.MarkerMap.t -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a>) -><br>       <a href="Document.html#TYPEcontent">content</a> list -> unit</code></pre>
+<pre><span id="VALnewStruct"><span class="keyword">val</span> newStruct</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> Pervasives.ref -><br>       ?in_toc:bool -><br>       ?label:string -><br>       ?numbered:bool -><br>       ?extra_tags:(string * string) list -> <a href="Document.html#TYPEcontent">content</a> list -> unit</code></pre><div class="info ">
+Adds a new node, just below the last one.<br>
+</div>
+<br>
+<h3 id="3_Referenceslabelsandlinks">References, labels and links</h3><br>
+
+<pre><span id="VALpageref"><span class="keyword">val</span> pageref</span> : <code class="type">Extra.StrMap.key -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALmake_name"><span class="keyword">val</span> make_name</span> : <code class="type">string -> string</code></pre>
+<pre><span id="VALlabel"><span class="keyword">val</span> label</span> : <code class="type">?labelType:string -> string -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALpass_number"><span class="keyword">val</span> pass_number</span> : <code class="type">int Pervasives.ref</code></pre>
+<pre><span id="VALlref"><span class="keyword">val</span> lref</span> : <code class="type">?refType:Extra.StrMap.key -> string -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALgeneralRef"><span class="keyword">val</span> generalRef</span> : <code class="type">Extra.StrMap.key -> string -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALsectref"><span class="keyword">val</span> sectref</span> : <code class="type">string -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALextLink"><span class="keyword">val</span> extLink</span> : <code class="type">string -> <a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALlink"><span class="keyword">val</span> link</span> : <code class="type">string -> <a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALbutton_name"><span class="keyword">val</span> button_name</span> : <code class="type">unit -> string</code></pre>
+<pre><span id="VALbutton"><span class="keyword">val</span> button</span> : <code class="type">RawContent.button_kind -> <a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre><br>
+<h3 id="3_Images">Images</h3><br>
+
+<pre><span id="VALimage"><span class="keyword">val</span> image</span> : <code class="type">?scale:float -><br>       ?width:float -><br>       ?height:float -> ?offset:float -> string -> 'a -> <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a></code></pre>
+<pre><span id="VALvideo"><span class="keyword">val</span> video</span> : <code class="type">?scale:float -><br>       ?width:float -><br>       ?height:float -><br>       ?offset:float -> string -> <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a></code></pre>
+<pre><span id="VALincludeGraphics"><span class="keyword">val</span> includeGraphics</span> : <code class="type">?scale:float -><br>       ?width:float -><br>       ?height:float -> ?offset:float -> string -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALincludeVideo"><span class="keyword">val</span> includeVideo</span> : <code class="type">?scale:float -><br>       ?width:float -><br>       ?height:float -> ?offset:float -> string -> <a href="Document.html#TYPEcontent">content</a> list</code></pre><br>
+<h3 id="3_Boxification">Boxification</h3><br>
+
+<pre><span id="VALmakeGlue"><span class="keyword">val</span> makeGlue</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> int -> <a href="Box.html#TYPEbox">Box.box</a></code></pre><div class="info ">
+Makes a glue from the unicode character code given in the argument.<br>
+</div>
+
+<pre><span id="VALgl_of_str"><span class="keyword">val</span> gl_of_str</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> string -> <a href="Box.html#TYPEbox">Box.box</a> list</code></pre><div class="info ">
+Converts a <code class="code">string</code> to a list of glyphs, according to the environment.<br>
+</div>
+
+<pre><span id="VALboxify"><span class="keyword">val</span> boxify</span> : <code class="type"><a href="Box.html#TYPEbox">Box.box</a> array Pervasives.ref -><br>       int Pervasives.ref -><br>       <a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEenvironment">environment</a></code></pre><div class="info ">
+Converts a list of contents into a list of boxes, which is the next Patoline layer.<br>
+</div>
+
+<pre><span id="VALdraw_boxes"><span class="keyword">val</span> draw_boxes</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Box.html#TYPEbox">Box.box</a> list -> RawContent.raw list</code></pre><div class="info ">
+Typesets boxes on a single line, then converts them to a list of basic
+    drawing elements: <code class="code">RawContent.raw</code>.<br>
+</div>
+
+<pre><span id="VALbezier_of_boxes"><span class="keyword">val</span> bezier_of_boxes</span> : <code class="type">RawContent.raw list -> Bezier.curve list</code></pre>
+<pre><span id="VALadjust_width"><span class="keyword">val</span> adjust_width</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -><br>       <a href="Box.html#TYPEbox">Box.box</a> array Pervasives.ref -> int Pervasives.ref -> unit</code></pre>
+<pre><span id="VALboxify_scoped"><span class="keyword">val</span> boxify_scoped</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEcontent">content</a> list -> <a href="Box.html#TYPEbox">Box.box</a> list</code></pre><div class="info ">
+The same as boxify, but discards the final environment.<br>
+</div>
+
+<pre><span id="VALdraw"><span class="keyword">val</span> draw</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEcontent">content</a> list -> RawContent.raw list</code></pre><div class="info ">
+Composes <code class="code">boxify</code> and <code class="code">draw_boxes</code><br>
+</div>
+
+<pre><span id="VALstates"><span class="keyword">val</span> states</span> : <code class="type">int list -> <a href="Document.html#TYPEcontent">content</a> list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALaltStates"><span class="keyword">val</span> altStates</span> : <code class="type">(int list * <a href="Document.html#TYPEcontent">content</a> list) list -> <a href="Document.html#TYPEcontent">content</a> list</code></pre>
+<pre><span id="VALflatten"><span class="keyword">val</span> flatten</span> : <code class="type">?initial_path:Extra.IntMap.key list -><br>       <a href="Document.html#TYPEenvironment">environment</a> -><br>       <a href="Document.html#TYPEtree">tree</a> -><br>       <a href="Document.html#TYPEenvironment">environment</a> *<br>       (<a href="Box.html#TYPEbox">Box.box</a> array array -><br>        <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>        <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>        <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>        <a href="Box.html#TYPEline">Box.line</a> Box.MarkerMap.t -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a>)<br>       array *<br>       (<a href="Box.html#TYPEbox">Box.box</a> array array -><br>        <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>        <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>        <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>        <a href="Box.html#TYPEline">Box.line</a> Box.MarkerMap.t -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a>)<br>       array * (<a href="Box.html#TYPEframe_zipper">Box.frame_zipper</a> -> <a href="Box.html#TYPEframe_zipper">Box.frame_zipper</a>) array *<br>       (<a href="Box.html#TYPEline">Box.line</a> -><br>        <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>        <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEparameters">Box.parameters</a> -> <a href="Box.html#TYPEframe_zipper">Box.frame_zipper</a> -> float -> float)<br>       array *<br>       (<a href="Box.html#TYPEbox">Box.box</a> array array -><br>        <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>        <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>        <a href="Box.html#TYPEline">Box.line</a> Box.MarkerMap.t -> <a href="Box.html#TYPEline">Box.line</a> -> bool -> <a href="Box.html#TYPEline">Box.line</a> list)<br>       array *<br>       (<a href="Box.html#TYPEbox">Box.box</a> array array -><br>        <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array -><br>        <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>        <a href="Box.html#TYPEline">Box.line</a> -><br>        <a href="Box.html#TYPEbox">Box.box</a> array -><br>        int -><br>        <a href="Box.html#TYPEparameters">Box.parameters</a> -><br>        float -><br>        <a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEbox">Box.box</a> array -> int -> <a href="Box.html#TYPEparameters">Box.parameters</a> -> float -> float)<br>       array * <a href="Box.html#TYPEbox">Box.box</a> array array *<br>       (<a href="Document.html#TYPEtree">tree</a> * (Extra.IntMap.key * <a href="Document.html#TYPEtree">tree</a>) list) array *<br>       <a href="Box.html#TYPEdrawingBox">Box.drawingBox</a> array *<br>       (<a href="Document.html#TYPEtree">tree</a> * (Extra.IntMap.key * <a href="Document.html#TYPEtree">tree</a>) list) array *<br>       int list array</code></pre><div class="info ">
+"flattens" a document tree to an array of paragraphs, a paragraph
+    being an array of boxes.<br>
+</div>
+
+<pre><span id="VALmake_struct"><span class="keyword">val</span> make_struct</span> : <code class="type">(int * float * float) array -> <a href="Document.html#TYPEtree">tree</a> -> Driver.structure</code></pre>
+<pre><span id="VALtag"><span class="keyword">val</span> tag</span> : <code class="type"><a href="Document.html#TYPEtree">tree</a> -> (string * string) list -> <a href="Document.html#TYPEtree">tree</a></code></pre><div class="info ">
+Adds a tag to the given structure.<br>
+</div>
+
+<pre><span id="VALupdate_names"><span class="keyword">val</span> update_names</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -><br>       <a href="Break.html#TYPEfigurePosition">Break.figurePosition</a> Extra.IntMap.t -><br>       <a href="Box.html#TYPEline">Box.line</a> Box.MarkerMap.t -> <a href="Document.html#TYPEenvironment">environment</a> * bool</code></pre><div class="info ">
+Label updating after optimization.<br>
+</div>
+
+<pre><span id="VALreset_counters"><span class="keyword">val</span> reset_counters</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a></code></pre><div class="info ">
+Resets all the counters, preserving their levels.<br>
+</div>
+</body></html>

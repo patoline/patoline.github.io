@@ -1,0 +1,231 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Badness" rel="Chapter" href="Badness.html">
+<link title="Box" rel="Chapter" href="Box.html">
+<link title="Break" rel="Chapter" href="Break.html">
+<link title="Complete" rel="Chapter" href="Complete.html">
+<link title="ConfigFindFont" rel="Chapter" href="ConfigFindFont.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="DefaultMacros" rel="Chapter" href="DefaultMacros.html">
+<link title="Diagrams" rel="Chapter" href="Diagrams.html">
+<link title="Distance" rel="Chapter" href="Distance.html">
+<link title="Document" rel="Chapter" href="Document.html">
+<link title="Euler" rel="Chapter" href="Euler.html">
+<link title="FontPattern" rel="Chapter" href="FontPattern.html">
+<link title="Geometry" rel="Chapter" href="Geometry.html">
+<link title="Maths" rel="Chapter" href="Maths.html">
+<link title="Offset" rel="Chapter" href="Offset.html">
+<link title="OutputDrawing" rel="Chapter" href="OutputDrawing.html">
+<link title="Proj3d" rel="Chapter" href="Proj3d.html">
+<link title="TypoLanguage" rel="Chapter" href="TypoLanguage.html">
+<link title="Typography" rel="Chapter" href="Typography.html">
+<link title="Verbatim" rel="Chapter" href="Verbatim.html">
+<link title="Test_offset" rel="Chapter" href="Test_offset.html">
+<link title="ConfigFindFontLeg" rel="Chapter" href="ConfigFindFontLeg.html">
+<link title="Numerals" rel="Chapter" href="Numerals.html">
+<link title="PageLayout" rel="Chapter" href="PageLayout.html"><title>Diagrams.Node</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;info&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;params&nbsp;:&nbsp;<span class="constructor">RawContent</span>.path_param;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mainAnchor&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.anchor;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;innerSep&nbsp;:&nbsp;float;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;outerSep&nbsp;:&nbsp;float;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bb&nbsp;:&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;center&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Point</span>.t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pdfAnchor&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Point</span>.t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;node_contents&nbsp;:&nbsp;<span class="constructor">RawContent</span>.raw&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;button&nbsp;:&nbsp;(<span class="constructor">RawContent</span>.button_kind&nbsp;*&nbsp;string)&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;innerCurve&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Curve</span>.t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;midCurve&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Curve</span>.t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;outerCurve&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Curve</span>.t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;anchor&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.anchor&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Point</span>.t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;decorations&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.decoration&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;node_anchor&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.anchor;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;at&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Point</span>.t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z&nbsp;:&nbsp;float;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">and</span>&nbsp;decoration&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Curve</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">RawContent</span>.path_param&nbsp;*&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Curve</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Node</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;default_params&nbsp;:&nbsp;<span class="constructor">RawContent</span>.path_param<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;default&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;coord&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Point</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;coord3d&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Proj3d</span>.projection&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;decoration_to_contents&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.decoration&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">RawContent</span>.raw&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;to_contents&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">RawContent</span>.raw&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;to_gentity&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Gentity</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Transfo</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="keyword">rec</span>&nbsp;<span class="constructor">Style</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;{&nbsp;pet&nbsp;:&nbsp;<span class="constructor">Pet</span>.t;&nbsp;transfo&nbsp;:&nbsp;transfo;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">and</span>&nbsp;transfo&nbsp;=&nbsp;info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;info<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">and</span>&nbsp;<span class="constructor">Pet</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;name&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;append&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Style</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Style</span>.t&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;(&nbsp;=&nbsp;)&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;register&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?depends:t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?codepends:t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?append:(<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Style</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Style</span>.t&nbsp;list)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;*&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Map</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;key&nbsp;=&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;+<span class="keywordsign">'</span>a&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;empty&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;is_empty&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mem&nbsp;:&nbsp;key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;add&nbsp;:&nbsp;key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;singleton&nbsp;:&nbsp;key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;remove&nbsp;:&nbsp;key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;merge&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;option&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>c&nbsp;option)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>c&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;union&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare&nbsp;:&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;equal&nbsp;:&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;iter&nbsp;:&nbsp;(key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;fold&nbsp;:&nbsp;(key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;for_all&nbsp;:&nbsp;(key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;exists&nbsp;:&nbsp;(key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;filter&nbsp;:&nbsp;(key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;partition&nbsp;:&nbsp;(key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;*&nbsp;<span class="keywordsign">'</span>a&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;cardinal&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bindings&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(key&nbsp;*&nbsp;<span class="keywordsign">'</span>a)&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;min_binding&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;key&nbsp;*&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;min_binding_opt&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(key&nbsp;*&nbsp;<span class="keywordsign">'</span>a)&nbsp;option<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;max_binding&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;key&nbsp;*&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;max_binding_opt&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(key&nbsp;*&nbsp;<span class="keywordsign">'</span>a)&nbsp;option<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;choose&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;key&nbsp;*&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;choose_opt&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(key&nbsp;*&nbsp;<span class="keywordsign">'</span>a)&nbsp;option<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;split&nbsp;:&nbsp;key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;*&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;*&nbsp;<span class="keywordsign">'</span>a&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;find&nbsp;:&nbsp;key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;find_opt&nbsp;:&nbsp;key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;find_first&nbsp;:&nbsp;(key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;key&nbsp;*&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;find_first_opt&nbsp;:&nbsp;(key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(key&nbsp;*&nbsp;<span class="keywordsign">'</span>a)&nbsp;option<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;find_last&nbsp;:&nbsp;(key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;key&nbsp;*&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;find_last_opt&nbsp;:&nbsp;(key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(key&nbsp;*&nbsp;<span class="keywordsign">'</span>a)&nbsp;option<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;map&nbsp;:&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mapi&nbsp;:&nbsp;(key&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;transform&nbsp;:&nbsp;<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;info<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;transfo&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?dump_contents:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;params&nbsp;:&nbsp;<span class="constructor">RawContent</span>.path_param&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;params_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;lineWidth&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;dashed&nbsp;:&nbsp;float&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;dashed_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;draw&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;setZ&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;setZ_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;drawColor&nbsp;:&nbsp;<span class="constructor">Color</span>.color&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;draw_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;fill&nbsp;:&nbsp;<span class="constructor">Color</span>.color&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;fill_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;color&nbsp;:&nbsp;<span class="constructor">Color</span>.color&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;color_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;contents_outputcommon&nbsp;:&nbsp;<span class="constructor">RawContent</span>.raw&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;contents_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;contents_box&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.environment&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Box</span>.box&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;contents&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.environment&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;innerSep&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;inner_sep_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;outerSep&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;outer_sep_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mainAnchor&nbsp;:&nbsp;anchor&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;main_anchor_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">BB</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;translate&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;points&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;*&nbsp;<span class="keywordsign">'</span>b&nbsp;*&nbsp;<span class="keywordsign">'</span>c&nbsp;*&nbsp;<span class="keywordsign">'</span>d&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>a&nbsp;*&nbsp;<span class="keywordsign">'</span>b)&nbsp;*&nbsp;(<span class="keywordsign">'</span>c&nbsp;*&nbsp;<span class="keywordsign">'</span>b)&nbsp;*&nbsp;(<span class="keywordsign">'</span>c&nbsp;*&nbsp;<span class="keywordsign">'</span>d)&nbsp;*&nbsp;(<span class="keywordsign">'</span>a&nbsp;*&nbsp;<span class="keywordsign">'</span>d)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;outer_points&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(float&nbsp;*&nbsp;float)&nbsp;*&nbsp;(float&nbsp;*&nbsp;float)&nbsp;*&nbsp;(float&nbsp;*&nbsp;float)&nbsp;*&nbsp;(float&nbsp;*&nbsp;float)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mid_points&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(float&nbsp;*&nbsp;float)&nbsp;*&nbsp;(float&nbsp;*&nbsp;float)&nbsp;*&nbsp;(float&nbsp;*&nbsp;float)&nbsp;*&nbsp;(float&nbsp;*&nbsp;float)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;center&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;boundingBox&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bounding_box_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;getMainAnchor&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.anchor<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;ray_intersect&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;(float&nbsp;array&nbsp;*&nbsp;float&nbsp;array)&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;*&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;rectangle&nbsp;:&nbsp;<span class="constructor">Document</span>.environment&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;shape_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;button&nbsp;:&nbsp;(unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">RawContent</span>.write)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;button_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;drag&nbsp;:&nbsp;(float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;drag_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;default_shape&nbsp;:&nbsp;<span class="constructor">Document</span>.environment&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;default_rectangle&nbsp;:&nbsp;<span class="constructor">Document</span>.environment&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;kappa&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;circle&nbsp;:&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;float_div&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;*&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pmod_float&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;nat_mod&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;scal_prod&nbsp;:&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;triangle&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?orientation:float&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?apex_angle:float&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.environment&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;translate&nbsp;:&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;anchor&nbsp;:&nbsp;anchor&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;anchor_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;at&nbsp;:&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;at_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;at3d&nbsp;:&nbsp;<span class="constructor">Proj3d</span>.projection&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;at3d_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;make_output&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">RawContent</span>.raw&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;make_boxified&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.environment&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Box</span>.box&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;make&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.environment&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Node</span>.info<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;label&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Document</span>.environment&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?pos:anchor&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?style:<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Document</span>.content&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Style</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;label_pet&nbsp;:&nbsp;<span class="constructor">Transfo</span>.<span class="constructor">Pet</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;inter&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Gentity</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Diagrams</span>.<span class="constructor">Gentity</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(float&nbsp;*&nbsp;float)&nbsp;list<br>
+<span class="keyword">end</span></code></body></html>
