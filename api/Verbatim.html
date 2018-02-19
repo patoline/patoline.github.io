@@ -36,7 +36,9 @@
 <link title="Test_offset" rel="Chapter" href="Test_offset.html">
 <link title="ConfigFindFontLeg" rel="Chapter" href="ConfigFindFontLeg.html">
 <link title="Numerals" rel="Chapter" href="Numerals.html">
-<link title="PageLayout" rel="Chapter" href="PageLayout.html"><title>Verbatim</title>
+<link title="PageLayout" rel="Chapter" href="PageLayout.html">
+<link title="Db" rel="Chapter" href="Db.html">
+<link title="DbMemory" rel="Chapter" href="DbMemory.html"><title>Verbatim</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Typography.html" title="Typography">Previous</a>
@@ -45,13 +47,32 @@
 </div>
 <h1>Module <a href="type_Verbatim.html">Verbatim</a></h1>
 
-<pre><span class="keyword">module</span> Verbatim: <code class="code">sig</code> <a href="Verbatim.html">..</a> <code class="code">end</code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Verbatim: <code class="code">sig</code> <a href="Verbatim.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Handling verbatim environments
+<p>
+
+This module provides functions to generate verbatim (preformatted)
+content, and a preliminary support for syntax highlighting for a few
+predefined languages.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="VALfile_cache"><span class="keyword">val</span> file_cache</span> : <code class="type">(string, Pervasives.out_channel * int) Hashtbl.t</code></pre>
-<pre><span id="VALlines_to_file"><span class="keyword">val</span> lines_to_file</span> : <code class="type">string list -> string option -> unit</code></pre>
-<pre><span id="VALglue_space"><span class="keyword">val</span> glue_space</span> : <code class="type">int -> <a href="Document.html#TYPEcontent">Document.content</a></code></pre>
+<pre><span id="VALlines_to_file"><span class="keyword">val</span> lines_to_file</span> : <code class="type">string list -> string option -> unit</code></pre><div class="info ">
+<code class="code">lines_to_file lines fn</code> writes the lines <code class="code">lines</code> to the optional file
+   <code class="code">fn</code> if it is provided. Do nothing otherwise.<br>
+</div>
+
+<pre><span id="VALglue_space"><span class="keyword">val</span> glue_space</span> : <code class="type">int -> <a href="Document.html#TYPEcontent">Document.content</a></code></pre><div class="info ">
+<code class="code">glue_space n</code> corresponds to <code class="code">n</code> spaces from the font.<br>
+</div>
+
 <pre><span id="VALlines_skip"><span class="keyword">val</span> lines_skip</span> : <code class="type">int Pervasives.ref</code></pre>
-<pre><span id="VALline_per_line"><span class="keyword">val</span> line_per_line</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">Document.tree_zipper</a> Pervasives.ref -><br>       (string -> <a href="Document.html#TYPEcontent">Document.content</a> list) -> string list -> unit</code></pre>
+<pre><span id="VALline_per_line"><span class="keyword">val</span> line_per_line</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">Document.tree_zipper</a> Pervasives.ref -><br>       (string -> <a href="Document.html#TYPEcontent">Document.content</a> list) -> string list -> unit</code></pre><div class="info ">
+<code class="code">line_per_line f lines</code> builds each line of <code class="code">lines</code> using <code class="code">f</code> and display
+   each of them using the verbatim font.<br>
+</div>
+
 <pre><code><span id="TYPEparam"><span class="keyword">type</span> <code class="type"></code>param</span> = {</code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -76,15 +97,40 @@
 </tr></table>
 }
 
+<div class="info ">
+Parameter type for the word handler below.<br>
+</div>
 
 
-<pre><span id="VALhandle_spaces"><span class="keyword">val</span> handle_spaces</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a> -><br>       (string -> <a href="Document.html#TYPEcontent">Document.content</a> list) -> string -> <a href="Document.html#TYPEcontent">Document.content</a> list</code></pre>
-<pre><span id="VALfit_on_grid"><span class="keyword">val</span> fit_on_grid</span> : <code class="type"><a href="Document.html#TYPEcontent">Document.content</a> -> <a href="Document.html#TYPEcontent">Document.content</a></code></pre>
-<pre><span id="VALsymbol"><span class="keyword">val</span> symbol</span> : <code class="type">string -> <a href="Document.html#TYPEcontent">Document.content</a></code></pre>
+<pre><span id="VALhandle_spaces"><span class="keyword">val</span> handle_spaces</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a> -><br>       (string -> <a href="Document.html#TYPEcontent">Document.content</a> list) -> string -> <a href="Document.html#TYPEcontent">Document.content</a> list</code></pre><div class="info ">
+<code class="code">handle_spaces w_to_c line</code> builds a line using the function <code class="code">w_to_c</code> to
+   build words (i.e. sections without spaces) and takes care of the spaces
+   (one text space is as wide as any other character).<br>
+</div>
+
+<pre><span id="VALfit_on_grid"><span class="keyword">val</span> fit_on_grid</span> : <code class="type"><a href="Document.html#TYPEcontent">Document.content</a> -> <a href="Document.html#TYPEcontent">Document.content</a></code></pre><div class="info ">
+<code class="code">fit_on_grid c</code> adds spacing on both sides of the content element <code class="code">c</code> so
+   that its width becomes a multiple of the width of a single character.<br>
+</div>
+
+<pre><span id="VALsymbol"><span class="keyword">val</span> symbol</span> : <code class="type">string -> <a href="Document.html#TYPEcontent">Document.content</a></code></pre><div class="info ">
+<code class="code">symbol s</code> build a mathematical symbole from the string <code class="code">s</code>. Its width
+   on the page will be a multiple of the width of one verbatim character.<br>
+</div>
+
 <pre><span id="EXCEPTIONFound_symbol"><span class="keyword">exception</span> Found_symbol</span> <span class="keyword">of</span> <code class="type">int * string * <a href="Document.html#TYPEcontent">Document.content</a></code></pre>
 
-<pre><span id="VALhandle_word"><span class="keyword">val</span> handle_word</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a> -> string -> <a href="Document.html#TYPEcontent">Document.content</a> list</code></pre>
-<pre><span id="VALverb_text"><span class="keyword">val</span> verb_text</span> : <code class="type">(string -> <a href="Document.html#TYPEcontent">Document.content</a> list) -> string -> <a href="Document.html#TYPEcontent">Document.content</a> list</code></pre>
+<pre><span id="VALhandle_word"><span class="keyword">val</span> handle_word</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a> -> string -> <a href="Document.html#TYPEcontent">Document.content</a> list</code></pre><div class="info ">
+<code class="code">handle_word par w</code> build the contents corresponding to the word <code class="code">w</code>. The
+   <code class="code">par</code> variable provides parameters for keywords to be put in bold and
+   special symbols to be displayed using the maths font.<br>
+</div>
+
+<pre><span id="VALverb_text"><span class="keyword">val</span> verb_text</span> : <code class="type">(string -> <a href="Document.html#TYPEcontent">Document.content</a> list) -> string -> <a href="Document.html#TYPEcontent">Document.content</a> list</code></pre><div class="info ">
+<code class="code">verb_text build s</code> builds verbatim contents from a string <code class="code">s</code> and a
+   generation function <code class="code">build</code>.<br>
+</div>
+
 <pre><span id="VALparam_Default"><span class="keyword">val</span> param_Default</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a></code></pre>
 <pre><span id="VALparam_SML"><span class="keyword">val</span> param_SML</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a></code></pre>
 <pre><span id="VALparam_OCaml"><span class="keyword">val</span> param_OCaml</span> : <code class="type"><a href="Verbatim.html#TYPEparam">param</a></code></pre>
