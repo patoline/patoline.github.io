@@ -50,10 +50,10 @@
 <pre><span id="TYPEdbinfo"><span class="keyword">type</span> <code class="type"></code>dbinfo</span> = <code class="type">unit</code> </pre>
 
 
-<pre><span id="TYPEdatabase"><span class="keyword">type</span> <code class="type"></code>database</span> = <code class="type">(string, string) Hashtbl.t</code> </pre>
+<pre><span id="TYPEdatabase"><span class="keyword">type</span> <code class="type"></code>database</span> = <code class="type">(string, string list) Hashtbl.t</code> </pre>
 
 
 <pre><span id="VALconnect"><span class="keyword">val</span> connect</span> : <code class="type">unit -> ('a, 'b) Hashtbl.t</code></pre>
 <pre><span id="VALdisconnect"><span class="keyword">val</span> disconnect</span> : <code class="type">'a -> unit</code></pre>
 <pre><span id="VALinit_db"><span class="keyword">val</span> init_db</span> : <code class="type">'a -> 'b -> unit</code></pre>
-<pre><span id="VALcreate_data"><span class="keyword">val</span> create_data</span> : <code class="type">(string, string list) Hashtbl.t -><br>       'a -><br>       ?log:bool -> ?visibility:Util.visibility -> 'b -> string -> 'c -> 'c <a href="Db.html#TYPEdata">Db.data</a></code></pre></body></html>
+<pre><span id="VALcreate_data"><span class="keyword">val</span> create_data</span> : <code class="type">(string, string list) Hashtbl.t -><br>       string -><br>       ?log:bool -> ?visibility:Util.visibility -> 'a -> string -> 'b -> 'b <a href="Db.html#TYPEdata">Db.data</a></code></pre></body></html>

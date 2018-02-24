@@ -40,6 +40,7 @@
 <link title="Db" rel="Chapter" href="Db.html">
 <link title="DbMemory" rel="Chapter" href="DbMemory.html"><link title="Encoding and decoding data in the database" rel="Section" href="#1_Encodinganddecodingdatainthedatabase">
 <link title="Connection to databases " rel="Section" href="#1_Connectiontodatabases">
+<link title="Hooks" rel="Section" href="#1_Hooks">
 <link title="Utility functions" rel="Section" href="#1_Utilityfunctions">
 <title>Db</title>
 </head>
@@ -207,22 +208,42 @@ Generic type for database instances
 
 
 <pre><span id="VALinit_db"><span class="keyword">val</span> init_db</span> : <code class="type">(module Db.DbInterface with type dbinfo = 'a) -> string -> 'a -> <a href="Db.html#TYPEdb">db</a></code></pre><br>
-<h1 id="1_Utilityfunctions">Utility functions</h1><br>
+<h1 id="1_Hooks">Hooks</h1><br>
 
-<pre><span id="VALinteraction_start_hook"><span class="keyword">val</span> interaction_start_hook</span> : <code class="type">(unit -> unit) list Pervasives.ref</code></pre>
-<pre><span id="VALdo_interaction_start_hook"><span class="keyword">val</span> do_interaction_start_hook</span> : <code class="type">unit -> unit</code></pre>
-<pre><span id="VALsessid"><span class="keyword">val</span> sessid</span> : <code class="type">(string * string * (string * string) list) option Pervasives.ref</code></pre>
-<pre><span id="VALsecret"><span class="keyword">val</span> secret</span> : <code class="type">string Pervasives.ref</code></pre>
-<pre><span id="VALread_hook"><span class="keyword">val</span> read_hook</span> : <code class="type">(string -> Util.visibility -> unit) list Pervasives.ref</code></pre>
-<pre><span id="VALwrite_hook"><span class="keyword">val</span> write_hook</span> : <code class="type">(string -> Util.visibility -> unit) list Pervasives.ref</code></pre>
+<pre><span id="VALinteraction_start_hook"><span class="keyword">val</span> interaction_start_hook</span> : <code class="type">(unit -> unit) list Pervasives.ref</code></pre><div class="info ">
+List of functions called when the interactive session starts<br>
+</div>
+
+<pre><span id="VALread_hook"><span class="keyword">val</span> read_hook</span> : <code class="type">(string -> Util.visibility -> unit) list Pervasives.ref</code></pre><div class="info ">
+Hooks called when some data is being read from a database<br>
+</div>
+
+<pre><span id="VALwrite_hook"><span class="keyword">val</span> write_hook</span> : <code class="type">(string -> Util.visibility -> unit) list Pervasives.ref</code></pre><div class="info ">
+Hooks called when some data is being written to a database<br>
+</div>
+
 <pre><span id="VALrecord"><span class="keyword">val</span> record</span> : <code class="type">('a -> 'b -> unit) list Pervasives.ref -><br>       ('c -> 'd) -> 'c -> 'd * ('a * 'b) list</code></pre>
 <pre><span id="VALstop_record"><span class="keyword">val</span> stop_record</span> : <code class="type">'a list Pervasives.ref -> ('b -> 'c) -> 'b -> 'c</code></pre>
 <pre><span id="VALrecord_read"><span class="keyword">val</span> record_read</span> : <code class="type">('a -> 'b) -> 'a -> 'b * (string * Util.visibility) list</code></pre>
 <pre><span id="VALrecord_write"><span class="keyword">val</span> record_write</span> : <code class="type">('a -> 'b) -> 'a -> (string * Util.visibility) list</code></pre>
 <pre><span id="VALstop_record_read"><span class="keyword">val</span> stop_record_read</span> : <code class="type">('a -> 'b) -> 'a -> 'b</code></pre>
 <pre><span id="VALstop_record_write"><span class="keyword">val</span> stop_record_write</span> : <code class="type">('a -> 'b) -> 'a -> 'b</code></pre>
-<pre><span id="VALdo_record_read"><span class="keyword">val</span> do_record_read</span> : <code class="type">'a <a href="Db.html#TYPEdata">data</a> -> Util.visibility -> unit</code></pre>
-<pre><span id="VALdo_record_write"><span class="keyword">val</span> do_record_write</span> : <code class="type">'a <a href="Db.html#TYPEdata">data</a> -> Util.visibility -> unit</code></pre>
+<pre><span id="VALdo_interaction_start_hook"><span class="keyword">val</span> do_interaction_start_hook</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+Run all hooks in <a href="Db.html#VALinteraction_start_hook"><code class="code">Db.interaction_start_hook</code></a>.<br>
+</div>
+
+<pre><span id="VALdo_record_read"><span class="keyword">val</span> do_record_read</span> : <code class="type">'a <a href="Db.html#TYPEdata">data</a> -> Util.visibility -> unit</code></pre><div class="info ">
+Run all hooks in <a href="Db.html#VALread_hook"><code class="code">Db.read_hook</code></a>.<br>
+</div>
+
+<pre><span id="VALdo_record_write"><span class="keyword">val</span> do_record_write</span> : <code class="type">'a <a href="Db.html#TYPEdata">data</a> -> Util.visibility -> unit</code></pre><div class="info ">
+Run all hooks in <a href="Db.html#VALwrite_hook"><code class="code">Db.write_hook</code></a>.<br>
+</div>
+<br>
+<h1 id="1_Utilityfunctions">Utility functions</h1><br>
+
+<pre><span id="VALsessid"><span class="keyword">val</span> sessid</span> : <code class="type">(string * string * (string * string) list) option Pervasives.ref</code></pre>
+<pre><span id="VALsecret"><span class="keyword">val</span> secret</span> : <code class="type">string Pervasives.ref</code></pre>
 <pre><span id="VALmake_sessid"><span class="keyword">val</span> make_sessid</span> : <code class="type">unit -> string</code></pre>
 <pre><span id="VALfriends_from_string"><span class="keyword">val</span> friends_from_string</span> : <code class="type">string -> (string * string) list</code></pre>
 <pre><span id="VALfriends_to_string"><span class="keyword">val</span> friends_to_string</span> : <code class="type">(string * string) list -> string</code></pre></body></html>

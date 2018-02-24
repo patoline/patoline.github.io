@@ -38,11 +38,15 @@
 <link title="Numerals" rel="Chapter" href="Numerals.html">
 <link title="PageLayout" rel="Chapter" href="PageLayout.html">
 <link title="Db" rel="Chapter" href="Db.html">
-<link title="DbMemory" rel="Chapter" href="DbMemory.html"><link title="Environment transformations" rel="Section" href="#3_Environmenttransformations">
-<link title="Figures" rel="Section" href="#3_Figures">
-<link title="References, labels and links" rel="Section" href="#3_Referenceslabelsandlinks">
-<link title="Images" rel="Section" href="#3_Images">
-<link title="Boxification" rel="Section" href="#3_Boxification">
+<link title="DbMemory" rel="Chapter" href="DbMemory.html"><link title="Font, substitutions, positioning" rel="Section" href="#1_Fontsubstitutionspositioning">
+<link title="Mathematical formulae" rel="Section" href="#1_Mathematicalformulae">
+<link title="Environments" rel="Section" href="#1_Environments">
+<link title="Document content" rel="Section" href="#1_Documentcontent">
+<link title="Environment transformations" rel="Subsection" href="#3_Environmenttransformations">
+<link title="Figures" rel="Subsection" href="#3_Figures">
+<link title="References, labels and links" rel="Subsection" href="#3_Referenceslabelsandlinks">
+<link title="Images" rel="Subsection" href="#3_Images">
+<link title="Boxification" rel="Subsection" href="#3_Boxification">
 <title>Document</title>
 </head>
 <body>
@@ -53,11 +57,26 @@
 <h1>Module <a href="type_Document.html">Document</a></h1>
 
 <pre><span class="keyword">module</span> Document: <code class="code">sig</code> <a href="Document.html">..</a> <code class="code">end</code></pre><div class="info module top">
-Environments. These are typically folded on document trees, and
-    control many different things about the fonts, counters, or
-    labels.<br>
+High-level representation of documents
+<p>
+
+The module defines the <a href="Document.html#TYPEtree"><code class="code">Document.tree</code></a> type, which describes whole
+documents. This tree is typically produced by running the OCaml
+executable obtained after parsing a <code class="code">.txp</code> file, but can be produced by
+anyy other mean. It is the main input to Patoline Typography library in
+order to produce the final document.
+<p>
+
+Values of type <a href="Document.html#TYPEtree"><code class="code">Document.tree</code></a> are meant to be transformed by some format's
+output routine.
+<p>
+
+We also provide a tree zipper interface to ease construction of a
+<a href="Document.html#TYPEtree"><code class="code">Document.tree</code></a> when reading linearly an input file.<br>
 </div>
 <hr width="100%">
+<br>
+<h1 id="1_Fontsubstitutionspositioning">Font, substitutions, positioning</h1><br>
 
 <pre><code><span id="TYPEfontAlternative"><span class="keyword">type</span> <code class="type"></code>fontAlternative</span> = </code></pre><table class="typetable">
 <tr>
@@ -102,8 +121,12 @@ Environments. These are typically folded on document trees, and
 
 <pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Box.html#TYPEline">Box.line</a> -> <a href="Box.html#TYPEline">Box.line</a> -> int</code></pre>
 <pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type">'a -> int</code></pre></div>
-<pre><code class="code">end</code><code class="code">)</code></pre>
-<pre><span class="keyword">module</span> <a href="Document.Mathematical.html">Mathematical</a>: <code class="code">sig</code> <a href="Document.Mathematical.html">..</a> <code class="code">end</code></pre>
+<pre><code class="code">end</code><code class="code">)</code></pre><br>
+<h1 id="1_Mathematicalformulae">Mathematical formulae</h1><br>
+
+<pre><span class="keyword">module</span> <a href="Document.Mathematical.html">Mathematical</a>: <code class="code">sig</code> <a href="Document.Mathematical.html">..</a> <code class="code">end</code></pre><br>
+<h1 id="1_Environments">Environments</h1><br>
+
 <pre><code><span id="TYPEenvironment"><span class="keyword">type</span> <code class="type"></code>environment</span> = {</code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -382,7 +405,9 @@ Environments. These are typically folded on document trees, and
 <pre><span id="VALenv_accessed"><span class="keyword">val</span> env_accessed</span> : <code class="type">bool Pervasives.ref</code></pre>
 <pre><span id="VALnames"><span class="keyword">val</span> names</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -><br>       ((int * int list) Extra.StrMap.t * string * <a href="Box.html#TYPEline">Box.line</a>) Extra.StrMap.t</code></pre>
 <pre><span id="VALuser_positions"><span class="keyword">val</span> user_positions</span> : <code class="type"><a href="Document.html#TYPEenvironment">environment</a> -> <a href="Box.html#TYPEline">Box.line</a> Box.MarkerMap.t</code></pre>
-<pre><span id="VALdisplayname"><span class="keyword">val</span> displayname</span> : <code class="type">Driver.structure -> RawContent.raw list</code></pre>
+<pre><span id="VALdisplayname"><span class="keyword">val</span> displayname</span> : <code class="type">Driver.structure -> RawContent.raw list</code></pre><br>
+<h1 id="1_Documentcontent">Document content</h1><br>
+
 <pre><code><span id="TYPEcontent"><span class="keyword">type</span> <code class="type"></code>content</span> = </code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -427,6 +452,9 @@ Environments. These are typically folded on document trees, and
 
 </tr></table>
 
+<div class="info ">
+Main type used to hold document contents.<br>
+</div>
 
 
 <pre><code><span id="TYPEparagraph"><span class="keyword">type</span> <code class="type"></code>paragraph</span> = {</code></pre><table class="typetable">
@@ -488,6 +516,9 @@ Environments. These are typically folded on document trees, and
 </tr></table>
 }
 
+<div class="info ">
+First type of leaves in a document: paragraphs.<br>
+</div>
 
 
 <pre><code><span id="TYPEfiguredef"><span class="keyword">type</span> <code class="type"></code>figuredef</span> = {</code></pre><table class="typetable">
@@ -521,6 +552,9 @@ Environments. These are typically folded on document trees, and
 </tr></table>
 }
 
+<div class="info ">
+Second type of leaves in a document: figures.<br>
+</div>
 
 
 <pre><code><span id="TYPEnode"><span class="keyword">type</span> <code class="type"></code>node</span> = {</code></pre><table class="typetable">
@@ -589,6 +623,9 @@ Environments. These are typically folded on document trees, and
 </tr></table>
 }
 
+<div class="info ">
+Internal node of the document tree (e.g. section, chapter...).<br>
+</div>
 
 
 <pre><code><span id="TYPEtree"><span class="keyword">type</span> <code class="type"></code>tree</span> = </code></pre><table class="typetable">
@@ -614,23 +651,87 @@ Environments. These are typically folded on document trees, and
 
 </tr></table>
 
+<div class="info ">
+Type of a document tree.<br>
+</div>
 
 
-<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type"><a href="Document.html#TYPEnode">node</a></code></pre>
-<pre><span id="VALsingleton"><span class="keyword">val</span> singleton</span> : <code class="type"><a href="Document.html#TYPEtree">tree</a> -> <a href="Document.html#TYPEnode">node</a></code></pre>
+<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type"><a href="Document.html#TYPEnode">node</a></code></pre><div class="info ">
+Empty node (with no child tree).<br>
+</div>
+
+<pre><span id="VALsingleton"><span class="keyword">val</span> singleton</span> : <code class="type"><a href="Document.html#TYPEtree">tree</a> -> <a href="Document.html#TYPEnode">node</a></code></pre><div class="info ">
+Build a node with a single child tree.<br>
+</div>
+
 <pre><span id="TYPEtree_zipper"><span class="keyword">type</span> <code class="type"></code>tree_zipper</span> = <code class="type"><a href="Document.html#TYPEtree">tree</a> * (int * <a href="Document.html#TYPEnode">node</a>) list</code> </pre>
+<div class="info ">
+The main datatype is a zipper over a document tree. It consists in a
+   couple whose first component is a tree. The second component represents
+   the context identifying a position in the tree.
+<p>
+
+   The tree represented by the zipper <code class="code">(t, [(p1,t1), ... , (pn,tn)])</code> is
+   built by:<ul>
+<li>appending the tree t at position p1 in t1,</li>
+<li>appending the resulting tree at poistion p2 in t2,</li>
+<li>...</li>
+<li>appending the resulting tree at poistion pn in tn.</li>
+</ul>
+<br>
+</div>
 
 
-<pre><span id="VALup"><span class="keyword">val</span> up</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
-<pre><span id="VALup_n"><span class="keyword">val</span> up_n</span> : <code class="type">int -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
-<pre><span id="VALtop"><span class="keyword">val</span> top</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
-<pre><span id="VALlastChild"><span class="keyword">val</span> lastChild</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
-<pre><span id="VALnewChildAfter"><span class="keyword">val</span> newChildAfter</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree">tree</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
-<pre><span id="VALnewChildBefore"><span class="keyword">val</span> newChildBefore</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree">tree</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
-<pre><span id="VALchild"><span class="keyword">val</span> child</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> int -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
-<pre><span id="VALfollow"><span class="keyword">val</span> follow</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> int list -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre>
-<pre><span class="keyword">module type</span> <a href="Document.Format.html">Format</a> = <code class="code">sig</code> <a href="Document.Format.html">..</a> <code class="code">end</code></pre>
-<pre><span class="keyword">module type</span> <a href="Document.DocumentStructure.html">DocumentStructure</a> = <code class="code">sig</code> <a href="Document.DocumentStructure.html">..</a> <code class="code">end</code></pre>
+<pre><span id="VALup"><span class="keyword">val</span> up</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre><div class="info ">
+Function that takes a tree zipper <code class="code">(t,cxt)</code> pointing to some node
+   <code class="code">t</code> and returns a zipper pointing to the father node of t. If this
+   function is called on a zipper that points to the root of the tree, a
+   new empty node is created to have <code class="code">t</code> as its only child.<br>
+</div>
+
+<pre><span id="VALup_n"><span class="keyword">val</span> up_n</span> : <code class="type">int -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre><div class="info ">
+Function that applies <a href="Document.html#VALup"><code class="code">Document.up</code></a> n times on a zipper, effectively moving the
+   zipper to the n-th ancestor of the currently pointed node.<br>
+</div>
+
+<pre><span id="VALtop"><span class="keyword">val</span> top</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre><div class="info ">
+Move the zipper to the root of the tree<br>
+</div>
+
+<pre><span id="VALlastChild"><span class="keyword">val</span> lastChild</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre><div class="info ">
+Move the zipper to point to the child of the pointed node with the higher
+   index. It the pointed tree is not a node the zipper is left unchanged.<br>
+</div>
+
+<pre><span id="VALnewChildAfter"><span class="keyword">val</span> newChildAfter</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree">tree</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre><div class="info ">
+Take a zipper <code class="code">(t,cxt)</code> and a tree <code class="code">c</code> and adds <code class="code">c</code> as the last child of the
+   pointed node. If the pointed subtree is not a node, a new node is
+   created to hold <code class="code">t</code> and <code class="code">c</code>. The returned zipper points to <code class="code">c</code>.<br>
+</div>
+
+<pre><span id="VALnewChildBefore"><span class="keyword">val</span> newChildBefore</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> <a href="Document.html#TYPEtree">tree</a> -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre><div class="info ">
+Same as <a href="Document.html#VALnewChildAfter"><code class="code">Document.newChildAfter</code></a> but adds the tree as the first child.<br>
+</div>
+
+<pre><span id="VALchild"><span class="keyword">val</span> child</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> int -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre><div class="info ">
+Take a zipper pointing to a node and move it down its i-th child. If the
+   zipper does not point to a node, <code class="code">Invalid_argument</code> is raised. If the i-th
+   child does not exists, it is created as a new empty node.<br>
+</div>
+
+<pre><span id="VALfollow"><span class="keyword">val</span> follow</span> : <code class="type"><a href="Document.html#TYPEtree_zipper">tree_zipper</a> -> int list -> <a href="Document.html#TYPEtree_zipper">tree_zipper</a></code></pre><div class="info ">
+Take a tree zipper and an path represented as a list of integers and move
+   the zipper down the path (i.e. calling child on the successive indices.<br>
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Document.Format.html">Format</a> = <code class="code">sig</code> <a href="Document.Format.html">..</a> <code class="code">end</code></pre><div class="info">
+Module type of a document format.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Document.DocumentStructure.html">DocumentStructure</a> = <code class="code">sig</code> <a href="Document.DocumentStructure.html">..</a> <code class="code">end</code></pre><div class="info">
+Module type to be used as a document wrapper.
+</div>
+
 <pre><span id="VALdoc_tags"><span class="keyword">val</span> doc_tags</span> : <code class="type"><a href="Document.html#TYPEtree">tree</a> -> (string * string) list</code></pre>
 <pre><span id="VALinit_env_hook"><span class="keyword">val</span> init_env_hook</span> : <code class="type">(<a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a>) list Pervasives.ref</code></pre>
 <pre><span id="VALadd_env_hook"><span class="keyword">val</span> add_env_hook</span> : <code class="type">(<a href="Document.html#TYPEenvironment">environment</a> -> <a href="Document.html#TYPEenvironment">environment</a>) -> unit</code></pre>

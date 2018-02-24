@@ -291,7 +291,10 @@ The same as boxify, but discards the final environment.
 <tr><td><a href="Maths.html#VALchange_fonts">change_fonts</a> [<a href="Maths.html">Maths</a>]</td>
 <td></td></tr>
 <tr><td><a href="Document.html#VALchild">child</a> [<a href="Document.html">Document</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Take a zipper pointing to a node and move it down its i-th child.
+</div>
+</td></tr>
 <tr><td><a href="Diagrams.Node.html#VALcircle">circle</a> [<a href="Diagrams.Node.html">Diagrams.Node</a>]</td>
 <td></td></tr>
 <tr><td><a href="Diagrams.Edge.html#VALcliptip">cliptip</a> [<a href="Diagrams.Edge.html">Diagrams.Edge</a>]</td>
@@ -495,15 +498,24 @@ Disconnecting from the database
 <tr><td><a href="Diagrams.Edge.html#VALdo_clip">do_clip</a> [<a href="Diagrams.Edge.html">Diagrams.Edge</a>]</td>
 <td></td></tr>
 <tr><td><a href="Db.html#VALdo_interaction_start_hook">do_interaction_start_hook</a> [<a href="Db.html">Db</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Run all hooks in <a href="Db.html#VALinteraction_start_hook"><code class="code">Db.interaction_start_hook</code></a>.
+</div>
+</td></tr>
 <tr><td><a href="Document.html#VALdo_ragged_left">do_ragged_left</a> [<a href="Document.html">Document</a>]</td>
 <td></td></tr>
 <tr><td><a href="Document.html#VALdo_ragged_right">do_ragged_right</a> [<a href="Document.html">Document</a>]</td>
 <td></td></tr>
 <tr><td><a href="Db.html#VALdo_record_read">do_record_read</a> [<a href="Db.html">Db</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Run all hooks in <a href="Db.html#VALread_hook"><code class="code">Db.read_hook</code></a>.
+</div>
+</td></tr>
 <tr><td><a href="Db.html#VALdo_record_write">do_record_write</a> [<a href="Db.html">Db</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Run all hooks in <a href="Db.html#VALwrite_hook"><code class="code">Db.write_hook</code></a>.
+</div>
+</td></tr>
 <tr><td><a href="Diagrams.Edge.html#VALdo_squiggle">do_squiggle</a> [<a href="Diagrams.Edge.html">Diagrams.Edge</a>]</td>
 <td></td></tr>
 <tr><td><a href="Box.html#VALdoc_frame">doc_frame</a> [<a href="Box.html">Box</a>]</td>
@@ -587,7 +599,10 @@ initialize data structure, but whose content should never be used
 <tr><td><a href="Document.html#VALemph">emph</a> [<a href="Document.html">Document</a>]</td>
 <td></td></tr>
 <tr><td><a href="Document.html#VALempty">empty</a> [<a href="Document.html">Document</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Empty node (with no child tree).
+</div>
+</td></tr>
 <tr><td><a href="Diagrams.Edge.html#VALempty">empty</a> [<a href="Diagrams.Edge.html">Diagrams.Edge</a>]</td>
 <td></td></tr>
 <tr><td><a href="Box.html#VALempty_drawing_box">empty_drawing_box</a> [<a href="Box.html">Box</a>]</td>
@@ -709,7 +724,11 @@ Calling <code class="code">fold_left_line paragraphs f x0 line</code> computes
 </div>
 </td></tr>
 <tr><td><a href="Document.html#VALfollow">follow</a> [<a href="Document.html">Document</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Take a tree zipper and an path represented as a list of integers and move
+   the zipper down the path (i.e.
+</div>
+</td></tr>
 <tr><td><a href="Document.html#VALfont">font</a> [<a href="Document.html">Document</a>]</td>
 <td></td></tr>
 <tr><td><a href="Diagrams.Edge.html#VALfontArrowHead">fontArrowHead</a> [<a href="Diagrams.Edge.html">Diagrams.Edge</a>]</td>
@@ -874,7 +893,10 @@ Create the table structure in the database.
 <tr><td><a href="Distance.html#VALinter_far">inter_far</a> [<a href="Distance.html">Distance</a>]</td>
 <td></td></tr>
 <tr><td><a href="Db.html#VALinteraction_start_hook">interaction_start_hook</a> [<a href="Db.html">Db</a>]</td>
-<td></td></tr>
+<td><div class="info">
+List of functions called when the interactive session starts
+</div>
+</td></tr>
 <tr><td><a href="Diagrams.Curve.html#VALinternal_restrict">internal_restrict</a> [<a href="Diagrams.Curve.html">Diagrams.Curve</a>]</td>
 <td></td></tr>
 <tr><td><a href="Diagrams.Curve.html#VALintersections">intersections</a> [<a href="Diagrams.Curve.html">Diagrams.Curve</a>]</td>
@@ -979,7 +1001,11 @@ Is the node a paragraph ?
 <tr><td><a href="Diagrams.Curve.html#VALlast">last</a> [<a href="Diagrams.Curve.html">Diagrams.Curve</a>]</td>
 <td></td></tr>
 <tr><td><a href="Document.html#VALlastChild">lastChild</a> [<a href="Document.html">Document</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Move the zipper to point to the child of the pointed node with the higher
+   index.
+</div>
+</td></tr>
 <tr><td><a href="Box.html#VALlast_line">last_line</a> [<a href="Box.html">Box</a>]</td>
 <td></td></tr>
 <tr><td><a href="Diagrams.Curve.html#VALlatest_intersection">latest_intersection</a> [<a href="Diagrams.Curve.html">Diagrams.Curve</a>]</td>
@@ -1216,9 +1242,16 @@ Allows to modify the <code class="code">Document.environment</code> in a math fo
 <tr><td><a href="Distance.html#VALnear">near</a> [<a href="Distance.html">Distance</a>]</td>
 <td></td></tr>
 <tr><td><a href="Document.html#VALnewChildAfter">newChildAfter</a> [<a href="Document.html">Document</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Take a zipper <code class="code">(t,cxt)</code> and a tree <code class="code">c</code> and adds <code class="code">c</code> as the last child of the
+   pointed node.
+</div>
+</td></tr>
 <tr><td><a href="Document.html#VALnewChildBefore">newChildBefore</a> [<a href="Document.html">Document</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Same as <a href="Document.html#VALnewChildAfter"><code class="code">Document.newChildAfter</code></a> but adds the tree as the first child.
+</div>
+</td></tr>
 <tr><td><a href="Document.html#VALnewPar">newPar</a> [<a href="Document.html">Document</a>]</td>
 <td></td></tr>
 <tr><td><a href="Document.html#VALnewStruct">newStruct</a> [<a href="Document.html">Document</a>]</td>
@@ -1454,7 +1487,10 @@ Adds a new node, just below the last one.
 <tr><td><a href="Distance.html#VALread_cache">read_cache</a> [<a href="Distance.html">Distance</a>]</td>
 <td></td></tr>
 <tr><td><a href="Db.html#VALread_hook">read_hook</a> [<a href="Db.html">Db</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Hooks called when some data is being read from a database
+</div>
+</td></tr>
 <tr><td><a href="Db.html#VALrecord">record</a> [<a href="Db.html">Db</a>]</td>
 <td></td></tr>
 <tr><td><a href="Db.html#VALrecord_read">record_read</a> [<a href="Db.html">Db</a>]</td>
@@ -1544,7 +1580,10 @@ Resets all the counters, preserving their levels.
 <tr><td><a href="Document.html#VALsimpleFamilyMember">simpleFamilyMember</a> [<a href="Document.html">Document</a>]</td>
 <td></td></tr>
 <tr><td><a href="Document.html#VALsingleton">singleton</a> [<a href="Document.html">Document</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Build a node with a single child tree.
+</div>
+</td></tr>
 <tr><td><a href="Document.html#VALsize">size</a> [<a href="Document.html">Document</a>]</td>
 <td></td></tr>
 <tr><td><a href="Distance.html#VALsolve22">solve22</a> [<a href="Distance.html">Distance</a>]</td>
@@ -1656,7 +1695,10 @@ Adds a tag to the given structure.
 <tr><td><a href="Document.html#VALtoggleItalic">toggleItalic</a> [<a href="Document.html">Document</a>]</td>
 <td></td></tr>
 <tr><td><a href="Document.html#VALtop">top</a> [<a href="Document.html">Document</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Move the zipper to the root of the tree
+</div>
+</td></tr>
 <tr><td><a href="Diagrams.Node.html#VALtransfo">transfo</a> [<a href="Diagrams.Node.html">Diagrams.Node</a>]</td>
 <td></td></tr>
 <tr><td><a href="Diagrams.Edge.html#VALtransform">transform</a> [<a href="Diagrams.Edge.html">Diagrams.Edge</a>]</td>
@@ -1701,9 +1743,17 @@ Adds a tag to the given structure.
 <tr><td><a href="Diagrams.Vector.html#VALunit">unit</a> [<a href="Diagrams.Vector.html">Diagrams.Vector</a>]</td>
 <td></td></tr>
 <tr><td><a href="Document.html#VALup">up</a> [<a href="Document.html">Document</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Function that takes a tree zipper <code class="code">(t,cxt)</code> pointing to some node
+   <code class="code">t</code> and returns a zipper pointing to the father node of t.
+</div>
+</td></tr>
 <tr><td><a href="Document.html#VALup_n">up_n</a> [<a href="Document.html">Document</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Function that applies <a href="Document.html#VALup"><code class="code">Document.up</code></a> n times on a zipper, effectively moving the
+   zipper to the n-th ancestor of the currently pointed node.
+</div>
+</td></tr>
 <tr><td><a href="Document.html#VALupdateFont">updateFont</a> [<a href="Document.html">Document</a>]</td>
 <td></td></tr>
 <tr><td><a href="Document.html#VALupdate_names">update_names</a> [<a href="Document.html">Document</a>]</td>
@@ -1760,7 +1810,10 @@ Label updating after optimization.
 <tr><td><a href="Distance.html#VALwrite_cache">write_cache</a> [<a href="Distance.html">Distance</a>]</td>
 <td></td></tr>
 <tr><td><a href="Db.html#VALwrite_hook">write_hook</a> [<a href="Db.html">Db</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Hooks called when some data is being written to a database
+</div>
+</td></tr>
 <tr><td align="left"><br>X</td></tr>
 <tr><td><a href="Diagrams.html#VALxarrow">xarrow</a> [<a href="Diagrams.html">Diagrams</a>]</td>
 <td></td></tr>
