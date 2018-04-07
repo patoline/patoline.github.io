@@ -37,6 +37,8 @@ a {
 /**** Header (top menu) *****************************************************/
 
 #header {
+  position   : sticky;
+  top        : 0;
   padding    : 10px 0 10px 0;
   margin     : 0;
   background : black;
@@ -105,7 +107,7 @@ a {
   text-align       : center;
   color            : white;
   background-color : black;
-  padding-top      : 1em;
+  padding-top      : 2em;
   padding-bottom   : 1em;
 }
 
